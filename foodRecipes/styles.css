@@ -42,21 +42,27 @@ body {
     font-size: 40px;
 }
 
+.heading a {
+    color: green;
+}
+
 .imageAndInfo {
     display: flex;
     justify-content: space-between;
     gap: 50px;
+    padding: 10px;
+    background-color: gray;
+    border-radius: 10px;
 }
 
 .image img {
     border-radius: 10px;
-    width: 600px;
+    width: 700px;
 }
 
 .prepTimes {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 h3 {
