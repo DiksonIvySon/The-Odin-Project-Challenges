@@ -1,0 +1,69 @@
+
+
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLinks ul{
+    display: flex;
+}
+
+.navLinks ul li {
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+.navLinks ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.navLinks ul li a:hover {
+    background-color: green;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.logo {
+    color: green;
+}
+
+.heading h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.imageAndInfo {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.image img {
+    border-radius: 10px;
+    width: 600px;
+}
+
+.prepTimes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3 {
+    color: green;
+}
+
+.ingredients ul li{
+    padding: 2px;
+}
+
