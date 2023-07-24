@@ -1,22 +1,17 @@
-@import url('https//fonts.googleapis.com/css?family=Raleway:300,400');
 
-@font-face {
-    font-family: "myFont";
-    src: url(fonts/font.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
 
 * {
     box-sizing: border-box;
     font-family: Raleway;
     color: #777;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 html, body {
     margin: 0;
     padding: 0;
+
 }
 
 .nav ul {
@@ -46,7 +41,8 @@ html, body {
 }
 
 .nav a:hover {
-    background-color: rgb(255, 255, 255, .3);
+    color: #56CCF2;
+    font-weight: bolder;
 }
 
 .main-header {
@@ -57,30 +53,20 @@ html, body {
     padding-bottom: 30px;
 }
 
-.band-name {
+.main-header h1 {
     text-align: center;
-    margin: 0;
-    font-size: 4em
-    /*font-family: "myFont";*/
-    /* fix the font of the band name*/
+    font-size: 100px;
 }
 
 .content-section {
     margin: 1em;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5em;
+.content-section h2 {
+    color: black;
 }
 
 .section-header {
-    /*font-family: ;
-    fix the font for the title "About"
-    also center it
-    */
-
     text-align: center;
 
 }
@@ -93,68 +79,35 @@ html, body {
     border-radius: 50%;
 }
 
-.main-footer {
-    background-color: #56CCF2;
-    color: white; /* this is not working, the social media icons should be while
-    try: changing the images.
-    */
-    padding: .25em 0;
-}
-
-.main-footer-container {
+.footer {
+    background-color: #56CCF2; 
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
 }
 
-.main-footer-container ul {
-    flex-grow: 1;
-    text-align: end;
+.footer h3 {
+    color: black;
 }
 
-.footer-nav li {
-    padding: o .5em;
+.footer i {
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.footer-nav img {
-    width: 30px;
-    height: 30px;
+.footer i:hover {
+    font-size: 30px;
+    color: purple;
 }
+
+
 
 /* css styling for the home page of the web also known as the musicpro index.html */
 
-.btn {
-    text-align: center;
-    vertical-align: middle;
-    padding: .67em;
-    cursor: pointer;
-}
-
-.btn-header {
-    margin: .5em 15% 2em 15%;
-    color: white;
-    border: 2px solid #2D9CDB;
-    background-color: rgba(255, 255, 255, .1);
-    border-radius: 0;
-    font-size: 1.5em;
-    font-weight: lighter;
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-.btn-header:hover {
-    background-color: rgba(255, 255, 255, .3);
-}
-
-.btn-play {
-    display: block;
-    margin: 0 auto;
-    color: #2D9CDB;
-    font-size: 4em;
-    border-radius: 50%;
-    padding: 0;
-    width: 100px;
-    height: 100px;
-}
 
 .tour-row {
     border-bottom: 1px solid black;
@@ -185,11 +138,7 @@ html, body {
     width: 42%;
 }
 
-.tour-btn {
-    max-width: 19%;
-}
-
-.btn-primary {
+button {
     color: white;
     background-color: #56CCF2;
     border: none;
@@ -197,6 +146,62 @@ html, body {
     font-weight: bold;
 }
 
-.btn-primary:hover {
-    background-color: #2D9CDB;
+button:hover {
+    color: #56CCF2;
+    background-color: black;
+    box-shadow: 0px 0px 0px 2px;
+    cursor: pointer;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+/*adding styling to the store page*/
+
+section > h2 {
+    text-align: center;
+    color: black;
+}
+
+.store-items {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.store-items img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+/*styling the cart*/
+
+.cart {
+   display: flex;
+   justify-content: center; 
+   margin: 10px;
+}
+
+.cart-item {
+    display: flex;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.cart-item-info {
+    margin-left: 10px;
+}
+
+.remove-btn:hover {
+    background-color: red;
+    color: black;
 }

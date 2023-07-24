@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>THE IvySon Sax</title>
         <meta name="decription" content="This is the discription">
-        <link rel="stylesheet" href="musicpro styles.css">
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <header class="main-header">
@@ -17,11 +19,16 @@
             </nav>
             
             <h1 class="band-name band-name-large">The IvySon Sax</h1> 
-            <div class="container">
-                <button class="btn btn-header" type="button">Get My Latest Album</button>
-            </div>
-            <button class="btn btn-header btn-play" type="button">&#9658;</button>
         </header>
+
+        <section class="video">
+            <div>
+            </div>
+
+          <!-- <video autoplay loop muted plays-inline class="video">
+                <source src="https://www.youtube.com/watch?v=-unASUgYtVI&ab_channel=HtmlCamp" type="video">
+            </video> -->
+        </section>
         <section class="content-section container">
             <h2 class="section-header slideInLeft">TOURS</h2>  <!-- added an animation to slide the "Tours" title from the left  -->
             <div>
@@ -42,7 +49,7 @@
                     
                     <span class="tour-item tour-arena">DTE ENERGY MUSIC THEATRE</span>
                     
-                    <button type="button" class="btn tour-item tour-btn btn-primary" >BUY TICKETS</button>
+                    <button type="button" class="btn tour-item" >BUY TICKETS</button>
                     
                </div>
                <div class="tour-row">
@@ -88,34 +95,16 @@
             </div>     
 
         </section> 
-        <footer class="main-footer">
-            <div class="container main-footer-container">
-               <h3 class="band-name">The IvySon Sax</h3>
-               <ul class="nav footer-nav">
-                <li>
-                    <a href="https://www.instagram.com/" target="_blank">
-                    <img src="IMAGES/instagram tag images.jpg" width="50" height="50" >
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.tiktok.com/" target="_blank">
-                    <img src="IMAGES/tik tok tag image.png" width="50" height="50">
-                    </a>
-                </li>
-                    
-                <li>
-                    <a href="https://www.facebook.com/" target="_blank">
-                    <img src="IMAGES/facebook tag download.jpg" width="50" height="50">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/" target="_blank">
-                    <img src="IMAGES/youtube tag images.png" width="50" height="50">
-                    </a>
-                </li>
-                    
-               </ul>
-            </div>
+        <footer class="footer">
+               <div class="band-name">
+                    <h3>The IvySon Sax</h3>
+               </div>
+               <div class="social-icons">
+                    <i class="fa-brands fa-facebook fa-fade"></i>
+                    <i class="fa-brands fa-twitter fa-fade"></i>
+                    <i class="fa-brands fa-instagram fa-fade"></i>
+                    <i class="fa-brands fa-tiktok fa-fade"></i>
+               </div>
         </footer> 
     </body>
 </html>
