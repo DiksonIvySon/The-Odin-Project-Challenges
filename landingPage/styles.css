@@ -157,6 +157,11 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.video video{
+    width: 600px;
+    height: 400px;
     margin: 10px;
 }
 
