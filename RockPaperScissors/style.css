@@ -132,18 +132,19 @@ header {
 .video {
     display: flex;
     justify-content: center;
-    position: relative;
 }
 
 .video video{
     height: 100vh;
     border-radius: 10px;
+    position: relative;
 }
 
-.play-game-button {
+.video .play-game-button {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, 50%);
     font-size: 50px;
     padding: 20px;
     border-radius: 50px;
