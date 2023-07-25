@@ -5,7 +5,6 @@
 
 body {
     background-image: linear-gradient(180deg , white, grey ,black);
-    padding: 10px;
 }
 
 header {
@@ -50,6 +49,7 @@ header {
     color: black;
     background-color: orange;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
 .heading {
@@ -71,7 +71,7 @@ header {
 
 .quick-links li {
     list-style-type: none;
-    padding: 15px;
+    padding: 12px;
 }
 
 .quick-links a:hover {
@@ -87,10 +87,16 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px;
 }
 
 .footer {
     background-color: black;
+}
+
+.footer h3 {
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .container {
@@ -121,6 +127,8 @@ header {
 
 .email {
     background-color: grey;
+    width: 80px;
+    border-radius: 5px;
 }
 
 .email i:hover {
@@ -146,13 +154,32 @@ header {
     background: black;
 }
 
+.main-btn-left button:hover {
+    border: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
 .main-btn-left input {
     border-radius: 10px;
 }
 
+.main-btn-left input:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
 .main-btn-right input{
-    height: 20px;
+    height: 40px;
+    width: 100px;
     color: black;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.main-btn-right input:hover {
+    border: 2px orange;
+
 }
 
 .main-btn button {
