@@ -15,8 +15,25 @@ function getComputerChoice(){
         computerChoice = "scissors";
     }
    
-   document.querySelector(".computer-play").textContent = computerChoice;
+   //document.querySelector(".computer-play").textContent = computerChoice;
+   comPlay(computerChoice);
    return computerChoice;
+}
+
+//function to chang the background color of the computer play buttons to show the computers play
+function comPlay(play) {
+    let playID;
+    if (play === "rock"){
+        playID = "#btn-computerRock";
+    }
+    else if (play === "paper") {
+        playID = "#btn-computerPaper";
+    }
+    else {
+        playID = "#btn-computerScissors";
+    }
+
+    document.querySelector(playID).style.backgroundColor = "aqua";
 }
 
 function singleRound(playerSelection, computerSelection){
@@ -85,7 +102,7 @@ function clickListener() {
     })
 }
 
-function game(string){
+function game(string) {
  
     for(let i=1; i<=5; i++){
         let playerSelection = string;
