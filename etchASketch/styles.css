@@ -146,6 +146,15 @@ header {
     background: black;
 }
 
+.main-btn-left input {
+    border-radius: 10px;
+}
+
+.main-btn-right input{
+    height: 20px;
+    color: black;
+}
+
 .main-btn button {
     border-radius: 0%;
     background-image: linear-gradient(70deg, orange, grey, black);
