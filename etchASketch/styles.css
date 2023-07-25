@@ -188,3 +188,9 @@ header {
     display: grid;
 }
 
+/*styling the home page*/
+
+.home-heading h1{
+    text-align: center;
+}
+

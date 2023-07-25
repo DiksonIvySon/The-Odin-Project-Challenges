@@ -27,11 +27,34 @@
     </header>
 
     <main>
-        <section class="home-heading">
-            <h1>Welcome to Etch-A-Sketch</h1>
-        </section>
-        <section>
-            
+        <section class="section">
+            <h1 class="heading">Etch-A-Sketch</h1>
+            <div class="section-container">
+                <div class="main-btn">
+                   <div class="main-btn-left">
+                        <button onclick="resetDrawingSurface()">Reset</button>
+                        <button onclick="changeColor('black')">Black</button>
+                        <button onclick="changeColor('white')">Erasor</button>
+                        <div>
+                            <label class="colorChosen">Select a Pen Color </label>
+                            <input type="color" value="pink" onchange="changeColor(this.value)">
+                        </div>
+                   </div>
+                   <div class="main-btn-right">
+                        <label>Set Size</label>
+                        <input type="number" placeholder="18" value="16" onchange="changeSize(this.value)">
+                   </div>
+                </div>
+                <div class="drawing-surface-heading">
+                    <h2>Drawing-Surface</h2>
+                </div>
+                <div class="drawing-surface">
+                    <div class="drawing-grid">
+                        <!-- This is where the grid divs are added -->
+    
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
