@@ -3,14 +3,15 @@
 function checkPassword(){
     const userPassword = document.getElementById("user-password").value
     const passwordConfirmation = document.getElementById("password-confirmation").value
-    const validationNo = document.querySelector(".validation-no");
-    const validationYes = document.querySelector(".validation-yes");
+    const validationMessage = document.querySelector(".validation-message");
 
     if (userPassword != passwordConfirmation){
-        validationNo.textContent = "Passwords don't match";
+        validationMessage.textContent = "Passwords don't match";
+        validationMessage.style.color = "red";
     }
     else {
-        validationYes.textContentCon = "Passwords match";
+        validationMessage.textContent = "Passwords match";
+        validationMessage.style.color = "green";
     }
 }
 

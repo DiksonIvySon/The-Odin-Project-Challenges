@@ -55,14 +55,13 @@
                                  <div>
                                      <label for="password-confirmation">Confirm Password*</label>
                                      <br>
-                                     <input type="password" id="password-confirmation" name="password-confirmation" required>
-                                     <h3 class="validation-no"></h3>
-                                     <h3 class="validation-yes"></h3>
+                                     <input onkeyup="checkPassword()" type="password" id="password-confirmation" name="password-confirmation" required>
+                                     <h3 class="validation-message"></h3>
                                  </div>
                         </div>
                         <div class="buttons">
                              <button class="reset-btn" type="reset"><b>Reset</b></button>
-                             <button class="submit-btn" type="submit" onclick="checkPassword()"><b>Create Account</b></button>
+                             <button class="submit-btn" type="submit"><b>Create Account</b></button>
                         </div>
                         <div class="alreadyHaveAccount">
                             <h2>Already have an account? <a href="">Log in</a></h2>
