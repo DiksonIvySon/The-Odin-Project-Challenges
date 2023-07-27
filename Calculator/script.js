@@ -1,44 +1,45 @@
 
 //function for addition
-function add(a,b) {
-    return a + b;
+function add(firstNumber, SecondNumber) {
+    return firstNumber + SecondNumber;
 }
 
 //function for subtraction
-function subtract(a, b) {
-    return a - b;
+function subtract(firstNumber, SecondNumber) {
+    return firstNumber - SecondNumber;
 }
 
 //function for multiplication
-function multiply(a, b) {
-    return a * b;
+function multiply(firstNumber, SecondNumber) {
+    return firstNumber * SecondNumber;
 }
 
 //function for division
-function divide(a, b) {
-    return a / b;
+function divide(firstNumber, SecondNumber) {
+    return firstNumber / SecondNumber;
 }
 
 
-let firstNumber;
-let SecondNumber;
-let operator;
+let firstNumber = 4;
+let SecondNumber = 2;
+let operator = "+";
+console.log(operate(firstNumber, SecondNumber, operator));
 
 function operate(firstNumber, SecondNumber, operator) {
     if (operator === "+") {
-        add(firstNumber, SecondNumber);
+        return add(firstNumber, SecondNumber);
     }
     else if (operator === "-") {
-        subtract(firstNumber, SecondNumber);
+        return subtract(firstNumber, SecondNumber);
     }
     else if (operator === "*") {
-        multiply(firstNumber, SecondNumber);
+        return multiply(firstNumber, SecondNumber);
     }
     else if (operator === "/") {
-        divide(firstNumber, SecondNumber);
+        return divide(firstNumber, SecondNumber);
     }
     else {
         alertMessage = operator + " is not an allowed operator."
-        alert(alertMessage)
+        console.log(alertMessage);
     }
 }
