@@ -23,3 +23,22 @@ function divide(a, b) {
 let firstNumber;
 let SecondNumber;
 let operator;
+
+function operate(firstNumber, SecondNumber, operator) {
+    if (operator === "+") {
+        add(firstNumber, SecondNumber);
+    }
+    else if (operator === "-") {
+        subtract(firstNumber, SecondNumber);
+    }
+    else if (operator === "*") {
+        multiply(firstNumber, SecondNumber);
+    }
+    else if (operator === "/") {
+        divide(firstNumber, SecondNumber);
+    }
+    else {
+        alertMessage = operator + " is not an allowed operator."
+        alert(alertMessage)
+    }
+}
