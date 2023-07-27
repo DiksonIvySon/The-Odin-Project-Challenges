@@ -12,6 +12,5 @@ function checkPassword(){
     else {
         validationYes.textContentCon = "Passwords match";
     }
-    
 }
 
