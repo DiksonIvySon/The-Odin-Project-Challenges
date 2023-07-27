@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <head class="head"></head>
+    <div class="main">
+        <div class="logo">
+            <img src="images/myLogo2.jpg" alt="my logo" width="200px">
+        </div>
+
+        <div class="form-con">
+            <div class="form-container">
+                <div>
+                    <p class="paragraph">
+                        This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.
+                        Sign up now to get started.You know you want to.
+                    </p>
+                    <h1 class="createAccount">Create an account</h1>
+                </div>
+                <div>
+                    <form action="#" method="post">
+                        <div class="form">
+                                 <div>
+                                     <label for="first-name">First Name:</label>
+                                     <br>
+                                     <input type="text" id="first-name" name="first-name" placeholder="Dikson" required>
+                                 </div>
+                                 <div>
+                                    <label for="last-name">Last Name:</label>
+                                    <br>
+                                    <input type="text" id="last-name" name="last-name" placeholder="Manganye" required>
+                                </div>
+                                 <div>
+                                     <label for="last-name">Email:</label>
+                                     <br>
+                                     <input type="text" id="last-name" name="last-name" placeholder="ivySon@gmail.com" required>
+                                 </div>
+                                 <div>
+                                    <label for="phone-number">Phone Number:</label>
+                                    <br>
+                                    <input type="text" id="phone-number" name="phone-number" placeholder="0857648537" min="10" required>
+                                </div>
+                                 <div>
+                                     <label for="user-password">Password:</label>
+                                     <br>
+                                     <input type="password" id="user-password" name="user-password" required>
+                                 </div>
+                                 <div>
+                                     <label for="password-confirmation">Confirm Password:</label>
+                                     <br>
+                                     <input type="password" id="password-confirmation" name="password-confirmation" required>
+                                     <h3 class="validation-no"></h3>
+                                     <h3 class="validation-yes"></h3>
+                                 </div>
+                        </div>
+                        <div class="button">
+                             <button class="reset-btn" type="reset"><b>Reset</b></button>
+                             <button class="submit-btn" type="submit" onclick="checkPassword()"><b>Create Account</b></button>
+                             <h2>Already have an account? <a href="">Log in</a></h2>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h2 class="wallpaperset">Background image by <a href="https://wallpaperset.com/genre/space"><em>Wallpaperset</em></a></h2>
+    </footer>
+</body>
+</html>
