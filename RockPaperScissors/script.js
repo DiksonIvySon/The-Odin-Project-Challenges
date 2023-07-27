@@ -15,7 +15,11 @@ function getComputerChoice(){
         computerChoice = "scissors";
     }
    
-   //document.querySelector(".computer-play").textContent = computerChoice;
+   //Resetting the background color of the computer play buttons to white
+   document.querySelector("#btn-computerRock").style.backgroundColor = "white";
+   document.querySelector("#btn-computerPaper").style.backgroundColor = "white";
+   document.querySelector("#btn-computerScissors").style.backgroundColor = "white";
+
    comPlay(computerChoice);
    return computerChoice;
 }
@@ -76,14 +80,6 @@ function singleRound(playerSelection, computerSelection){
 
 }
   
-var playerScore = 0;
-var computerScore = 0;
-var gameWinner;
-
-//outputting the score on to the image in the UI 
-var outputScore = playerScore + " : " + computerScore;
-const gameScore = document.getElementById("gameScore")
-gameScore.textContent = outputScore;
 
 //function that will listen to which button is clicked and return the play value                (THERE IS A PROBLEM HERE)
 function clickListener() {
@@ -102,9 +98,20 @@ function clickListener() {
     })
 }
 
+let playerScore = 0;
+let computerScore = 0;
+let gameWinner;
+
+function outputScore() {
+    //outputting the score on to the image in the UI 
+    var outputScore = playerScore + " : " + computerScore;
+    const gameScore = document.getElementById("gameScore");
+    gameScore.textContent = outputScore;
+}
+
+
 function game(string) {
  
-    for(let i=1; i<=5; i++){
         let playerSelection = string;
         let computerSelection = getComputerChoice();
         let roundWinner = singleRound(playerSelection, computerSelection);
@@ -113,30 +120,44 @@ function game(string) {
         if (roundWinner.substring(0, 9) == "Its a tie"){
             playerScore += 0;
             computerScore += 0;
+            outputScore()
         }
         else if (roundWinner.substring(0, 8) == "You Win!"){
             playerScore += 1;
+            outputScore()
         }
         else if (roundWinner.substring(0, 14) == "Computer Wins!"){
             computerScore += 1;
+            outputScore()
         }
-    }
+    
 
-    if (playerScore > computerScore){
+    if (playerScore == 5){
         gameWinner = "You";
+        result = "**** " + gameWinner + " won the game " + " ****";
+
+        //out putting result on the picture in the UI.
+        const gameResult = document.getElementById("gameResult");
+        gameResult.textContent = result;
+
+        playerScore = 0;
+        computerScore = 0;
     }
-    else if (playerScore < computerScore){
+    else if (computerScore == 5){
         gameWinner = "Computer";
+        result = "**** " + gameWinner + " won the game " + " ****";
+
+        //out putting result on the picture in the UI.
+        const gameResult = document.getElementById("gameResult");
+        gameResult.textContent = result;
+
+        playerScore = 0;
+        computerScore = 0;
     }
     else {
-        gameWinner = "Its an over-all tie, everyone";
+        //do nothing
     }
     
-    result = "**** " + gameWinner + " won the game " + " ****";
-
-    //out putting result on the picture in the UI.
-    const gameResult = document.getElementById("gameResult");
-    gameResult.textContent = result;
 }
 
 
