@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calulator</title>
+    <title>Calculator</title>
 </head>
 <body>
     <main>
-        <div class="display"></div>
-        <div class="keyboard">
-            <div class="equals-btn"></div>
-            <div class="operators">
-                <div class="add"><strong>+</strong></div>
-                <div class="subtract"><strong>-</strong></div>
-                <div class="multiple"><strong>x</strong></div>
-                <div class="divide"><strong>/</strong></div>
-            </div>
-            <div class="numbers">
-                <div class="zero">0</div>
-                <div class="one">1</div>
-                <div class="two">2</div>
-                <div class="three">3</div>
-                <div class="four">4</div>
-                <div class="five">5</div>
-                <div class="six">6</div>
-                <div class="seven">7</div>
-                <div class="eight">8</div>
-                <div class="nine">9</div>
-            </div>
-            <div class="decimal"><strong>.</strong></div>
-            <div class="clear-btn">Clear</div>
+        <div class="Calculator">
+            <section  class="display">
+                <div class="expression"></div>
+                <div class="output"></div>
+            </section>
+            <section  class="keyboard">
+                <div  class="operators">
+                    <button class="add" value="+"><strong>+</strong></button>
+                    <button class="subtract" value="-"><strong>-</strong></button>
+                    <button class="multiple" value="*"><strong>x</strong></button>
+                    <button class="divide" value="/"><strong>/</strong></button>
+                </div>
+                <div  class="numbers">
+                    <button class="zero" value="0">0</button>
+                    <button class="one" value="1">1</button>
+                    <button class="two" value="2">2</button>
+                    <button class="three" value="3">3</button>
+                    <button class="four" value="4">4</button>
+                    <button class="five" value="5">5</button>
+                    <button class="six" value="6">6</button>
+                    <button class="seven" value="7">7</button>
+                    <button class="eight" value="8">8</button>
+                    <button class="nine" value="9">9</button>
+                </div>
+                <div class="keys">
+                    <button class="decimal" value="."><strong>.</strong></button>
+                    <button class="clear-btn">Clear</button>
+                    <button class="backSpace-btn">backspace</button>
+                    <button class="equals-btn"></button>
+                </div>
+            </section>
         </div>
     </main>
 </body>
