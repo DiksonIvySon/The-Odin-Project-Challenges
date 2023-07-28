@@ -1,39 +1,39 @@
 
 //function for addition
-function add(firstNumber, SecondNumber) {
+function Add(firstNumber, SecondNumber) {
     return firstNumber + SecondNumber;
 }
 
 //function for subtraction
-function subtract(firstNumber, SecondNumber) {
+function Subtract(firstNumber, SecondNumber) {
     return firstNumber - SecondNumber;
 }
 
 //function for multiplication
-function multiply(firstNumber, SecondNumber) {
+function Multiply(firstNumber, SecondNumber) {
     return firstNumber * SecondNumber;
 }
 
 //function for division
-function divide(firstNumber, SecondNumber) {
+function Divide(firstNumber, SecondNumber) {
     return firstNumber / SecondNumber;
 }
 
 
-let firstNumber = 4;
-let SecondNumber = 2;
-let operator = "+";
-console.log(operate(firstNumber, SecondNumber, operator));
+let firstNumber;
+let SecondNumber;
+let operator;
+/*console.log(Operate(firstNumber, SecondNumber, operator));*/
 
-function operate(firstNumber, SecondNumber, operator) {
+function Operate(firstNumber, SecondNumber, operator) {
     if (operator === "+") {
-        return add(firstNumber, SecondNumber);
+        return Add(firstNumber, SecondNumber);
     }
     else if (operator === "-") {
-        return subtract(firstNumber, SecondNumber);
+        return Subtract(firstNumber, SecondNumber);
     }
     else if (operator === "*") {
-        return multiply(firstNumber, SecondNumber);
+        return Multiply(firstNumber, SecondNumber);
     }
     else if (operator === "/") {
         return divide(firstNumber, SecondNumber);
@@ -43,3 +43,32 @@ function operate(firstNumber, SecondNumber, operator) {
         console.log(alertMessage);
     }
 }
+
+const keyArray = [];
+
+//function to store the expression that is made when the keyboard keys are clicked
+function Display(keyboardKey) {
+    
+    keyArray.push(keyboardKey);
+    
+    console.log(keyArray);
+    document.querySelector(".expression").textContent = keyArray;
+}
+
+function Populate(keyboardKey) {
+    if (typeof keyboardKey === 'number') {
+        Display(keyboardKey);
+    }
+}
+
+
+/*clickedButton = document.querySelector(".zero");
+clickedButton.addEventListener("click", function() {
+    let clickedButtonValue = clickedButton.value;
+    Populate(clickedButtonValue);
+});*/
+
+
+
+
+
