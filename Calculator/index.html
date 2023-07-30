@@ -5,42 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
-        <div class="Calculator">
-            <section  class="display">
-                <div>
-                    <h1 class="expression"></h1>
+        <div class="calculator">
+            <div>
+                <div class="warning">
+                    <h1></h1>
                 </div>
-                <div class="output"></div>
-            </section>
-            <section  class="keyboard">
-                <div  class="operators">
-                    <button class="add" value="+"><strong>+</strong></button>
-                    <button class="subtract" value="-"><strong>-</strong></button>
-                    <button class="multiple" value="*"><strong>x</strong></button>
-                    <button class="divide" value="/"><strong>/</strong></button>
-                </div>
-                <div  class="numbers">
-                    <button class="zero" value="0" onclick="Populate(0)">0</button>
-                    <button class="one" value="1" onclick="Populate(1)">1</button>
-                    <button class="two" value="2" onclick="Populate(2)">2</button>
-                    <button class="three" value="3" onclick="Populate(3)">3</button>
-                    <button class="four" value="4" onclick="Populate(4)">4</button>
-                    <button class="five" value="5" onclick="Populate(5)">5</button>
-                    <button class="six" value="6" onclick="Populate(6)">6</button>
-                    <button class="seven" value="7" onclick="Populate(7)">7</button>
-                    <button class="eight" value="8" onclick="Populate(8)">8</button>
-                    <button class="nine" value="9" onclick="Populate(9)">9</button>
-                </div>
-                <div class="keys">
-                    <button class="decimal" value="."><strong>.</strong></button>
-                    <button class="clear-btn">Clear</button>
-                    <button class="backSpace-btn">backspace</button>
-                    <button class="equals-btn"></button>
-                </div>
-            </section>
+                <section  class="display">
+                    <div>
+                        <h1 class="expression"></h1>
+                    </div>
+                    <div class="output"></div>
+                </section>
+                <section  class="keyboard">
+                   
+                        <button class="add" value="+"><strong>+</strong></button>
+                        <button class="subtract" value="-"><strong>-</strong></button>
+                        <button class="multiple" value="*"><strong>x</strong></button>
+                        <button class="divide" value="/"><strong>/</strong></button>
+                    
+                        <button class="zero" value="0" onclick="Populate(0)">0</button>
+                        <button class="one" value="1" onclick="Populate(1)">1</button>
+                        <button class="two" value="2" onclick="Populate(2)">2</button>
+                        <button class="three" value="3" onclick="Populate(3)">3</button>
+                        <button class="four" value="4" onclick="Populate(4)">4</button>
+                        <button class="five" value="5" onclick="Populate(5)">5</button>
+                        <button class="six" value="6" onclick="Populate(6)">6</button>
+                        <button class="seven" value="7" onclick="Populate(7)">7</button>
+                        <button class="eight" value="8" onclick="Populate(8)">8</button>
+                        <button class="nine" value="9" onclick="Populate(9)">9</button>
+                    
+                        <button class="decimal" value="."><strong>.</strong></button>
+                        <button class="clear-btn">Clear</button>
+                        <button class="backSpace-btn">backspace</button>
+                        <button class="equals-btn"><strong>=</strong></button>
+                    
+                </section>
+            </div>
         </div>
     </main>
 </body>
