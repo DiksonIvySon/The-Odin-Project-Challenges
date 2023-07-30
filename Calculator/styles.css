@@ -1,3 +1,8 @@
+body {
+    background-image: url(images/pexels-karolina-grabowska-6256066.jpg);
+    background-image: cover;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -9,13 +14,13 @@ main {
     padding: 10px;
     background-color: gray;
     border: 5px solid black;
-    border-radius: 90px;
+    border-radius: 60px;
 }
 
 .calculator > div {
     background-color: black;
     padding:70px 30px 40px 30px;
-    border-radius: 80px;
+    border-radius: 50px;
 }
 
 .display {
@@ -47,7 +52,7 @@ button {
     height: 50px;
     border: 2px solid black;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     min-width: 40px;
 }
