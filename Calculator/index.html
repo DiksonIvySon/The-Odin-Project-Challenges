@@ -6,6 +6,7 @@
     <title>Calculator</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <main>
@@ -22,10 +23,10 @@
                 </section>
                 <section  class="keyboard">
                    
-                        <button class="add" value="+"><strong>+</strong></button>
-                        <button class="subtract" value="-"><strong>-</strong></button>
-                        <button class="multiple" value="*"><strong>x</strong></button>
-                        <button class="divide" value="/"><strong>/</strong></button>
+                        <button class="add" value="+"><strong><i class="fa-solid fa-plus"></i></strong></button>
+                        <button class="subtract" value="-"><strong><i class="fa-solid fa-minus"></i></strong></button>
+                        <button class="multiple" value="*"><strong><i class="fa-solid fa-xmark"></i></strong></button>
+                        <button class="divide" value="/"><strong><i class="fa-solid fa-divide"></i></strong></button>
                     
                         <button class="zero" value="0" onclick="Populate(0)">0</button>
                         <button class="one" value="1" onclick="Populate(1)">1</button>
@@ -40,8 +41,8 @@
                     
                         <button class="decimal" value="."><strong>.</strong></button>
                         <button class="clear-btn">Clear</button>
-                        <button class="backSpace-btn">backspace</button>
-                        <button class="equals-btn"><strong>=</strong></button>
+                        <button class="backSpace-btn"><i class="fa-solid fa-delete-left"></i></button>
+                        <button class="equals-btn"><strong><i class="fa-solid fa-equals"></i></strong></button>
                     
                 </section>
             </div>
