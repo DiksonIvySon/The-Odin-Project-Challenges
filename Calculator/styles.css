@@ -12,7 +12,8 @@ main {
 }
 
 .calculator {
-    width: 50%;
+    width: 75%;
+    max-width: 500px;
     padding: 10px;
     background-color: black;
     border: 5px solid white;
