@@ -28,7 +28,7 @@ main {
 }
 
 .display {
-    height: 100px;
+    min-height: 100px;
     background-color: WHITE;
     color: #3500D3;
     border-radius: 10px;

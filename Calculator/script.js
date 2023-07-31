@@ -51,10 +51,11 @@ function Display(keyboardKey) {
     
     keyArray.push(keyboardKey);
     
-    console.log(keyArray);
-    document.querySelector(".expression").textContent = keyArray;
+    let keyArrayString = keyArray.join(' '); 
+    document.querySelector(".expression").textContent = keyArrayString;
 }
 
+//function to populate the expression that is made when the keyboard keys are clicked
 function Populate(keyboardKey) {
     if (typeof keyboardKey === 'number') {
         Display(keyboardKey);
