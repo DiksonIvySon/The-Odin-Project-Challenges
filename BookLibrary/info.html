@@ -10,189 +10,84 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
               integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
               crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header1">
-            <div class="logo">
-                <img src="images/2.jpg" alt="myLogo">
+    <div class="header1">
+        <div class="logo">
+            <img src="images/2.jpg" alt="myLogo">
+        </div>
+        <div class="user-logged-in">
+            <div>
+                <img src="images/Screenshot_20210512-141131_WhatsApp (2).jpg" alt="logged-in user" >
             </div>
-            <div class="user-logged-in">
-                <div>
-                    <img src="images/Screenshot_20210512-141131_WhatsApp (2).jpg" alt="logged-in user" >
-                </div>
-                <div>
-                    <h4>Username</h4>
-                </div>
+            <div>
+                <h4>Dikson Manganye</h4>
             </div>
         </div>
-        <div class="header2">
-            <div class="search-bar">
-                <label for="search-bar">
-                    <i class="fa-solid fa-magnifying-glass fa-fade"></i>
-                </label>
-                <input type="text" id="search-bar" name="search-bar" placeholder="Search">
-            </div>
-            <div class="navigation">
-                <ul>
-                    <li><a href="index.html"><strong>Home</strong></a></li>
-                    <li><a href="index.html"><strong>more info</strong></a></li>
-                    <li><a href="index.html"><strong>Logout</strong></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    </div>
 
-    <main>
+    <div class="header2">
+        <div class="search-bar">
+            <label for="search-bar">
+                <i class="fa-solid fa-magnifying-glass fa-fade"></i>
+            </label>
+            <input type="text" id="search-bar" name="search-bar" placeholder="Search">
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html"><strong>Home</strong></a></li>
+                <li><a href="info.html"><strong>info</strong></a></li>
+                <li><a href=".html"><strong>Login</strong></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main">
         <section class="section">
-            <div class="add-section">
-                <button>
-                    Add a book to the library
-                </button>
-                <form action="">
-                    <div>
-                        <label for="title">Book Title</label>
-                        <input type="text" id="title" name="title" placeholder="title" required>
-                    </div>
-                    <div>
-                        <label for="title">Book Title</label>
-                        <input type="text" id="title" name="title" placeholder="title" required>
-                    </div>
-                    <div>
-                        <label for="title">Book Title</label>
-                        <input type="text" id="title" name="title" placeholder="title" required>
-                    </div>
-                    <div>
-                        <label for="title">Book Title</label>
-                        <input type="text" id="title" name="title" placeholder="title" required>
-                    </div>
-
-                    <div class="btn">
-                        <button>Add book</button>
-                    </div>  
-                </form>
-            </div>
-            <div class="main">
-                <div class="book">book1</div>
-                <div class="book">book2</div>
-                <div class="book">book3</div>
-                <div class="book">book4</div>
-            </div>
-
+           
         </section>
     </main>
 
     <footer class="footer">
+        <div class="socials">
+            <div>
+                <h3>Socials</h3>
+            </div>
+            <div>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-discord"></i>
+            </div>
+            <div class="copyright">
+                <h4>Copyright<i class="fa-solid fa-at">2023</i><br> Dikson Manganye</h4>
+            </div>
+        </div>
+        <div class="quick-links">
+            <div>
+                <h3>Quick links</h3>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="index.html"><strong>Home</strong></a></li>
+                    <li><a href="index.html"><strong>info</strong></a></li>
+                    <li><a href="index.html"><strong>Logout</strong></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contact">
+            <div>
+                <h3>Contact</h3>
+            </div>
+            <div>
+                <p style="text-align: justify;">For any information, suggestions or improvements. 
+                    <br> Please contact me using the button below.
+                </p>
+                <div class="email">
+                    <i class="fa-solid fa-envelope fa-fade">  Email </i>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
-
-
-<!-- ********************************************************************-->
-
-<div class="book">
-    <div class="book-details">
-        <div class="image">
-            <img src="images/2.jpg" alt="book-image">
-        </div>
-        <div>
-            <h2>Title</h2>
-            <h4>Author</h4>
-            <h4>Pages</h4>
-            <h4>read</h4>
-        </div>
-    </div>
-    <div class="book-remove">
-        <div>
-            <button>Remove Book</button>
-        </div>
-        <div>
-            <select id="readStatus" name="readStatus">
-                <option value="not read yet">Not read yet</option>
-                <option value="read">Read</option>
-            </select>
-        </div>
-        <div>
-            <i class="fa-sharp fa-solid fa-star"></i>
-        </div>
-    </div>
-</div>
-<div class="book">
-    <div class="book-details">
-        <div class="image">
-            <img src="images/2.jpg" alt="book-image">
-        </div>
-        <div>
-            <h2>Title</h2>
-            <h4>Author</h4>
-            <h4>Pages</h4>
-            <h4>read</h4>
-        </div>
-    </div>
-    <div class="book-remove">
-        <div>
-            <button>Remove Book</button>
-        </div>
-        <div>
-            <select id="readStatus" name="readStatus">
-                <option value="not read yet">Not read yet</option>
-                <option value="read">Read</option>
-            </select>
-        </div>
-        <div>
-            <i class="fa-sharp fa-solid fa-star"></i>
-        </div>
-    </div>
-</div>
-<div class="book"><div class="book-details">
-    <div class="image">
-        <img src="images/2.jpg" alt="book-image">
-    </div>
-    <div>
-        <h2>Title</h2>
-        <h4>Author</h4>
-        <h4>Pages</h4>
-        <h4>read</h4>
-    </div>
-</div>
-<div class="book-remove">
-    <div>
-        <button>Remove Book</button>
-    </div>
-    <div>
-        <select id="readStatus" name="readStatus">
-            <option value="not read yet">Not read yet</option>
-            <option value="read">Read</option>
-        </select>
-    </div>
-    <div>
-        <i class="fa-sharp fa-solid fa-star"></i>
-    </div>
-</div></div>
-<div class="book">
-    <div class="book-details">
-        <div class="image">
-            <img src="images/2.jpg" alt="book-image">
-        </div>
-        <div>
-            <h2>Title</h2>
-            <h4>Author</h4>
-            <h4>Pages</h4>
-            <h4>read</h4>
-        </div>
-    </div>
-    <div class="book-remove">
-        <div>
-            <button>Remove Book</button>
-        </div>
-        <div>
-            <select id="readStatus" name="readStatus">
-                <option value="not read yet">Not read yet</option>
-                <option value="read">Read</option>
-            </select>
-        </div>
-        <div>
-            <i class="fa-sharp fa-solid fa-star"></i>
-        </div>
-    </div>
-</div>

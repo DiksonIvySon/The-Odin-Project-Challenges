@@ -100,7 +100,7 @@ body {
     background-color: red;
     color: black;
     box-shadow: 0px 0px 10px;
-    transition: 1s;
+    transition: 0.4s;
     cursor: pointer;
 }
 
@@ -180,7 +180,7 @@ body {
 .navigation li strong:hover {
     text-shadow: 0px 0px 30px white;
     color: aqua;
-    transition: 1s;
+    transition: 0.2s;
 }
 
 .search-bar {
@@ -201,6 +201,7 @@ body {
 /* footer styling */
 
 .footer {
+    margin-top: 10px;
     display: flex;
     padding: 10px;
 }
