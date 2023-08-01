@@ -39,7 +39,9 @@ body {
 
 .section {
     display: flex;
+    flex-wrap: wrap;
     padding: 15px;
+    gap: 15px;
     height: 95%;
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -52,7 +54,6 @@ body {
     grid-area: add-section;
     padding: 30px;
     background-color: lightgrey;
-    margin-right: 10px;
     border-radius: 10px;
 }
 
@@ -60,6 +61,26 @@ body {
     background-color: lightgrey;
     border-radius: 10px;
     grid-area: books;
+}
+
+@media (max-width: 1024px) {
+    .section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: initial;
+    }
+
+    .add-section {
+        grid-area: initial !important;
+    }
+
+    .books {
+        grid-area: initial !important;
+    }
+
+    .search-bar {
+        width: 40%;
+    }
 }
 
 .book {
@@ -189,6 +210,7 @@ body {
     border-radius: 15px;
     padding-left: 20px;
     font-size: 20px;
+    width: 24%;
 }
 
 .search-bar input {
@@ -198,16 +220,25 @@ body {
     border: 0px;
 }
 
+@media (max-width: 1024px) {
+
+    .search-bar {
+        width: 40%;
+    }
+}
+
 /* footer styling */
 
 .footer {
     margin-top: 10px;
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     padding: 10px;
 }
 
-.footer div {
-    flex: 1;
+.footer > div {
+    margin: 15px;
 }
 
 .quick-links ul li {
