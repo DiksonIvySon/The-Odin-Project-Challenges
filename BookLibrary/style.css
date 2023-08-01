@@ -326,3 +326,54 @@ form label {
 }
 
 
+/* styling the login page form */
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form input {
+    height: 20px;
+    padding: 10px;
+    width: 400px;
+}
+
+.login-form .buttons {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+
+.login-form .buttons div {
+    padding: 0px;
+}
+
+.buttons button {
+    background-color: #2d3541;
+    margin: 0px;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.buttons button:hover {
+    color: black;
+    background-color: aqua;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.haveAccount h4 {
+    color: black;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.haveAccount a {
+    color: blue;
+    text-decoration: none;
+}
+

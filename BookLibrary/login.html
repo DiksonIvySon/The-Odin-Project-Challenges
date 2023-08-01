@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+              integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header1">
+        <div class="logo">
+            <img src="images/2.jpg" alt="myLogo">
+        </div>
+        <div class="user-logged-in">
+            <div>
+                <img src="images/Screenshot_20210512-141131_WhatsApp (2).jpg" alt="logged-in user" >
+            </div>
+            <div>
+                <h4>Dikson Manganye</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="header2">
+        <div class="search-bar">
+            <label for="search-bar">
+                <i class="fa-solid fa-magnifying-glass fa-fade"></i>
+            </label>
+            <input type="text" id="search-bar" name="search-bar" placeholder="Search">
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html"><strong>Home</strong></a></li>
+                <li><a href="info.html"><strong>info</strong></a></li>
+                <li><a href="login.html"><strong>Login</strong></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main">
+        <section class="login-form">
+            <form action="#" method="post">
+                <div class="form">
+                    <div>
+                        <label for="first-name">First Name*</label>
+                        <br>
+                        <input type="text" id="first-name" name="first-name" placeholder="Dikson" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name*</label>
+                        <br>
+                        <input type="text" id="last-name" name="last-name" placeholder="Manganye" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Email*</label>
+                        <br>
+                        <input type="text" id="last-name" name="last-name" placeholder="ivySon@gmail.com" required>
+                    </div>
+                    <div>
+                        <label for="user-password">Password*</label>
+                        <br>
+                        <input type="password" id="user-password" name="user-password" required>
+                    </div>
+                    <div>
+                        <label for="password-confirmation">Confirm Password*</label>
+                        <br>
+                        <input onkeyup="checkPassword()" type="password" id="password-confirmation" name="password-confirmation" required>
+                        <h3 class="validation-message"></h3>
+                    </div>
+                </div>
+                <div class="buttons">
+                     <div>
+                        <button class="reset-btn" type="reset">Reset</button>
+                        <button class="submit-btn" type="submit">Create Account</button>
+                     </div>
+                </div>
+                <div class="haveAccount">
+                    <h4>Already have an account? <a href="">Log in</a></h4>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="socials">
+            <div>
+                <h3>Socials</h3>
+            </div>
+            <div>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-discord"></i>
+            </div>
+            <div class="copyright">
+                <h4>Copyright<i class="fa-solid fa-at">2023</i><br> Dikson Manganye</h4>
+            </div>
+        </div>
+        <div class="quick-links">
+            <div>
+                <h3>Quick links</h3>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="index.html"><strong>Home</strong></a></li>
+                    <li><a href="info.html"><strong>info</strong></a></li>
+                    <li><a href="login.html"><strong>Logout</strong></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contact">
+            <div>
+                <h3>Contact</h3>
+            </div>
+            <div>
+                <p style="text-align: justify;">For any information, suggestions or improvements. 
+                    <br> Please contact me using the button below.
+                </p>
+                <div class="email">
+                    <i class="fa-solid fa-envelope fa-fade">  Email </i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
