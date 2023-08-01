@@ -1,0 +1,296 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+}
+
+body {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 50px 5fr 1fr;
+    grid-template-areas:
+                        "header1"
+                        "header2"
+                        "main"
+                        "footer";
+}
+
+.header1 {
+    grid-area: header1;
+    background-color: #2d3541;
+}
+
+.header2 {
+    grid-area: header2;
+    background-color: gray;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: black;
+}
+
+.section {
+    display: flex;
+    padding: 15px;
+    height: 95%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+                        "add-section books";
+}
+
+.add-section {
+    grid-area: add-section;
+    padding: 30px;
+    background-color: lightgrey;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.books {
+    background-color: lightgrey;
+    border-radius: 10px;
+    grid-area: books;
+}
+
+.book {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.book-details {
+    display: flex;
+}
+
+.book-details img {
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.book-details .image {
+    padding-right: 10px;
+}
+
+.book-remove {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.book-remove button {
+    background-color: black;
+    border-radius: 10px;
+}
+
+.book-remove button:hover {
+    background-color: red;
+    color: black;
+    box-shadow: 0px 0px 10px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.book-remove i {
+    padding-left: 50px;
+    color: black;
+}
+
+.book-remove i:hover {
+    color: gold;
+}
+
+@media (max-width: 1024px) {
+    .books {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 200px);
+        grid-template-areas: initial;
+    }
+
+    .book {
+        grid-area: initial !important;
+    }
+}
+
+
+/*----------------------------------------------------------------------------------*/
+/* header1 styling*/
+
+.header1 {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-logged-in img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.user-logged-in {
+    display: flex;
+}
+
+.user-logged-in div {
+    padding-left: 10px;
+}
+
+/* header2 styling*/
+
+.header2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 25px;
+}
+
+.navigation ul{
+    display: flex;
+}
+
+.navigation ul li {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+}
+
+.navigation li strong:hover {
+    text-shadow: 0px 0px 30px white;
+    color: aqua;
+    transition: 1s;
+}
+
+.search-bar {
+    background-color: #2d3541;
+    padding-top: 10px;
+    border-radius: 15px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.search-bar input {
+    background-color: transparent;
+    font-size: 15px;
+    outline: none;
+    border: 0px;
+}
+
+/* footer styling */
+
+.footer {
+    display: flex;
+    padding: 10px;
+}
+
+.footer div {
+    flex: 1;
+}
+
+.quick-links ul li {
+    list-style-type: none;
+}
+
+.quick-links ul li a{
+   text-decoration: none; 
+}
+
+.quick-links ul li strong:hover {
+    text-shadow: 0px 0px 70px white;
+    color: aqua;
+}
+
+.socials i {
+    font-size: 35px;
+    padding: 5px;
+}
+
+.socials i:hover {
+    text-shadow: 0px 0px 50px white;
+    color:aqua;
+    cursor: pointer;
+}
+
+.email i:hover {
+    text-shadow: 0px 0px 50px white;
+    color: aqua;
+}
+
+.copyright i {
+    font-size: 12px;
+}
+
+/* styling the add-book-section */
+
+.add-section-button {
+    background-color: black;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 5px;
+}
+
+form div {
+    padding-top: 15px;
+}
+
+form div input {
+    color: white;
+    background-color: #2d3541;
+    border-radius: 5px;
+    width: 100%;
+    height: 20px;
+}
+
+form label {
+    color: black;
+}
+
+#readStatus {
+    border-radius: 5px;
+    background-color: #2d3541;
+    width: 100%;
+    margin-bottom: 40px;
+    min-height: 25px;
+}
+
+.add-book-btn button {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #2d3541;
+}
+
+.add-book-btn button:hover {
+    background-color: green;
+}
+
+.add-book-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
