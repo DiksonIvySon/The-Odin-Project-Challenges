@@ -44,24 +44,34 @@ function Operate(firstNumber, SecondNumber, operator) {
     }
 }
 
-const keyArray = [];
+let keyArray = [];
 
-//function to store the expression that is made when the keyboard keys are clicked
-function Display(keyboardKey) {
-    
-    keyArray.push(keyboardKey);
-    
+//function to display on screen the expression that is made when the keyboard keys are clicked
+function Display() {
     let keyArrayString = keyArray.join(' '); 
     document.querySelector(".expression").textContent = keyArrayString;
 }
 
+
 //function to populate the expression that is made when the keyboard keys are clicked
 function Populate(keyboardKey) {
     if (typeof keyboardKey === 'number') {
-        Display(keyboardKey);
+        keyArray.push(keyboardKey);
+        Display();
     }
 }
 
+//function to clear the screen when called
+function clearScreen() {
+    keyArray = [];
+    Display();
+}
+
+//function to remove to remove the last entered item when the when the backspace button is clicked
+function backSpace() {
+    keyArray.pop();
+    Display();
+} 
 
 
 /*clickedButton = document.querySelector(".zero");
