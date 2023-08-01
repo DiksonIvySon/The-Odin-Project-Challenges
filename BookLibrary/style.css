@@ -57,6 +57,10 @@ body {
     border-radius: 10px;
 }
 
+.add-section button {
+    color: white;
+}
+
 .books {
     background-color: lightgrey;
     border-radius: 10px;
@@ -114,6 +118,7 @@ body {
 
 .book-remove button {
     background-color: black;
+    color: white;
     border-radius: 10px;
 }
 
@@ -215,6 +220,7 @@ body {
 }
 
 .search-bar input {
+    color: white;
     background-color: transparent;
     font-size: 15px;
     outline: none;
@@ -305,6 +311,7 @@ form label {
 #readStatus {
     border-radius: 5px;
     background-color: #2d3541;
+    color: white;
     width: 100%;
     margin-bottom: 40px;
     min-height: 25px;
@@ -327,6 +334,9 @@ form label {
     align-items: center;
 }
 
+.add-section select {
+    color: white;
+}
 
 /* styling the login page form */
 
@@ -354,6 +364,7 @@ form label {
 
 .buttons button {
     background-color: #2d3541;
+    color: white;
     margin: 0px;
     padding: 5px;
     border-radius: 10px;
