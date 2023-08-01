@@ -45,6 +45,8 @@ function Operate(firstNumber, SecondNumber, operator) {
 }
 
 let keyArray = [];
+let numberKeyArray = [];
+let symbolKeyArray = [];
 
 //function to display on screen the expression that is made when the keyboard keys are clicked
 function Display() {
@@ -55,10 +57,18 @@ function Display() {
 
 //function to populate the expression that is made when the keyboard keys are clicked
 function Populate(keyboardKey) {
+
+    keyArray.push(keyboardKey);
+    Display();
+
     if (typeof keyboardKey === 'number') {
-        keyArray.push(keyboardKey);
-        Display();
+        numberKeyArray.push(keyboardKey);
     }
+    else {
+        symbolKeyArray.push(keyboardKey);
+    }
+
+    
 }
 
 //function to clear the screen when called
@@ -72,6 +82,13 @@ function backSpace() {
     keyArray.pop();
     Display();
 } 
+
+//function sum up the expression
+function equals() {
+    if (typeof keyArray[-1] === 'symbol' ) {
+        alert("Your expression ends with a symbol")
+    }
+}
 
 
 /*clickedButton = document.querySelector(".zero");

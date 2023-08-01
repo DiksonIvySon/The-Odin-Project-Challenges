@@ -23,10 +23,10 @@
                 </section>
                 <section  class="keyboard">
                    
-                        <button class="add" value="+"><strong><i class="fa-solid fa-plus"></i></strong></button>
-                        <button class="subtract" value="-"><strong><i class="fa-solid fa-minus"></i></strong></button>
-                        <button class="multiple" value="*"><strong><i class="fa-solid fa-xmark"></i></strong></button>
-                        <button class="divide" value="/"><strong><i class="fa-solid fa-divide"></i></strong></button>
+                        <button class="add" value="+" onclick="Populate('+')"><strong><i class="fa-solid fa-plus"></i></strong></button>
+                        <button class="subtract" value="-" onclick="Populate('-')"><strong><i class="fa-solid fa-minus"></i></strong></button>
+                        <button class="multiple" value="*" onclick="Populate('*')"><strong><i class="fa-solid fa-xmark"></i></strong></button>
+                        <button class="divide" value="/" onclick="Populate('/')"><strong><i class="fa-solid fa-divide"></i></strong></button>
                     
                         <button class="zero" value="0" onclick="Populate(0)">0</button>
                         <button class="one" value="1" onclick="Populate(1)">1</button>
@@ -42,13 +42,13 @@
                         <button class="decimal" value="."><strong>.</strong></button>
                         <button class="clear-btn" onclick="clearScreen()">Clear</button>
                         <button class="backSpace-btn" onclick="backSpace()"><i class="fa-solid fa-delete-left"></i></button>
-                        <button class="equals-btn"><strong><i class="fa-solid fa-equals"></i></strong></button>
+                        <button class="equals-btn" onclick="equals()"><strong><i class="fa-solid fa-equals"></i></strong></button>
                     
                 </section>
             </div>
         </div>
     </main>
-    <section>
+    <section class="Copyright">
         <h1>Copyright © 2023 <br> Dikson Manganye</h1>
     </section>
 </body>
