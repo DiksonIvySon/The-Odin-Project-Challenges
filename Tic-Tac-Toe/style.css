@@ -31,21 +31,39 @@ header i:hover {
     justify-content: center;
     align-items: center;
     margin: 20px;
-    background-color: black;
 }
 
 .selections {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.selections > div{
+    display: flex;
     background-color: black;
     padding: 15px;
     margin: 20px;
-    height: 60px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.selections > div > div {
+    margin: 10px ;
 }
 
 .selections select {
     border-radius: 5px;
+    padding: 5px;
     background-color: yellow;
+    color: black;
+}
+
+.selections .instructions h4 {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: lighter;
+    color: black;
 }
 
 .instructions h4 {
