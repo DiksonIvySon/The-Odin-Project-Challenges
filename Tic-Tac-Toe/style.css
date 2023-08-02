@@ -1,0 +1,237 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: rgb(111, 115, 115);
+    height:100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+header i {
+    font-size: 20px;
+    padding: 20px;
+}
+
+header i:hover {
+    text-shadow: 0px 0px 15px;
+    color: yellow;
+    cursor: pointer;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    background-color: black;
+}
+
+.selections {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 15px;
+    margin: 20px;
+    height: 60px;
+}
+
+.selections select {
+    border-radius: 5px;
+    background-color: yellow;
+}
+
+.instructions h4 {
+    margin-top: 0px;
+    width: 120px;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: yellow;
+}
+
+.blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+                        "b1 b2 b3"
+                        "b4 b5 b6"
+                        "b7 b8 b9";
+}
+
+.block:nth-child(1) {
+    grid-area: b1;
+    margin: 10px;
+}
+
+.block:nth-child(2) {
+    grid-area: b2;
+    margin: 10px;
+}
+
+.block:nth-child(3) {
+    grid-area: b3;
+    margin: 10px;
+
+}
+
+.block:nth-child(4) {
+    grid-area: b4;
+    margin: 10px;
+}
+
+.block:nth-child(5) {
+    grid-area: b5;
+    margin: 10px;
+}
+
+.block:nth-child(6) {
+    grid-area: b6;
+    margin: 10px;
+}
+
+.block:nth-child(7) {
+    grid-area: b7;
+    margin: 10px;
+}
+
+.block:nth-child(8) {
+    grid-area: b8;
+    margin: 10px;
+}
+
+.block:nth-child(9) {
+    grid-area: b9;
+    margin: 10px;
+}
+
+.block {
+    background-color: wheat;
+    width: 150px;
+    height: 150px;
+}
+
+/* footer styling */
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.footer div {
+    margin: 20px;
+}
+
+.footer-heading h3{
+    padding: 3px;
+    border-radius: 5px;
+    background-image: linear-gradient(70deg, yellow, black, yellow);
+}
+
+.quick-links ul li {
+    list-style-type: none;
+}
+
+.quick-links ul li a{
+   text-decoration: none; 
+}
+
+.quick-links ul li strong:hover {
+    text-shadow: 0px 0px 70px white;
+    color: yellow;
+}
+
+.socials i {
+    font-size: 35px;
+    padding: 5px;
+}
+
+.socials i:hover {
+    text-shadow: 0px 0px 50px white;
+    color: yellow;
+    cursor: pointer;
+}
+
+.email {
+    text-align: center;
+}
+
+.email i:hover {
+    text-shadow: 0px 0px 50px white;
+    color: yellow;
+}
+
+.copyright i {
+    font-size: 12px;
+}
+
+.home-page-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-image: linear-gradient(70deg, black, black, yellow);
+    border-radius: 5px;
+}
+
+.home-page-main div {
+    display: grid;
+}
+
+.home-title {
+    font-size: 40px;
+    text-align: center;
+}
+
+.home-selects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-selects select {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin: 10px 0px 40px 0px;
+    padding: 5px;
+}
+
+.home-selects select:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
+
+.play-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.play-btn button {
+    height: 50px;
+    margin: 20px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.play-btn button:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
+
+.home-page-main button a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
