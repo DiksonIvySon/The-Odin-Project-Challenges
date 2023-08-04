@@ -6,9 +6,6 @@ let player2 = {
     play: "o",
 }
 
-console.log(player1.play)
-console.log(player2.play)
-
 function print() {
     console.log(player1.play)
     console.log(player2.play)
@@ -35,18 +32,38 @@ function playSelection() {
     print();
 }
 
+let currentPlayer  = player1.play;
 
 let GameBoard = {
-    gameBoard: ["x", "o", "x", "o", "x", "o", "x", "o", "x"],
+    gameBoardArray: ["", "", "", "", "", "", "", "", ""],
 }
 
+//function to render the contents of the gameBoard to the webpage
+const blocks = document.querySelectorAll(".block");
+blocks.forEach(block => block.addEventListener("click", function(){
+    clickedBlock(block);
+}))
 
-/*
-function block(number) {
-    if (playArray === []) {
-         let blockObject = {
-            blockNumber: number,
-            blockPlay:  
-         }
+function clickedBlock(block) {
+    const blockIndex = block.getAttribute("blockIndex");
+    
+    if (GameBoard.gameBoardArray[blockIndex] === "") {
+        updateBlock(blockIndex, block);
     }
-}*/
+}
+
+function updateBlock(blockIndex, block) {
+    GameBoard.gameBoardArray[blockIndex] = currentPlayer;
+    block.textContent = currentPlayer;
+    changePlayer();
+}
+
+function changePlayer() {
+    if (currentPlayer === player1.play) {
+        currentPlayer = player2.play;
+    }
+    else {
+        currentPlayer = player1.play;
+    }
+}
+
