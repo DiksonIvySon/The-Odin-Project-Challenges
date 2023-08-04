@@ -23,7 +23,7 @@
 
     <div class="game-board">
         <div class="blocks">
-            <div class="block" onclick=""></div>
+            <div class="block"></div>
             <div class="block"></div>
             <div class="block"></div>
             <div class="block"></div>
@@ -47,9 +47,9 @@
                 <p></p>
             </div>
             <div>
-                <select name="gameMode" id="gameMode">
-                    <option value="playFriend">Play pass and play</option>
-                    <option value="playFriend">play computer</option>
+                <select name="gameMode" id="playSelection" onchange="playSelection()">
+                    <option value="x">Play X</option>
+                    <option value="o">play O</option>
                 </select>
             </div>
         </div>
