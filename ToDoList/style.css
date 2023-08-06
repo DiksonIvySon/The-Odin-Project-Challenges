@@ -1,0 +1,15 @@
+ body {
+    background-color: gray;
+ }
+
+ /* styling the footer */
+ .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+ }
+
+.social-icons i {
+    margin-right: 15px;
+}
