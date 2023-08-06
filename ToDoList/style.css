@@ -1,13 +1,46 @@
- body {
-    background-color: gray;
+ * {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
+
+ body {
+    margin: 0px;
+    height: 100vh;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 70px 1fr 70px;
+    grid-template-areas: "header header"
+                         "side-bar main"
+                         "footer footer";
+ }
+
+.header {
+    grid-area: header;
+    background-color: aqua;
+ }
+
+.side-bar {
+    grid-area: side-bar;
+    background-color: brown;
+}
+
+.main {
+    grid-area: main;
+    background-color: blue;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: black;
+}
 
  /* styling the footer */
  .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
+    padding: 20px;
  }
 
 .social-icons i {
