@@ -15,34 +15,66 @@
                          "footer footer";
  }
 
+
+/* styling the header ................................................................*/
 .header {
     grid-area: header;
     background-color: aqua;
+    
+    padding-left: 20px;
  }
 
+ .header h1 i {
+    padding-right: 5px;
+ }
+
+
+ /* styling the side-bar..............................................................*/
 .side-bar {
     grid-area: side-bar;
     background-color: brown;
 }
 
+
+/* styling the main  .................................................................*/ 
 .main {
     grid-area: main;
     background-color: blue;
 }
 
+/* styling the list item */
+
+.list-item {
+    display: flex;
+    margin: 20px;
+    background-color: gray;
+    border-radius: 15px;
+}
+
+.item-properties {
+    margin:0px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority-box {
+    width: 20px;
+    background-color: red;
+}
+
+ /* styling the footer ...............................................................*/
 .footer {
     grid-area: footer;
     background-color: black;
-}
 
- /* styling the footer */
- .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
- }
+}
 
 .social-icons i {
     margin-right: 15px;
 }
+
