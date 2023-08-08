@@ -10,7 +10,32 @@ function toDo(title, description, notes, dueDate, priority) {
     this.priority = priority;
 }
 
+//function to render the todo event to the main when it is added using the add form
+function renderTOdO() {
+    let toDos = document.querySelector('.toDos');
+    toDos.textContent = "";
+    for (let i =0; i < allToDos.length; i++) {
+        let todo = toDos[i];
+        let todoContainer = document.createElement('div');
+        todoContainer.setAttribute('class', 'todo-item');
+        todoContainer.textContent = `
+                                    <div class="item-properties">
+                                        <div class="priority-box"></div>
+                                        <h2 class="item-title">${todo.title}</h2>
+                                        <h4 class="item-description">${todo.description}</h4>
+                                        <button class="item-notes">${todo.notes}</button>
+                                        <h4 class="Due date">${todo.dueDate}</h4>
+                                        <div>
+                                            <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="delete-btn edit" onclick="remove(${i})"><i class="fa-solid fa-trash-can"></i></button>
+                                        </div>
+                                        <input type="checkbox" id="checkbox" name="checkbox">
+                                    </div>
+                                    `;
 
+    toDos.appendChild(todoContainer);
+    }
+}
 
 //function that will take all of the input values and store them as constants.
 //And also call the toDo function which will then add the new toDo to allToDos array
