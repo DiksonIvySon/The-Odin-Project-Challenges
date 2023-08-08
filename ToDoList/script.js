@@ -9,3 +9,30 @@ function toDo(title, description, notes, dueDate, priority) {
     this.dueDate = dueDate;
     this.priority = priority;
 }
+
+
+
+//function that will take all of the input values and store them as constants.
+//And also call the toDo function which will then add the new toDo to allToDos array
+function addToDo() {
+    let title = document.querySelector('#title').value;
+    let description = document.querySelector('#author').value;
+    let notes = document.querySelector('#pages').value;
+    let dueDate = document.querySelector('#readStatus').value;
+
+    //function to get the checked value of the radio buttons
+    function radioValue() {
+        let radioButtons = document.getElementsByName('priority');
+        for (let i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                return radioButtons[i].value;
+            }
+        }
+    }
+
+    let priority = radioValue();
+    let newToDo = new toDo(title, description, notes, dueDate, priority);
+    
+    //adding the new toDo to allToDos array
+    allToDos.push(newToDo);
+};
