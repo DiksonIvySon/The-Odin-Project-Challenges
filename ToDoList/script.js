@@ -60,11 +60,13 @@ function addToDo() {
     
     //adding the new toDo to allToDos array
     allToDos.push(newToDo);
+    removeToDo();  //must be included to call the renderBook function.
 };
 
 //function to remove the todo activity when delete button is clicked
 function removeToDo(index) {
     allToDos.splice(index, 1);
+    removeToDo(); //must re-render the list of toDos after removing a todo activity
 }
 
 //function for the form to be revealed and hidden when the add toDo button is clicked
