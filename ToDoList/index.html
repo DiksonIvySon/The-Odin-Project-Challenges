@@ -19,25 +19,73 @@
         </div>
     </header>
     <div class="side-bar">  
-        <div class="navigation">
+        <section class="navigation">
             <ul>
-                <li><a href="index.html"><strong>Home</strong></a></li>
-                <li><a href="info.html"><strong>info</strong></a></li>
-                <li><a href=".html"><strong>Login</strong></a></li>
+                <li><a href="index.html"><strong>today</strong></a></li>
+                <li><a href="info.html"><strong>Next week</strong></a></li>
+                <li><a href=".html"><strong>all todos</strong></a></li>
+                <li><a href=".html"><strong>done</strong></a></li>
             </ul>
-        </div>
+        </section>
+        <section class="add-section">
+            <div>
+                <div class="add-section-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </div>
+                <form action="" id="form" >
+                    <div>
+                        <label for="title">Title</label>
+                        <br>
+                        <input type="text" id="title" name="title" placeholder="Run" required>
+                    </div>
+                    <div>
+                        <label for="description">Description</label>
+                        <br>
+                        <input type="text" id="description" name="description" placeholder="Dikson Manganye" required>
+                    </div>
+                    <div>
+                        <label for="notes">Notes</label>
+                        <br>
+                        <textarea name="comment" form="usrform">Enter text here...</textarea>
+                    </div>
+                    <div>
+                        <label for="notes">Due date</label>
+                        <br>
+                        <input type="date" id="date" name="date" placeholder="15/05/2000" required>
+                    </div>
+                    <div class="radio-buttons">
+                        <div>
+                            <input type="radio" id="html" name="fav_language" value="HTML">
+                            <label for="html">Low</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="css" name="fav_language" value="CSS">
+                            <label for="css">Medium</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                            <label for="javascript">High</label>
+                        </div>
+                    </div>
+
+                    <div class="add-btn">
+                        <button>Add book</button>
+                    </div>  
+                </form>
+            </div>
+        </section>
     </div>
 
     <main class="main">
         <div class="list-item">
-            <div class="priority-box">a</div>
             <div class="item-properties">
+                <div class="priority-box"></div>
                 <h2 class="item-title">title</h2>
                 <h4 class="item-description">description</h4>
-                <p class="item-notes">notes</p>
+                <button class="item-notes">notes</button>
                 <h4 class="Due date">15/05/2000</h4>
-                <h4 class="edit"><i class="fa-solid fa-pen"></i></h4>
-                <h4 class="checklist"><i class="fa-solid fa-square-check"></i></h4>
+                <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                <input type="checkbox" id="checkbox" name="checkbox">
             </div>
         </div>
        

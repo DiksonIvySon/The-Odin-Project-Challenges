@@ -6,9 +6,9 @@
  body {
     margin: 0px;
     height: 100vh;
-    background-color: gray;
+    background-color: #F6F6F6;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: 70px 1fr 70px;
     grid-template-areas: "header header"
                          "side-bar main"
@@ -19,9 +19,9 @@
 /* styling the header ................................................................*/
 .header {
     grid-area: header;
-    background-color: aqua;
+    background-color: BLACK;
     
-    padding-left: 20px;
+    padding-left: 40px;
  }
 
  .header h1 i {
@@ -32,35 +32,116 @@
  /* styling the side-bar..............................................................*/
 .side-bar {
     grid-area: side-bar;
-    background-color: brown;
+    background-color: #363538;
 }
 
+.add-section {
+    display: flex;
+    justify-content: center;
+}
+
+.add-section-button {
+    font-size: 6 0px;
+}
+
+.navigation ul li {
+    display: flex;
+    list-style-type: none;
+}
+
+#form {
+    background-color: #8D8C8A;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#form div {
+    margin: 5px;
+}
+
+#form textarea {
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#form input {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+}
+
+#date {
+    color: black;
+}
+
+.radio-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.add-btn button {
+    color: black;
+    border-radius: 5px;
+}
 
 /* styling the main  .................................................................*/ 
 .main {
     grid-area: main;
-    background-color: blue;
 }
 
 /* styling the list item */
-
-.list-item {
-    display: flex;
-    margin: 20px;
-    background-color: gray;
-    border-radius: 15px;
-}
 
 .item-properties {
     margin:0px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px;
+    padding-right: 20px;
+    background-color: #8D8C8A;
+    border-radius: 15px;
 }
 
 .priority-box {
     width: 20px;
+    height: 80px;
     background-color: red;
+}
+
+.item-notes {
+    padding: 5px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.item-notes:hover {
+    cursor: pointer;
+    color: #52D6F4;
+}
+
+#checkbox {
+    width: 25px;
+    height: 25px;
+}
+
+.edit {
+    padding: 2px;
+    background-color: black;
+    width: 30px;
+    height: 30hpx;
+    border-radius: 5px;
+}
+
+.edit i:hover {
+    color: #52D6F4;
+    cursor: pointer;
 }
 
  /* styling the footer ...............................................................*/
@@ -71,7 +152,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding:20px 40px;
 }
 
 .social-icons i {
