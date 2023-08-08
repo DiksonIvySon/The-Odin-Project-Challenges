@@ -1,6 +1,7 @@
 //list to contain all of the toDos added
 let allToDos = [];
 
+
 // function to convert the form inputs to a single todo object
 function toDo(title, description, notes, dueDate, priority) {
     this.title = title;
@@ -41,9 +42,9 @@ function renderTOdO() {
 //And also call the toDo function which will then add the new toDo to allToDos array
 function addToDo() {
     let title = document.querySelector('#title').value;
-    let description = document.querySelector('#author').value;
-    let notes = document.querySelector('#pages').value;
-    let dueDate = document.querySelector('#readStatus').value;
+    let description = document.querySelector('#description').value;
+    let notes = document.querySelector('#notes').value;
+    let dueDate = document.querySelector('#date').value;
 
     //function to get the checked value of the radio buttons
     function radioValue() {
@@ -86,3 +87,4 @@ document.querySelector('.add-btn').addEventListener('submit', function(event) {
     event.preventDefault();
     addToDo();
 });
+
