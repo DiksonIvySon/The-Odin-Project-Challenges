@@ -37,6 +37,11 @@ function addToDo() {
     allToDos.push(newToDo);
 };
 
+//function to remove the todo activity when delete button is clicked
+function removeToDo(index) {
+    allToDos.splice(index, 1);
+}
+
 //function for the form to be revealed and hidden when the add toDo button is clicked
 let addSectionButton = document.querySelector('.add-section-button');
 addSectionButton.addEventListener('click', function() {
