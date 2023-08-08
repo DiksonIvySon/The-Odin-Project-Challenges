@@ -18,65 +18,67 @@
             <h1><i class="fa-solid fa-list-check fa-beat-fade"></i>ToDo List</h1>
         </div>
     </header>
-    <div class="side-bar">  
-        <section class="navigation">
-            <ul>
-                <li><a href="index.html"><strong>today</strong></a></li>
-                <li><a href="info.html"><strong>Next week</strong></a></li>
-                <li><a href=".html"><strong>all todos</strong></a></li>
-                <li><a href=".html"><strong>done</strong></a></li>
-            </ul>
-        </section>
-        <section class="add-section">
-            <div>
-                <div class="add-section-button">
-                    <i class="fa-solid fa-circle-plus"></i>
-                </div>
-                <form action="" id="addForm" style="display: none;">
-                    <div>
-                        <label for="title">Title</label>
-                        <br>
-                        <input type="text" id="title" name="title" placeholder="Run" required>
-                    </div>
-                    <div>
-                        <label for="description">Description</label>
-                        <br>
-                        <input type="text" id="description" name="description" placeholder="Dikson Manganye" required>
-                    </div>
-                    <div>
-                        <textarea name="notes" id="notes" form="usrform" placeholder="Enter text here..."></textarea>
-                    </div>
-                    <div>
-                        <label for="date">Due date</label>
-                        <br>
-                        <input type="date" id="date" name="date" placeholder="15/05/2000" required>
-                    </div>
-                    <div class="radio-buttons">
-                        <div>
-                            <input type="radio" id="priority-low" name="priority" value="low">
-                            <label for="priority-low">Low</label><br>
-                        </div>
-                        <div>
-                            <input type="radio" id="priority-medium" name="priority" value="medium">
-                            <label for="priority-medium">Medium</label><br>
-                        </div>
-                        <div>
-                            <input type="radio" id="priority-high" name="priority" value="high">
-                            <label for="priority-high">High</label>
-                        </div>
-                    </div>
-
-                    <div class="add-btn">
-                        <button>Add Activity</button>
-                    </div>  
-                </form>
-            </div>
-        </section>
-    </div>
 
     <main class="main">
-        <div class="toDos">
-       <!--     <div class="todo-item">
+        <section class="side-bar">  
+            <div class="navigation">
+                <div>
+                    <button>today</button>
+                    <button>Next week</button>
+                    <button>all toDos</button>
+                    <button>done</button>
+                </div>
+            </div>
+            <div class="add-section-button">
+                <button><i class="fa-solid fa-circle-plus"></i> add a ToDo activity</button>
+            </div>
+            <div class="add-section">
+                <div>
+                    <form action="" id="addForm" style="display: none;">
+                        <div>
+                            <label for="title">Title</label>
+                            <br>
+                            <input type="text" id="title" name="title" placeholder="Run" required>
+                        </div>
+                        <div>
+                            <label for="description">Description</label>
+                            <br>
+                            <input type="text" id="description" name="description" placeholder="Dikson Manganye" required>
+                        </div>
+                        <div>
+                            <textarea name="notes" id="notes" form="usrform" placeholder="Write notes here..."></textarea>
+                        </div>
+                        <div>
+                            <label for="date">Due date</label>
+                            <br>
+                            <input type="date" id="date" name="date" placeholder="15/05/2000" required>
+                        </div>
+                        <div class="radio-buttons">
+                            <div>
+                                <input type="radio" id="priority-low" name="priority" value="low">
+                                <label for="priority-low">Low</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" id="priority-medium" name="priority" value="medium">
+                                <label for="priority-medium">Medium</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" id="priority-high" name="priority" value="high">
+                                <label for="priority-high">High</label>
+                            </div>
+                        </div>
+
+                        <div class="add-btn">
+                            <button>Add Activity</button>
+                        </div>  
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="toDos">
+        <!--     <div class="todo-item">
                 <div class="item-properties">
                     <div class="priority-box"></div>
                     <h2 class="item-title">title</h2>
@@ -90,7 +92,7 @@
                     <input type="checkbox" id="checkbox" name="checkbox">
                 </div>
             </div> -->
-        </div>
+        </section>
        
     </main>
 
