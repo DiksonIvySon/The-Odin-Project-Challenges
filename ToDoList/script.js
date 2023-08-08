@@ -48,3 +48,9 @@ addSectionButton.addEventListener('click', function() {
         addToDoForm.style.display = 'none';
     }
 })
+
+//event handler to handle the click on the Activity button and call the addToDo function.
+document.querySelector('.add-btn').addEventListener('submit', function(event) {
+    event.preventDefault();
+    addToDo();
+});
