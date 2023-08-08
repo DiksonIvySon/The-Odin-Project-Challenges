@@ -55,7 +55,7 @@
 }
 
 .add-section-button i {
-    color: #52D6F4;
+    color: #408697;
 }
 
 .navigation {
@@ -174,7 +174,7 @@
 
 .item-properties:hover {
     transform: translate(0px, -5px);
-    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.55);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.55);
     cursor: pointer;
 }
 
@@ -246,3 +246,17 @@
     color: #52D6F4;
 }
 
+
+/* styling the scrollbar*/
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #363538;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #52D6F4;
+    border-radius: 10px;
+}
