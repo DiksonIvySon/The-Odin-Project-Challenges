@@ -36,3 +36,15 @@ function addToDo() {
     //adding the new toDo to allToDos array
     allToDos.push(newToDo);
 };
+
+//function for the form to be revealed and hidden when the add toDo button is clicked
+let addSectionButton = document.querySelector('.add-section-button');
+addSectionButton.addEventListener('click', function() {
+    let addToDoForm = document.querySelector('#addForm');
+    if (addToDoForm.style.display == 'none') {
+        addToDoForm.style.display = 'block';
+    }
+    else {
+        addToDoForm.style.display = 'none';
+    }
+})
