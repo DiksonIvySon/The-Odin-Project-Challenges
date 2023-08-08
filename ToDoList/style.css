@@ -18,13 +18,14 @@
 /* styling the header ................................................................*/
 .header {
     grid-area: header;
-    background-color: BLACK;
+    background-color: #408697;
     
     padding-left: 40px;
  }
 
  .header h1 i {
     padding-right: 5px;
+    color: #52D6F4;
  }
 
 
@@ -48,6 +49,11 @@
     border-radius: 15px;
 }
 
+.add-section-button button:hover {
+    background-color: #52D6F4;
+    cursor: pointer;
+}
+
 .add-section-button i {
     color: #52D6F4;
 }
@@ -62,6 +68,12 @@
     margin: 10px;
     border-radius: 10px;
     color: black;
+}
+
+.navigation button:hover {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #52D6F4;
 }
 
 
@@ -101,6 +113,10 @@
     align-items: center;
 }
 
+.radio-buttons input:hover {
+    cursor: pointer;
+}
+
 .add-btn {
     display: flex;
     justify-content: center;
@@ -109,6 +125,12 @@
 .add-btn button {
     color: black;
     border-radius: 5px;
+    font-weight: bold;
+}
+
+.add-btn button:hover {
+    cursor: pointer;
+    background-color: #52D6F4;
 }
 
 /* styling the main  .................................................................*/ 
@@ -116,6 +138,16 @@
     grid-area: main;
     display: flex;
     flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+    .main {
+        display: block;
+    }
+
+    .side-bar {
+        max-width: none;
+    }
 }
 
 .toDos {
@@ -133,6 +165,17 @@
     padding-right: 20px;
     background-color: #8D8C8A;
     border-radius: 15px;
+
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.25),
+    5px 5px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 15px rgba(255, 255, 255, 0.25);
+}
+
+.item-properties:hover {
+    transform: translate(0px, -5px);
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.55);
+    cursor: pointer;
 }
 
 .priority-box {
@@ -150,11 +193,16 @@
 .item-notes:hover {
     cursor: pointer;
     color: #52D6F4;
+    font-size: 15px;
 }
 
 #checkbox {
     width: 25px;
     height: 25px;
+}
+
+#checkbox:hover {
+    cursor: pointer;
 }
 
 .edit {
@@ -168,6 +216,7 @@
 .edit i:hover {
     color: #52D6F4;
     cursor: pointer;
+    font-size: 15px;
 }
 
 
@@ -186,5 +235,14 @@
 
 .social-icons i {
     margin-right: 15px;
+}
+
+.social-icons i:hover {
+    font-size: 20px;
+}
+
+.footer i:hover {
+    cursor: pointer;
+    color: #52D6F4;
 }
 
