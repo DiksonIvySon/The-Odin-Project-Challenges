@@ -12,23 +12,23 @@ function toDo(title, description, notes, dueDate, priority) {
 }
 
 //function to render the todo event to the main when it is added using the add form
-function renderTOdO() {
+function renderTodo() {
     let toDos = document.querySelector('.toDos');
     toDos.textContent = "";
-    for (let i =0; i < allToDos.length; i++) {
-        let todo = toDos[i];
+    for (let i = 0; i < allToDos.length; i++) {
+        let todo = allToDos[i];
         let todoContainer = document.createElement('div');
         todoContainer.setAttribute('class', 'todo-item');
-        todoContainer.textContent = `
+        todoContainer.innerHTML = `
                                     <div class="item-properties">
                                         <div class="priority-box"></div>
                                         <h2 class="item-title">${todo.title}</h2>
                                         <h4 class="item-description">${todo.description}</h4>
-                                        <button class="item-notes">${todo.notes}</button>
+                                        <button class="item-notes">notes</button>
                                         <h4 class="Due date">${todo.dueDate}</h4>
                                         <div>
                                             <button class="edit"><i class="fa-solid fa-pen"></i></button>
-                                            <button class="delete-btn edit" onclick="remove(${i})"><i class="fa-solid fa-trash-can"></i></button>
+                                            <button class="delete-btn edit" onclick="removeToDo(${i})"><i class="fa-solid fa-trash-can"></i></button>
                                         </div>
                                         <input type="checkbox" id="checkbox" name="checkbox">
                                     </div>
@@ -61,13 +61,13 @@ function addToDo() {
     
     //adding the new toDo to allToDos array
     allToDos.push(newToDo);
-    removeToDo();  //must be included to call the renderBook function.
+    renderTodo();  //must be included to call the renderTodo function.
 };
 
 //function to remove the todo activity when delete button is clicked
 function removeToDo(index) {
     allToDos.splice(index, 1);
-    removeToDo(); //must re-render the list of toDos after removing a todo activity
+    renderTodo; //must re-render the list of toDos after removing a todo activity
 }
 
 //function for the form to be revealed and hidden when the add toDo button is clicked
@@ -83,7 +83,7 @@ addSectionButton.addEventListener('click', function() {
 })
 
 //event handler to handle the click on the Activity button and call the addToDo function.
-document.querySelector('.add-btn').addEventListener('submit', function(event) {
+document.querySelector('.add-btn').addEventListener('click', function(event) {
     event.preventDefault();
     addToDo();
 });
