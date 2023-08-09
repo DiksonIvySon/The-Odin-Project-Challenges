@@ -31,7 +31,7 @@ function renderTodo() {
                                         </div>
                                         <input type="checkbox" id="checkbox" name="checkbox">
                                     </div>
-                                    `;
+                                  `;
 
     toDos.appendChild(todoContainer);
     }
@@ -108,6 +108,22 @@ function asb() {
         addSectionButton.style.display = 'none';
     }
 }
+
+//
+let itemNotes = document.querySelectorAll('.item-notes');
+itemNotes.forEach(itemNote => {
+    itemNote.onclick = () => {
+        document.querySelector('.pop-up').style.display = 'block';
+    }
+});
+
+let popUpCancel = document.querySelector('.pop-up-cancel');
+popUpCancel.addEventListener('click', function() {
+    document.querySelector('.pop-up').style.display = 'none';
+})
+
+
+
 
 
 
