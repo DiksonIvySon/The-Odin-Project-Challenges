@@ -70,8 +70,7 @@ function removeToDo(index) {
 }
 
 //function for the form to be revealed and hidden when the add toDo button is clicked
-let addSectionButton = document.querySelector('.add-section-button');
-addSectionButton.addEventListener('click', function() {
+function hideOrReveal() {
     let addToDoForm = document.querySelector('#addForm');
     if (addToDoForm.style.display == 'none') {
         addToDoForm.style.display = 'block';
@@ -79,7 +78,16 @@ addSectionButton.addEventListener('click', function() {
     else {
         addToDoForm.style.display = 'none';
     }
-})
+}
+
+//listen to when add-section-button is click
+let addSectionButton = document.querySelector('.add-section-button');
+addSectionButton.addEventListener('click', hideOrReveal);
+
+//list to when cancel-button is clicked
+let cancelButton = document.querySelector('.cancel-form-button');
+cancelButton.addEventListener('click', hideOrReveal);
+
 
 //event handler to handle the click on the Activity button and call the addToDo function.
 document.querySelector('.add-btn').addEventListener('click', function(event) {

@@ -133,6 +133,16 @@
     background-color: #52D6F4;
 }
 
+.cancel-form-button {
+    text-align: end;
+}
+
+.cancel-form-button i:hover {
+    color: #52D6F4;
+    cursor: pointer;
+    font-size: 20px;
+}
+
 /* styling the main  .................................................................*/ 
 .main {
     grid-area: main;
