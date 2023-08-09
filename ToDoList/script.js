@@ -69,14 +69,23 @@ function removeToDo(index) {
     renderTodo; //must re-render the list of toDos after removing a todo activity
 }
 
+//event handler to handle the click on the Activity button and call the addToDo function.
+document.querySelector('.add-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    addToDo();
+});
+
+
 //function for the form to be revealed and hidden when the add toDo button is clicked
 function hideOrReveal() {
     let addToDoForm = document.querySelector('#addForm');
     if (addToDoForm.style.display == 'none') {
         addToDoForm.style.display = 'block';
+        asb();
     }
     else {
         addToDoForm.style.display = 'none';
+        asb();
     }
 }
 
@@ -88,10 +97,18 @@ addSectionButton.addEventListener('click', hideOrReveal);
 let cancelButton = document.querySelector('.cancel-form-button');
 cancelButton.addEventListener('click', hideOrReveal);
 
+//function to hide to reveal the add a ToDo activity button
+function asb() {
+    //addSectionButton is already defined above
+    let addToDoForm = document.querySelector('#addForm');
+    if (addToDoForm.style.display == 'none') {
+        addSectionButton.style.display = 'block';
+    }
+    else if (addToDoForm.style.display == 'block') {
+        addSectionButton.style.display = 'none';
+    }
+}
 
-//event handler to handle the click on the Activity button and call the addToDo function.
-document.querySelector('.add-btn').addEventListener('click', function(event) {
-    event.preventDefault();
-    addToDo();
-});
+
+
 
