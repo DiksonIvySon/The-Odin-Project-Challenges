@@ -38,6 +38,7 @@ let GameBoard = {
     gameBoardArray: ["", "", "", "", "", "", "", "", ""],
 }
 
+
 //function to render the contents of the gameBoard to the webpage
 const blocks = document.querySelectorAll(".block");
 blocks.forEach(block => block.addEventListener("click", function(){
@@ -56,6 +57,7 @@ function updateBlock(blockIndex, block) {
     GameBoard.gameBoardArray[blockIndex] = currentPlayer;
     block.textContent = currentPlayer;
     changePlayer();
+    console.log(GameBoard.gameBoardArray);
 }
 
 function changePlayer() {

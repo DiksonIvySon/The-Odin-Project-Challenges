@@ -23,7 +23,7 @@ function renderTodo() {
                                         <div class="priority-box"></div>
                                         <h2 class="item-title">${todo.title}</h2>
                                         <h4 class="item-description">${todo.description}</h4>
-                                        <button class="item-notes">notes</button>
+                                        <button class="item-notes" onclick="displayPopUp()">notes</button>
                                         <h4 class="Due date">${todo.dueDate}</h4>
                                         <div>
                                             <button class="edit"><i class="fa-solid fa-pen"></i></button>
@@ -109,7 +109,7 @@ function asb() {
     }
 }
 
-//
+/*
 let itemNotes = document.querySelectorAll('.item-notes');
 itemNotes.forEach(itemNote => {
     itemNote.onclick = () => {
@@ -121,7 +121,17 @@ let popUpCancel = document.querySelector('.pop-up-cancel');
 popUpCancel.addEventListener('click', function() {
     document.querySelector('.pop-up').style.display = 'none';
 })
+*/
 
+//function to display pop-up when the note button is clicked
+function displayPopUp() {
+    document.querySelector('.pop-up').style.display = 'block';
+}
+
+//function to remove the pop-up when the cancel button is clicked
+function removePopUp() {
+    document.querySelector('.pop-up').style.display = 'none';
+}
 
 
 
