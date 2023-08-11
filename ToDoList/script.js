@@ -66,7 +66,7 @@ function addToDo() {
 //function to remove the todo activity when delete button is clicked
 function removeToDo(index) {
     allToDos.splice(index, 1);
-    renderTodo; //must re-render the list of toDos after removing a todo activity
+    renderTodo(); //must re-render the list of toDos after removing a todo activity
 }
 
 //event handler to handle the click on the Activity button and call the addToDo function.
