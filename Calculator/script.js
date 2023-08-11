@@ -19,11 +19,7 @@ function Divide(firstNumber, SecondNumber) {
     return firstNumber / SecondNumber;
 }
 
-
-let firstNumber;
-let SecondNumber;
-/*console.log(Operate(firstNumber, SecondNumber, operator));*/
-
+//function to use the defined operator to complete to correct calculation by calling the corresponding method.
 function Operate(firstNumber, SecondNumber, operator) {
     if (operator === "+") {
         return Add(firstNumber, SecondNumber);
@@ -103,36 +99,6 @@ equalsButton.addEventListener('click', function() {
         previousValueScreen.textContent = previousValue; 
     }
 });
-
-
-/*
-//function to display on screen the expression that is made when the keyboard keys are clicked
-function Display() {
-    let keyArrayString = keyArray.join(' '); 
-    document.querySelector(".expression").textContent = keyArrayString;
-}
-
-
-//function to clear the screen when called
-function clearScreen() {
-    keyArray = [];
-    Display();
-}
-
-//function to remove to remove the last entered item when the when the backspace button is clicked
-function backSpace() {
-    keyArray.pop();
-    Display();
-} 
-
-//function sum up the expression
-function equals() {
-    if (typeof keyArray[-1] === 'symbol' ) {
-        alert("Your expression ends with a symbol")
-    }
-}
-
-*/
 
 
 
