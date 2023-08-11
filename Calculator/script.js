@@ -61,6 +61,10 @@ let equalsButton = document.querySelector('.equals.btn');
 operators.forEach(operator => {
     operator.onclick = () => {
         operatorValue = operator.value;
+        previousValue = currentValue;
+        currentValue = "";
+        previousValueScreen.textContent = previousValue + " " + operatorValue;
+        currentValueScreen.textContent = currentValue;
     }
 })
 
