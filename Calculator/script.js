@@ -87,13 +87,18 @@ clearButton.addEventListener('click', function() {
 
 //equalsButton event listener to do the calculations
 equalsButton.addEventListener('click', function() {
-    currentValue = Number(currentValue);  
-    previousValue = Number(previousValue);
-    let result = Operate(previousValue, currentValue, operatorValue);
-    result = result.toString();
-    currentValueScreen.textContent = result;
-    previousValue = "";
-    previousValueScreen.textContent = previousValue; 
+    if (previousValue === "" || currentValue === "") {
+        alert("Please enter the numbers to calculate.");
+    }
+    else {
+        currentValue = Number(currentValue);  
+        previousValue = Number(previousValue);
+        let result = Operate(previousValue, currentValue, operatorValue);
+        result = result.toString();
+        currentValueScreen.textContent = result;
+        previousValue = "";
+        previousValueScreen.textContent = previousValue; 
+    }
 })
 
 
