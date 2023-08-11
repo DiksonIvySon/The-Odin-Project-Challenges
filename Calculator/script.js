@@ -76,6 +76,15 @@ numbers.forEach(number => {
     }
 })
 
+//clearButton event listener to clear the screen
+clearButton.addEventListener('click', function() {
+    operatorValue = "";
+    previousValue = "";
+    operatorValue = "";
+    previousValueScreen.textContent = "";
+    currentValueScreen.textContent = "";
+}) 
+
 
 /*
 //function to display on screen the expression that is made when the keyboard keys are clicked
