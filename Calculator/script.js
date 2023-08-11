@@ -22,7 +22,6 @@ function Divide(firstNumber, SecondNumber) {
 
 let firstNumber;
 let SecondNumber;
-let operator;
 /*console.log(Operate(firstNumber, SecondNumber, operator));*/
 
 function Operate(firstNumber, SecondNumber, operator) {
@@ -44,16 +43,9 @@ function Operate(firstNumber, SecondNumber, operator) {
     }
 }
 
-let keyArray = [];
-let numberKeyArray = [];
-let symbolKeyArray = [];
-
-//function to display on screen the expression that is made when the keyboard keys are clicked
-function Display() {
-    let keyArrayString = keyArray.join(' '); 
-    document.querySelector(".expression").textContent = keyArrayString;
-}
-
+let operator ;
+let previousValue;
+let currentValue;
 
 //selecting all buttons using querySelectors
 let previousValueScreen = document.querySelector('.previousValueScreen');
@@ -64,6 +56,14 @@ let decimal = document.querySelector('decimal');
 let clearButton = document.querySelector('.clear-btn');
 let backSpace = document.querySelector('.backspace-btn');
 let equalsButton = document.querySelector('.equals.btn');
+
+
+/*
+//function to display on screen the expression that is made when the keyboard keys are clicked
+function Display() {
+    let keyArrayString = keyArray.join(' '); 
+    document.querySelector(".expression").textContent = keyArrayString;
+}
 
 
 //function to clear the screen when called
@@ -85,6 +85,7 @@ function equals() {
     }
 }
 
+*/
 
 
 
