@@ -53,6 +53,10 @@ main {
     margin: 10px;
 }
 
+.copyright a {
+    color: #3500D3;
+}
+
 .keyboard {
     
     display: grid;
