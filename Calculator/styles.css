@@ -36,6 +36,21 @@ main {
     border-radius: 10px;
     padding: 5px;
     margin: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+.previousValueScreen {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.currentValueScreen {
+    font-size: 30px;
+    margin: 10px;
 }
 
 .keyboard {
@@ -140,7 +155,8 @@ button:hover {
     grid-area: equal;
 }
 
- 
+
+
 
 
 
