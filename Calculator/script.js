@@ -43,19 +43,28 @@ function Operate(firstNumber, SecondNumber, operator) {
     }
 }
 
-let operator ;
+let operatorValue ;
 let previousValue;
 let currentValue;
 
 //selecting all buttons using querySelectors
 let previousValueScreen = document.querySelector('.previousValueScreen');
 let currentValueScreen = document.querySelector('.currentValueScreen');
-let operators = document.querySelectorAll('operator');
+let operators = document.querySelectorAll('.operator');
 let numbers = document.querySelectorAll('.number');
 let decimal = document.querySelector('decimal');
 let clearButton = document.querySelector('.clear-btn');
 let backSpace = document.querySelector('.backspace-btn');
 let equalsButton = document.querySelector('.equals.btn');
+
+//operator event listener to call a handle operator function that will define the operator
+operators.forEach(operator => {
+    operator.onclick = () => {
+        operatorValue = operator.value;
+        console.log(operatorValue); 
+    }
+})
+
 
 
 /*
