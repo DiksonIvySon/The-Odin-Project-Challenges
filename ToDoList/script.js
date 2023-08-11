@@ -16,11 +16,12 @@ function renderTodo() {
     toDos.textContent = "";
     for (let i = 0; i < allToDos.length; i++) {
         let todo = allToDos[i];
+        let priorityColor = setPriorityColor(i); 
         let todoContainer = document.createElement('div');
         todoContainer.setAttribute('class', 'todo-item');
         todoContainer.innerHTML = `
                                     <div class="item-properties">
-                                        <div class="priority-box"></div>
+                                        <div class="priority-box" style="background-color: ${priorityColor}"></div>
                                         <h2 class="item-title">${todo.title}</h2>
                                         <h4 class="item-description">${todo.description}</h4>
                                         <button class="item-notes" onclick="displayPopUp(${i})">notes</button>
@@ -35,6 +36,8 @@ function renderTodo() {
 
     toDos.appendChild(todoContainer);
     }
+
+    console.log(allToDos);
 }
 
 //function that will take all of the input values and store them as constants.
@@ -135,6 +138,23 @@ function displayPopUp(index) {
 //function to remove the pop-up when the cancel button is clicked
 function removePopUp() {
     document.querySelector('.pop-up').style.display = 'none';
+}
+
+//function to manage the priority color to be displayed
+function setPriorityColor(index) {
+    if (allToDos[index].priority === "low") {
+        return "green";
+    }
+    else if (allToDos[index].priority === "medium") {
+        return "blue";
+    }
+    else if (allToDos[index].priority === "high") {
+        return "red";
+    }
+    else {
+        //call a function that will automatically set the priority using the date provided
+        //still have to create the function, it will most likely make a call back to the setPriorityColor function
+    }
 }
 
 
