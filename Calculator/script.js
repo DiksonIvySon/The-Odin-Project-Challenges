@@ -90,6 +90,9 @@ equalsButton.addEventListener('click', function() {
     if (previousValue === "" && currentValue === "") {
         alert("Please enter the numbers to calculate.");
     }
+    else if (operatorValue === "") {
+        //Do nothing.
+    }
     else {
         currentValue = Number(currentValue);  
         previousValue = Number(previousValue);
@@ -99,7 +102,7 @@ equalsButton.addEventListener('click', function() {
         previousValue = "";
         previousValueScreen.textContent = previousValue; 
     }
-})
+});
 
 
 /*
