@@ -43,9 +43,9 @@ function Operate(firstNumber, SecondNumber, operator) {
     }
 }
 
-let operatorValue ;
-let previousValue;
-let currentValue;
+let operatorValue = "" ;
+let previousValue = "";
+let currentValue = "";
 
 //selecting all buttons using querySelectors
 let previousValueScreen = document.querySelector('.previousValueScreen');
@@ -61,10 +61,16 @@ let equalsButton = document.querySelector('.equals.btn');
 operators.forEach(operator => {
     operator.onclick = () => {
         operatorValue = operator.value;
-        console.log(operatorValue); 
     }
 })
 
+//number event listener to define the currentValue by adding the number
+numbers.forEach(number => {
+    number.onclick = () => {
+        currentValue += number.value;
+        console.log(currentValue);
+    }
+})
 
 
 /*
