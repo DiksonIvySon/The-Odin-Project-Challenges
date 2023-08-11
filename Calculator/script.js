@@ -50,7 +50,7 @@ let currentValueScreen = document.querySelector('.currentValueScreen');
 let operators = document.querySelectorAll('.operator');
 let numbers = document.querySelectorAll('.number');
 let clearButton = document.querySelector('.clear-btn');
-let backSpace = document.querySelector('.backspace-btn');
+let backSpaceButton = document.querySelector('.backSpace-btn');
 let equalsButton = document.querySelector('.equals-btn');
 
 //operator event listener to call a handle operator function that will define the operator
@@ -100,6 +100,24 @@ equalsButton.addEventListener('click', function() {
     }
 });
 
+//backspaceButton event listener to remove the last character of the currentValue
+backSpaceButton.addEventListener('click', function() {
+    valueToRemove = currentValue.charAt(currentValue.length-1);
+    currentValue = currentValue.replace(valueToRemove, ""); 
+    currentValueScreen.textContent = currentValue;
+    
+    //condition to make sure of that if the currentValue is empty then the user can change the previous value.
+    if (currentValue === "" && previousValue === "") {
+        //do nothing
+    }
+    else if (currentValue === "") {
+        currentValue = previousValue + " " + operatorValue;
+        currentValueScreen.textContent = currentValue;
+
+        previousValue = "";
+        previousValueScreen.textContent = "";
+    }
+})
 
 
 
