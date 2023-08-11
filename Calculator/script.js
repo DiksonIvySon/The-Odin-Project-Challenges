@@ -48,11 +48,11 @@ let previousValue = "";
 let currentValue = "";
 
 //selecting all buttons using querySelectors
+//Decimal querySelector is not included because: decimal forms part of a number and there will work well if treated as a number.
 let previousValueScreen = document.querySelector('.previousValueScreen');
 let currentValueScreen = document.querySelector('.currentValueScreen');
 let operators = document.querySelectorAll('.operator');
 let numbers = document.querySelectorAll('.number');
-let decimal = document.querySelector('decimal');
 let clearButton = document.querySelector('.clear-btn');
 let backSpace = document.querySelector('.backspace-btn');
 let equalsButton = document.querySelector('.equals-btn');
