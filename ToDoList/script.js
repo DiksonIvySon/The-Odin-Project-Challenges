@@ -23,7 +23,7 @@ function renderTodo() {
                                         <div class="priority-box"></div>
                                         <h2 class="item-title">${todo.title}</h2>
                                         <h4 class="item-description">${todo.description}</h4>
-                                        <button class="item-notes" onclick="displayPopUp()">notes</button>
+                                        <button class="item-notes" onclick="displayPopUp(${i})">notes</button>
                                         <h4 class="Due date">${todo.dueDate}</h4>
                                         <div>
                                             <button class="edit"><i class="fa-solid fa-pen"></i></button>
@@ -124,8 +124,12 @@ popUpCancel.addEventListener('click', function() {
 */
 
 //function to display pop-up when the note button is clicked
-function displayPopUp() {
+function displayPopUp(index) {
     document.querySelector('.pop-up').style.display = 'block';
+
+    let displayNotes = allToDos[index].notes;
+    let popUpContent = document.querySelector('.pop-up-content');
+    popUpContent.textContent = displayNotes;
 }
 
 //function to remove the pop-up when the cancel button is clicked
