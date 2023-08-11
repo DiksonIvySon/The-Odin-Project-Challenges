@@ -68,7 +68,7 @@ operators.forEach(operator => {
 numbers.forEach(number => {
     number.onclick = () => {
         currentValue += number.value;
-        console.log(currentValue);
+        currentValueScreen.textContent = currentValue;
     }
 })
 
