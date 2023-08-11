@@ -35,7 +35,7 @@ function Operate(firstNumber, SecondNumber, operator) {
         return Multiply(firstNumber, SecondNumber);
     }
     else if (operator === "/") {
-        return divide(firstNumber, SecondNumber);
+        return Divide(firstNumber, SecondNumber);
     }
     else {
         alertMessage = operator + " is not an allowed operator."
