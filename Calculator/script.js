@@ -87,7 +87,7 @@ clearButton.addEventListener('click', function() {
 
 //equalsButton event listener to do the calculations
 equalsButton.addEventListener('click', function() {
-    if (previousValue === "" || currentValue === "") {
+    if (previousValue === "" && currentValue === "") {
         alert("Please enter the numbers to calculate.");
     }
     else {
