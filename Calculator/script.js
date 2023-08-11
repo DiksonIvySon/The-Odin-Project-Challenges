@@ -55,21 +55,16 @@ function Display() {
 }
 
 
-//function to populate the expression that is made when the keyboard keys are clicked
-function Populate(keyboardKey) {
+//selecting all buttons using querySelectors
+let previousValueScreen = document.querySelector('.previousValueScreen');
+let currentValueScreen = document.querySelector('.currentValueScreen');
+let operators = document.querySelectorAll('operator');
+let numbers = document.querySelectorAll('.number');
+let decimal = document.querySelector('decimal');
+let clearButton = document.querySelector('.clear-btn');
+let backSpace = document.querySelector('.backspace-btn');
+let equalsButton = document.querySelector('.equals.btn');
 
-    keyArray.push(keyboardKey);
-    Display();
-
-    if (typeof keyboardKey === 'number') {
-        numberKeyArray.push(keyboardKey);
-    }
-    else {
-        symbolKeyArray.push(keyboardKey);
-    }
-
-    
-}
 
 //function to clear the screen when called
 function clearScreen() {
@@ -90,12 +85,6 @@ function equals() {
     }
 }
 
-
-/*clickedButton = document.querySelector(".zero");
-clickedButton.addEventListener("click", function() {
-    let clickedButtonValue = clickedButton.value;
-    Populate(clickedButtonValue);
-});*/
 
 
 
