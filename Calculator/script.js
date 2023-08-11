@@ -55,7 +55,7 @@ let numbers = document.querySelectorAll('.number');
 let decimal = document.querySelector('decimal');
 let clearButton = document.querySelector('.clear-btn');
 let backSpace = document.querySelector('.backspace-btn');
-let equalsButton = document.querySelector('.equals.btn');
+let equalsButton = document.querySelector('.equals-btn');
 
 //operator event listener to call a handle operator function that will define the operator
 operators.forEach(operator => {
@@ -84,6 +84,15 @@ clearButton.addEventListener('click', function() {
     previousValueScreen.textContent = "";
     currentValueScreen.textContent = "";
 }) 
+
+//equalsButton event listener to do the calculations
+equalsButton.addEventListener('click', function() {
+    currentValue = Number(currentValue);  
+    previousValue = Number(previousValue);
+    let result = Operate(previousValue, currentValue, operatorValue);
+    result = result.toString();
+    currentValueScreen.textContent = result;
+})
 
 
 /*
