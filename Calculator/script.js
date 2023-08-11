@@ -80,9 +80,9 @@ numbers.forEach(number => {
 clearButton.addEventListener('click', function() {
     operatorValue = "";
     previousValue = "";
-    operatorValue = "";
-    previousValueScreen.textContent = "";
-    currentValueScreen.textContent = "";
+    currentValue = "";
+    previousValueScreen.textContent = previousValue;
+    currentValueScreen.textContent = previousValue;
 }) 
 
 //equalsButton event listener to do the calculations
@@ -92,6 +92,8 @@ equalsButton.addEventListener('click', function() {
     let result = Operate(previousValue, currentValue, operatorValue);
     result = result.toString();
     currentValueScreen.textContent = result;
+    previousValue = "";
+    previousValueScreen.textContent = previousValue; 
 })
 
 
