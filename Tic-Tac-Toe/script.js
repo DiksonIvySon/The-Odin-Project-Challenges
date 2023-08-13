@@ -103,7 +103,8 @@ function checkWinner() {
         displayWinner(G.g[2]);
     }
     else {
-        //must display "keep on playing"
+        let displayWinnerScreen = document.querySelector('.displayWinner');
+        displayWinnerScreen.textContent = "Keep on playing";
     }
 
 }
