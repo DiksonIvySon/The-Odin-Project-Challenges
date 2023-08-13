@@ -7,6 +7,7 @@ body {
     height:100%;
     padding: 0px;
     margin: 0px;
+    text-align: center;
 }
 
 header {
@@ -30,6 +31,7 @@ header i:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin: 20px;
 }
 
@@ -43,8 +45,7 @@ header i:hover {
     display: flex;
     flex-wrap: wrap;
     background-color: black;
-    padding: 15px;
-    margin: 20px;
+    margin: 0px 20px 20px 20px;
     min-height: 70px;
     border-radius: 10px;
 }
@@ -56,9 +57,34 @@ header i:hover {
 .selections select {
     border-radius: 5px;
     padding: 5px;
-    background-color: yellow;
+    background-color: white;
     color: black;
     margin-bottom: 40px;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.selections select:hover {
+    background-color: yellow;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.selections .restart-btn {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    margin-bottom: 40px;
+    width: 150px;
+    font-weight: bold;
+}
+
+.selections .restart-btn:hover {
+    background-color: yellow;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .selections .instructions h4 {
@@ -138,6 +164,13 @@ header i:hover {
     height: 150px;
     text-align: center;
     font-size: 100px;
+}
+
+@media (max-width: 750px) {
+    .block {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 /* footer styling */
