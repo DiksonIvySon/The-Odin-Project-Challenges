@@ -181,4 +181,7 @@ document.querySelector('.restart-btn').addEventListener('click', function() {
         let resetBlock = i.toString();
         document.getElementById(resetBlock).style.backgroundColor = "wheat";
     }
+
+    //reset the displayWinner screen
+    document.querySelector('.displayWinner').textContent = "";
 }) 
