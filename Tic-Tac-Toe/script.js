@@ -72,13 +72,16 @@ function checkWinner() {
 
     //function that goes through an array to check if all the values are equal
     function allEquals(value1, value2, value3) {
-        if (value1 === value2 && value2 === value3) {
+        if (value1 === "" || value2 === "" || value3 === "") {
+            result = "false";
+        }
+        else if (value1 === value2 && value2 === value3) {
             result = "true";
         }
         else {
             result = "false";
         }
-
+        
         return result;
     }
     
