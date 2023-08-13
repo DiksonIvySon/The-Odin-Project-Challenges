@@ -108,3 +108,9 @@ function checkWinner() {
 
 }
 
+//function to display the winner of the game
+function displayWinner(winner) {
+    let displayWinnerScreen = document.querySelector('.displayWinner');
+    displayWinnerScreen.textContent = winner + " wins the game";
+}
+
