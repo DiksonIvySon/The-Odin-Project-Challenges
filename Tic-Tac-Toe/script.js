@@ -166,3 +166,13 @@ function showWiningPlays(block1, block2, block3) {
     document.getElementById(block2).style.backgroundColor = "green";
     document.getElementById(block3).style.backgroundColor = "green";
 } 
+
+//Making the restart game button function
+document.querySelector('.restart-btn').addEventListener('click', function() {
+    for (let i = 0; i < GameBoard.gameBoardArray.length; i++) {
+        GameBoard.gameBoardArray[i] = "";
+    }
+    
+    let blocks = document.querySelectorAll('.block');
+    blocks.forEach(block => block.textContent = "");
+}) 
