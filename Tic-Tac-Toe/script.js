@@ -175,4 +175,10 @@ document.querySelector('.restart-btn').addEventListener('click', function() {
     
     let blocks = document.querySelectorAll('.block');
     blocks.forEach(block => block.textContent = "");
+
+    //return all blocks colors to normal
+    for (i = 0; i < GameBoard.gameBoardArray.length; i++) {
+        let resetBlock = i.toString();
+        document.getElementById(resetBlock).style.backgroundColor = "wheat";
+    }
 }) 
