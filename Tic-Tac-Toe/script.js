@@ -90,35 +90,44 @@ function checkWinner() {
     //checking horizontal possible wins.
     if (allEquals(G[0], G[1], G[2]) === "true") {
         displayWinner(G[0]);
+        showWiningPlays(0,1,2);
         endGame()
     }
     else if (allEquals(G[3], G[4], G[5]) === "true") {
         displayWinner(G[3]);
+        showWiningPlays(3,4,5);
         endGame()
     }
     else if (allEquals(G[6], G[7], G[8]) === "true") {
         displayWinner(G[6]);
+        showWiningPlays(6,7,8);
         endGame()
     }
     //checking vertical possible wins.
     else if (allEquals(G[0], G[3], G[6]) === "true") {
         displayWinner(G[0]);
+        showWiningPlays(0,3,6);
         endGame()
     }
     else if (allEquals(G[1], G[4], G[7]) === "true") {
         displayWinner(G[1]);
+        showWiningPlays(1,4,7);
+        endGame();
     }
     else if (allEquals(G[2], G[5], G[8]) === "true") {
         displayWinner(G[2]);
+        showWiningPlays(2,5,8);
         endGame()
     }
     //checking diagonal possible wins.
     else if (allEquals(G[0], G[4], G[8]) === "true") {
         displayWinner(G[0]);
+        showWiningPlays(0,4,8);
         endGame()
     }
     else if (allEquals(G[2], G[4], G[6]) === "true") {
         displayWinner(G[2]);
+        showWiningPlays(2,4,6);
         endGame()
     }
     else {
@@ -147,3 +156,13 @@ function endGame() {
     }
 }
 
+//function to change the background color of the wining plays if there is a winner
+function showWiningPlays(block1, block2, block3) {
+    block1 = block1.toString();
+    block2 = block2.toString();
+    block3 = block3.toString();
+
+    document.getElementById(block1).style.backgroundColor = "green";
+    document.getElementById(block2).style.backgroundColor = "green";
+    document.getElementById(block3).style.backgroundColor = "green";
+} 
