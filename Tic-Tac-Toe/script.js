@@ -53,6 +53,7 @@ function clickedBlock(block) {
 function updateBlock(blockIndex, block) {
     GameBoard.gameBoardArray[blockIndex] = currentPlayer;
     block.textContent = currentPlayer;
+    checkWinner();
     changePlayer();
 }
 
@@ -70,37 +71,36 @@ function changePlayer() {
 function checkWinner() {
 
     //function that goes through an array to check if all the values are equal
-    const allEquals = aar => array.every(val => val === arr[0]);
+    const allEquals = arr => arr.every(val => val === arr[0]);
     
-    let G = GameBoard;
-    let g = gameBoardArray;
+    let G = GameBoard.gameBoardArray;
     
     //checking horizontal possible wins.
-    if (allEqualsEquals(G.g[0], G.g[1], G.g[2]) === "true") {
-        displayWinner(G.g[0]);
+    if (allEquals(G[0], G[1], G[2]) === "true") {
+        displayWinner(G[0]);
     }
-    else if (allEqualsEquals(G.g[3], G.g[4], G.g[5]) === "true") {
-        displayWinner(G.g[3]);
+    else if (allEquals(G[3], G[4], G[5]) === "true") {
+        displayWinner(G[3]);
     }
-    else if (allEqualsEquals(G.g[6], G.g[7], G.g[8]) === "true") {
-        displayWinner(G.g[6]);
+    else if (allEquals(G[6], G[7], G[8]) === "true") {
+        displayWinner(G[6]);
     }
     //checking vertical possible wins.
-    else if (allEqualsEquals(G.g[0], G.g[3], G.g[6]) === "true") {
-        displayWinner(G.g[0]);
+    else if (allEquals(G[0], G[3], G[6]) === "true") {
+        displayWinner(G[0]);
     }
-    else if (allEqualsEquals(G.g[1], G.g[4], G.g[7]) === "true") {
-        displayWinner(G.g[1]);
+    else if (allEquals(G[1], G[4], G[7]) === "true") {
+        displayWinner(G[1]);
     }
-    else if (allEqualsEquals(G.g[2], G.g[5], G.g[8]) === "true") {
-        displayWinner(G.g[2]);
+    else if (allEquals(G[2], G[5], G[8]) === "true") {
+        displayWinner(G[2]);
     }
     //checking diagonal possible wins.
-    else if (allEqualsEquals(G.g[0], G.g[4], G.g[8]) === "true") {
-        displayWinner(G.g[0]);
+    else if (allEquals(G[0], G[4], G[8]) === "true") {
+        displayWinner(G[0]);
     }
-    else if (allEqualsEquals(G.g[2], G.g[4], G.g[6]) === "true") {
-        displayWinner(G.g[2]);
+    else if (allEquals(G[2], G[4], G[6]) === "true") {
+        displayWinner(G[2]);
     }
     else {
         let displayWinnerScreen = document.querySelector('.displayWinner');
