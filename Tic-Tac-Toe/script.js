@@ -90,29 +90,36 @@ function checkWinner() {
     //checking horizontal possible wins.
     if (allEquals(G[0], G[1], G[2]) === "true") {
         displayWinner(G[0]);
+        endGame()
     }
     else if (allEquals(G[3], G[4], G[5]) === "true") {
         displayWinner(G[3]);
+        endGame()
     }
     else if (allEquals(G[6], G[7], G[8]) === "true") {
         displayWinner(G[6]);
+        endGame()
     }
     //checking vertical possible wins.
     else if (allEquals(G[0], G[3], G[6]) === "true") {
         displayWinner(G[0]);
+        endGame()
     }
     else if (allEquals(G[1], G[4], G[7]) === "true") {
         displayWinner(G[1]);
     }
     else if (allEquals(G[2], G[5], G[8]) === "true") {
         displayWinner(G[2]);
+        endGame()
     }
     //checking diagonal possible wins.
     else if (allEquals(G[0], G[4], G[8]) === "true") {
         displayWinner(G[0]);
+        endGame()
     }
     else if (allEquals(G[2], G[4], G[6]) === "true") {
         displayWinner(G[2]);
+        endGame()
     }
     else {
         let displayWinnerScreen = document.querySelector('.displayWinner');
@@ -125,5 +132,18 @@ function checkWinner() {
 function displayWinner(winner) {
     let displayWinnerScreen = document.querySelector('.displayWinner');
     displayWinnerScreen.textContent = winner + " wins the game";
+}
+
+//function to make sure of that no one can continue playing if there is a winner
+//This function does this by defining all of the empty block after a win so that no one else can play
+function endGame() {
+    for (let i = 0; i < GameBoard.gameBoardArray.length; i++) {
+        if (GameBoard.gameBoardArray[i] === "") {
+            GameBoard.gameBoardArray[i] = " ";
+        }
+        else {
+            //Do nothing (this would mean that the block is not empty)
+        }
+    }
 }
 
