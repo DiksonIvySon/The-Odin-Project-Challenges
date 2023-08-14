@@ -76,6 +76,18 @@
     background-color: #52D6F4;
 }
 
+.navigation .project-container button {
+    height: 20px;
+    font-size: 12px;
+}
+
+.navigation .project-container button:hover {
+    font-size: 13px;
+}
+
+.navigation h3 {
+    margin: 5px;
+}
 
 #addForm {
     background-color: #408697;

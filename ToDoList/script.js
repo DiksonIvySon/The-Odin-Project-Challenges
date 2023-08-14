@@ -159,6 +159,18 @@ function setPriorityColor(index) {
 }
 
 
+//Making the view all projects button function
+let viewAllProjects = document.querySelector('.viewAllProjects');
+viewAllProjects.addEventListener('click', function() {
+    let projectsContainer = document.querySelector('.project-container');
+    if (projectsContainer.style.display === "block") {
+        projectsContainer.style.display = "none";
+    }
+    else {
+        projectsContainer.style.display = "block";
+    }
+})
+
 
 
 
