@@ -47,6 +47,7 @@ function clickedBlock(block) {
     if (GameBoard.gameBoardArray[blockIndex] === "") {
         updateBlock(blockIndex, block);
     }
+    
 }
 
 //function to update the block to the corresponding play and call the change player function
@@ -162,9 +163,9 @@ function showWiningPlays(block1, block2, block3) {
     block2 = block2.toString();
     block3 = block3.toString();
 
-    document.getElementById(block1).style.backgroundColor = "green";
-    document.getElementById(block2).style.backgroundColor = "green";
-    document.getElementById(block3).style.backgroundColor = "green";
+    document.getElementById(block1).style.backgroundColor = "yellow";
+    document.getElementById(block2).style.backgroundColor = "yellow";
+    document.getElementById(block3).style.backgroundColor = "yellow";
 } 
 
 //Making the restart game button function
@@ -179,7 +180,7 @@ document.querySelector('.restart-btn').addEventListener('click', function() {
     //return all blocks colors to normal
     for (i = 0; i < GameBoard.gameBoardArray.length; i++) {
         let resetBlock = i.toString();
-        document.getElementById(resetBlock).style.backgroundColor = "wheat";
+        document.getElementById(resetBlock).style.backgroundColor = "gray";
     }
 
     //reset the displayWinner screen

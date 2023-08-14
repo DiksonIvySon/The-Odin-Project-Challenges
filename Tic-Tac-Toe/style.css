@@ -3,7 +3,6 @@
 }
 
 body {
-    background-color: rgb(111, 115, 115);
     height:100%;
     padding: 0px;
     margin: 0px;
@@ -11,7 +10,7 @@ body {
 }
 
 header {
-    background-color: gray;
+    background-color: black;
     display: flex;
     justify-content: space-between;
 }
@@ -159,17 +158,24 @@ header i:hover {
 }
 
 .block {
-    background-color: wheat;
+    background-color: gray;
     width: 150px;
     height: 150px;
     text-align: center;
     font-size: 100px;
+    color: black;
+}
+
+.block:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 @media (max-width: 750px) {
     .block {
         width: 100px;
         height: 100px;
+        font-size: 75px;
     }
 }
 
@@ -234,7 +240,9 @@ header i:hover {
     justify-content: center;
     align-items: center;
     margin: 10px;
-    background-image: linear-gradient(70deg, black, black, yellow);
+    background-image: url(images/istockphoto-1454104829-170667a.webp);
+    background-size: cover;
+    background-attachment: fixed;
     border-radius: 5px;
     height: auto;
 }
@@ -292,5 +300,9 @@ header i:hover {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
+    color: black;
+}
+
+.displayWinner {
     color: black;
 }
