@@ -61,6 +61,14 @@ body {
     color: white;
 }
 
+.add-section button:hover {
+    cursor: pointer;
+    color: aqua;
+    font-size: 18px;
+    background-color: #2d3541;
+    transition: 0.4s;
+}
+
 .books {
     background-color: lightgrey;
     border-radius: 10px;

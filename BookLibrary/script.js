@@ -19,7 +19,7 @@ function renderBook() {
         bookContainer.innerHTML = `
                                     <div class="book-details">
                                     <div class="image">
-                                        <img src="images/2.jpg" alt="book-image">
+                                        <img src="images/black-book.png" alt="book-image">
                                     </div>
                                     <div>
                                         <h2> Title: <strong>${book.title}</strong></h2>
