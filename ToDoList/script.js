@@ -78,7 +78,7 @@ function removeToDo(index) {
 document.querySelector('.add-btn').addEventListener('click', function(event) {
     event.preventDefault();
     addToDo();
-    hideOrReveal(); //this will close the form
+    hideOrReveal('#addForm'); //this will close the form
 });
 
 

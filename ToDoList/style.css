@@ -179,6 +179,7 @@
 
     .footer {
         text-align: center;
+        flex-direction: column;
     }
 
     .footer i {
@@ -333,7 +334,7 @@ main .pop-up .pop-up-content {
 
 /* styling the add project form*/
 .add-project-button {
-    width: 40%;
+    width: 50%;
     text-align: center;
 }
 
@@ -363,3 +364,4 @@ main .pop-up .pop-up-content {
     padding: 5px;
     border-radius: 5px;
 }
+
