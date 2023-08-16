@@ -1,3 +1,5 @@
+
+
 //list to contain all of the toDos added
 let allToDos = [];
 
@@ -81,8 +83,8 @@ document.querySelector('.add-btn').addEventListener('click', function(event) {
 
 
 //function for the form to be revealed and hidden when the add toDo button is clicked
-function hideOrReveal() {
-    let addToDoForm = document.querySelector('#addForm');
+function hideOrReveal(form) {
+    let addToDoForm = document.querySelector(form);
     if (addToDoForm.style.display == 'none') {
         addToDoForm.style.display = 'block';
         asb();
@@ -95,13 +97,17 @@ function hideOrReveal() {
 
 //listen to when add-section-button is click
 let addSectionButton = document.querySelector('.add-section-button');
-addSectionButton.addEventListener('click', hideOrReveal);
+addSectionButton.addEventListener('click', function() {
+    hideOrReveal('#addForm');
+});
 
 //list to when cancel-button is clicked
 let cancelButton = document.querySelector('.cancel-form-button');
-cancelButton.addEventListener('click', hideOrReveal);
+cancelButton.addEventListener('click', function() {
+    hideOrReveal('#addForm');
+});
 
-//function to hide to reveal the add a ToDo activity button
+//function to hide or reveal the add a ToDo activity button
 function asb() {
     //addSectionButton is already defined above
     let addToDoForm = document.querySelector('#addForm');
@@ -162,14 +168,20 @@ function setPriorityColor(index) {
 //Making the view all projects button function
 let viewAllProjects = document.querySelector('.viewAllProjects');
 viewAllProjects.addEventListener('click', function() {
-    let projectsContainer = document.querySelector('.project-container');
-    if (projectsContainer.style.display === "block") {
-        projectsContainer.style.display = "none";
-    }
-    else {
-        projectsContainer.style.display = "block";
-    }
+    hideOrReveal('.project-container');
 })
+
+
+//function to hide or reveal the add project form
+let addProjectButton = document.querySelector('.add-project-button');
+addProjectButton.addEventListener('click', function() {
+    hideOrReveal('#addProjectForm');
+});
+
+let cancelProjectFormButton = document.querySelector('.cancel-project-form-button');
+cancelProjectFormButton.addEventListener('click', function() {
+    hideOrReveal('#addProjectForm');
+});
 
 
 

@@ -31,9 +31,28 @@
                         <h3>Projects</h3>
                         <button class="viewAllProjects">View all projects</button>
                         <div class="project-container" style="display: none">
-                            <button>Run</button>
-                            <button>Run</button>
-                            <button>Run</button>
+                            <div>
+                                <button>Run</button>
+                                <button>Run</button>
+                            </div>
+                            <div>
+                                <div class="add-project-button">
+                                    <button onclick=""><i class="fa-solid fa-circle-plus"></i> Add Project</button>
+                                </div>
+                                <form action="" id="addProjectForm" style="display: none">
+                                    <div class="cancel-project-form-button">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                                    <div>
+                                        <label for="ProjectTitle">Project Title</label>
+                                        <br>
+                                        <input type="text" id="ProjectTitle" name="ProjectTitle" placeholder="Run" required>
+                                    </div>
+                                    <div class="add-project">
+                                        <button>Add Project</button>
+                                    </div> 
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <button>done</button>

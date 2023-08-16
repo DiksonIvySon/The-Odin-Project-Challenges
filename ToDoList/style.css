@@ -330,3 +330,36 @@ main .pop-up .pop-up-content {
     object-fit: cover;
     background-color: #52D6F4;
 }
+
+/* styling the add project form*/
+.add-project-button {
+    width: 40%;
+    text-align: center;
+}
+
+.add-project-button i {
+    color: #408697;
+}
+
+#addProjectForm {
+    background-color: #408697;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.cancel-project-form-button {
+    text-align: end;
+}
+
+.cancel-project-form-button i:hover {
+    font-size: 20px;
+    cursor: pointer;
+    color: #52D6F4;
+}
+
+#addProjectForm input {
+    width: 95%;
+    padding: 5px;
+    border-radius: 5px;
+}
