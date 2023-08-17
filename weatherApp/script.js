@@ -24,3 +24,26 @@ let vis_miles;
 let uv;
 let gust_mph;
 let gust_kph;
+
+
+//function to get the data from the API and initialize the weather information variables
+async function getWeatherInfo(location) {
+    const response = await fetch(location, {mode: 'cors'});
+    const weatherData = await response.json();
+    console.log(weatherData);
+    localTime = weatherData.current.cloud;
+  }
+
+
+//function to create the URL link.
+function createLink(location) {
+    location = 'https://api.weatherapi.com/v1/current.json?key=8badefafba8c47eb9f7184239231608&q=' + location;
+    getWeatherInfo(location);
+} 
+
+
+
+createLink('cape town');
+console.log(localTime);
+
+
