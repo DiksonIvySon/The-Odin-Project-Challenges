@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    padding: 10px;
+}
+
+footer .social-icons {
+    height: 35px;
+    margin: 5px;
+}
+
+footer .social-icons i {
+    margin: 20px;
+}
+
+footer .social-icons i:hover {
+    color: #C7AB59;
+    font-size: 25px;
+    cursor: pointer;
+    direction: rtl;
+}
