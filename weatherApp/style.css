@@ -1,8 +1,88 @@
-body {
+
+
+/* styling the header */
+.header {
     text-align: center;
 }
 
+/* styling the first page*/
+.firstPage {
+    padding: 40px;
+    background-image: url(images/sunny.webp);
+    background-size: cover;
+}
+
+.firstPage-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    color: white;
+    background-color: black ;
+    opacity: 0.3;
+    padding: 10px;
+    border-radius: 10px;
+    width: 260px;
+}
+
+.search-bar .form {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar .form label{
+    font-size: 35px;
+    margin-right: 5px;
+}
+
+.search-bar .form input{
+    font-size: 20px;
+    padding: 5px;
+    border: 0px;
+    border-radius: 5px;
+    width: 130px;
+}
+
+.search-bar .form button {
+    font-size: 20px;
+    margin: 3px;
+    border-radius: 5px;
+    height: 35px;
+    background-color: white;
+}
+
+.search-bar .form button:hover {
+    cursor: pointer;
+    background-color: #C7AB59;
+}
+
+.firstPage-weather {
+    text-align: center;
+}
+
+.firstPage-weather div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstPage-weather img {
+    width: 180px;
+    margin: 0px;
+    padding: opx;
+}
+
+.firstPage-weather h1 {
+    padding: 5px;
+    margin: 0px;
+}
+
+/* styling the footer*/
 footer {
+    text-align: center;
     color: white;
     background-color: black;
     padding: 10px;
