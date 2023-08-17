@@ -16,23 +16,24 @@
     </header>
 
     <main>
+        <!--current weather conditions-->
         <section class="firstPage">
             <div class="search-bar">
                 <form action="" class="form">
                     <label for="search"><i class="fa-solid fa-magnifying-glass fa-fade"></i></label>
                     <input type="text" id="search" name="search" placeholder="Johannesburg" required>
-                    <button type="button">search</button>
+                    <button type="button">Search</button>
                 </form>
             </div>
             <div class="firstPage-info">
-                <div class="currentLocation">
+                <!--<div class="currentLocation">
                     <h3>Name: <text>Johannesburg</text></h3>
                     <h3>Region: <text>Gauteng</text></h3>
                     <h3>Country: <text>South Africa</text></h3>
                     <h3>Latitude: <text>-26.23</text></h3>
                     <h3>Longitude: <text>28.08</text></h3>
                     <h3>last updated: <text>2023-08-17 11:30</text></h3>
-                </div>
+                </div>-->
                 <div class="firstPage-weather">
                     <img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="">
                     <div>
@@ -42,15 +43,59 @@
                     <text>Day time</text>
                 </div>
                 <div class="currentWeather">
-                    <h3>cloud <text>0</text></h3>
-                    <h3>Rain <text>0</text></h3>
-                    <h3>UV <text>10</text></h3>
-                    <h3>Humidity <text>31%</text></h3>
-                    <h3>Wind <text>2mph</text></h3>
-                    <h3>Feels like <text>21f</text></h3>
+                    <div>
+                        <div><img src="icons/clear-sky.png" alt=""></div>
+                        <div>
+                            <div>cloud cover</div>
+                            <div><text>0</text></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="icons/uv (1).png" alt=""></div>
+                        <div>
+                            <div>UV</div>
+                            <div><text>10</text></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="icons/humidity (1).png" alt=""></div>
+                        <div>
+                            <div>Humidity</div>
+                            <div><text>31%</text></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="icons/wind.png" alt=""></div>
+                        <div>
+                            <div>Wind Speed</div>
+                            <div><text>2mph</text></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="icons/humidity.png" alt=""></div>
+                        <div>
+                            <div>Feels like</div>
+                            <div><text>21f</text></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="icons/rainy.png" alt=""></div>
+                        <div>
+                            <div>Chance of Rain</div>
+                            <div><text>0</text></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!--things not to do or to do-->
+        <!--daily-weather-->
+        <section class="pageTwo"></section>
+
+        <!--all weather information-->
+        <section class="pageThree"></section>
+
     </main>
 
     <footer>
