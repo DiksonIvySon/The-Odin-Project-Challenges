@@ -157,34 +157,34 @@ function isDayOrNight() {
 function changeBackground() {
     document.querySelector('.firstPage-weather').style.color = 'black';
     let firstPageBackground = document.querySelector('.firstPage');
-    if (conditionText === "cloudy") {
+    if (conditionText === "Cloudy") {
         firstPageBackground.style.backgroundImage = "url(images/cloudy.jpeg)";
     }
-    else if (conditionText === "foggy") {
+    else if (conditionText === "Foggy" || conditionText === "Mist") {
         firstPageBackground.style.backgroundImage = "url(images/foggy.jpeg)";
     }
-    else if (conditionText === "overcast") {
+    else if (conditionText === "Overcast") {
         firstPageBackground.style.backgroundImage = "url(images/overcast.jpeg)";
     }
-    else if (conditionText === "Partly cloudy") {
+    else if (conditionText === "Partly cloudy" || conditionText === "Partly cloudy rain" || conditionText === "Partly cloudy rainy") {
         firstPageBackground.style.backgroundImage = "url(images/partly-cloudy.webp)";
     }
-    else if (conditionText === "rainy") {
+    else if (conditionText === "Rainy" || conditionText === "Rain" || conditionText === "Light rain" || conditionText === "heavy rain") {
         firstPageBackground.style.backgroundImage = "url(images/rainy.jpeg)";
     }
-    else if (conditionText === "snowing") {
+    else if (conditionText === "snowing" || conditionText === "snow") {
         firstPageBackground.style.backgroundImage = "url(images/snowing.jpeg)";
     }
-    else if (conditionText === "sunny") {
+    else if (conditionText === "Sunny" || conditionText === "sun") {
         firstPageBackground.style.backgroundImage = "url(images/sunny.jpeg)";
     }
-    else if (conditionText === "thunder and lightning") {
+    else if (conditionText === "thunder and lightning" || conditionText === "thunder" || conditionText === "lightning") {
         firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
     }
-    else if (conditionText === "thunder and lightning") {
-        firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
+    else if (conditionText === "Windy") {
+        firstPageBackground.style.backgroundImage = "url(images/windy.webp)";
     }
-    else if (conditionText === "windy") {
+    else if (conditionText === "Clear") {
         firstPageBackground.style.backgroundImage = "url(images/windy.webp)";
     }
     else {
