@@ -21,7 +21,7 @@ body {
 /* styling the first page*/
 .firstPage {
     padding: 40px;
-    background-image: url(images/cloudy.jpeg);
+    background-image: url(images/partly-cloudy.webp);
     background-size: cover;
     border-radius: 10px 10px 0px 0px;
 }
@@ -39,7 +39,8 @@ body {
     padding: 10px;
     border: 5px solid gray;
     border-radius: 50px;
-    width: 260px;
+    width: 280px;
+    margin: auto;
 }
 
 .search-bar .form {
@@ -65,7 +66,7 @@ body {
 .search-bar .form button {
     font-size: 20px;
     margin:0px 3px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 5px 20px 20px 5px;
     height: 40px;
     border: 0px;
     background-color: gray;
@@ -105,6 +106,7 @@ body {
     flex-wrap: wrap;
     margin-top: 10px;
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: white;
     border-radius: 10px;
     width: 95%;
 }
@@ -196,6 +198,8 @@ button:hover {
 .dailyWeather {
     width: 95%;
     margin: auto;
+    justify-content: center;
+    text-align: center;
 }
 
 .dailyWeather h2 {
