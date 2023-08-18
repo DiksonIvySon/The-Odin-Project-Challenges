@@ -109,7 +109,43 @@ function dataInitializer(weatherData) {
 function displayData() {
     let conditionIconScreen = document.querySelector('.conditionIcon');
     conditionIconScreen.setAttribute('src', conditionIcon);
+
+    let conditionTextScreen = document.querySelector('.conditionText');
+    conditionTextScreen.textContent = conditionText;
+
+    let temperature = document.querySelector('.temperature');
+    temperature.textContent = temp_c + "°C";
+
+    let dayTime = document.querySelector('.dayTime');
+    dayTime.textContent = isDayOrNight();
+
+    let currentCloudCover = document.querySelector('.current-cloudCover');
+    currentCloudCover.textContent = cloud;
+
+    let currentUV = document.querySelector('.current-uv');
+    currentUV.textContent = uv;
+
+    let currentHumidity = document.querySelector('.current-humidity');
+    currentHumidity.textContent = humidity + "%";
+
+    let currentWindSpeed = document.querySelector('.current-windSpeed');
+    currentWindSpeed.textContent = wind_kph + "kph";
+
+    let currentFeelsLike = document.querySelector('.current-feelsLike');
+    currentFeelsLike.textContent = feelsLike_c + "°C";
+
+    let currentChanceOfRain = document.querySelector('.current-chanceOfRain');
+    currentChanceOfRain.textContent = precipitation_in + "mm";  //precipitation represents the chance of rain
 }
+
+function isDayOrNight() {
+    if (is_day === 1) {
+        return "Day Time";
+    }
+    else {
+        return "Night Time";
+    }
+} 
 
 
 
