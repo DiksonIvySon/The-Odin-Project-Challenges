@@ -21,7 +21,7 @@ body {
 /* styling the first page*/
 .firstPage {
     padding: 40px;
-    background-image: url(images/partly-cloudy.webp);
+    background-image: url(images/snowing.jpeg);
     background-size: cover;
     border-radius: 10px 10px 0px 0px;
 }

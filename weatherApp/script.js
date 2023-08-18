@@ -36,7 +36,7 @@ let gust_kph;
 let gust_mph;
 
 
-//function to get the data from the API and initialize the weather information variables
+//function to get the data from the API and initialize the weather information variables.
 async function getWeatherInfo(location) {
     const response = await fetch(location, {mode: 'cors'});
     const weatherData = await response.json();
@@ -50,7 +50,7 @@ function createLink(location) {
     getWeatherInfo(location);
 } 
 
-//function to get the location entered by the user when the search button is clicked
+//function to get the location entered by the user when the search button is clicked.
 let searchButton = document.querySelector('.searchButton');
 searchButton.addEventListener('click', function() {
     let searchValue = document.getElementById('searchValue').value;
@@ -62,6 +62,8 @@ searchButton.addEventListener('click', function() {
     }
 })
 
+
+//function to define all declared variables above.
 function dataInitializer(weatherData) {
 
     //location
@@ -104,8 +106,10 @@ function dataInitializer(weatherData) {
 
     console.log(weatherData); //
     displayData();
+    changeBackground()        // change the first page background image.
 }
 
+//function to display the data.
 function displayData() {
     let conditionIconScreen = document.querySelector('.conditionIcon');
     conditionIconScreen.setAttribute('src', conditionIcon);
@@ -138,6 +142,7 @@ function displayData() {
     currentChanceOfRain.textContent = precipitation_in + "mm";  //precipitation represents the chance of rain
 }
 
+//function to determine if it is day or night.
 function isDayOrNight() {
     if (is_day === 1) {
         return "Day Time";
@@ -146,6 +151,41 @@ function isDayOrNight() {
         return "Night Time";
     }
 } 
+
+//function to change the first page background to match the weather condition.
+function changeBackground() {
+    let firstPageBackground = document.querySelector('.firstPage');
+    if (conditionText === "cloudy") {
+        firstPageBackground.style.backgroundImage = "url(images/cloudy.jpeg)";
+    }
+    else if (conditionText === "foggy") {
+        firstPageBackground.style.backgroundImage = "url(images/foggy.jpeg)";
+    }
+    else if (conditionText === "overcast") {
+        firstPageBackground.style.backgroundImage = "url(images/overcast.jpeg)";
+    }
+    else if (conditionText === "Partly cloudy") {
+        firstPageBackground.style.backgroundImage = "url(images/partly-cloudy.webp)";
+    }
+    else if (conditionText === "rainy") {
+        firstPageBackground.style.backgroundImage = "url(images/rainy.jpeg)";
+    }
+    else if (conditionText === "snowing") {
+        firstPageBackground.style.backgroundImage = "url(images/snowing.jpeg)";
+    }
+    else if (conditionText === "sunny") {
+        firstPageBackground.style.backgroundImage = "url(images/sunny.jpeg)";
+    }
+    else if (conditionText === "thunder and lightning") {
+        firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
+    }
+    else if (conditionText === "thunder and lightning") {
+        firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
+    }
+    else if (conditionText === "windy") {
+        firstPageBackground.style.backgroundImage = "url(images/windy.webp)";
+    }
+}
 
 
 
