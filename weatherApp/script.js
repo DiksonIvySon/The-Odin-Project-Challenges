@@ -44,8 +44,9 @@ searchButton.addEventListener('click', function() {
     }
 })
 
-
-
+function dataInitializer(weatherData) {
+    conditionIcon = weatherData.current.condition.icon;
+}
 
 
 
