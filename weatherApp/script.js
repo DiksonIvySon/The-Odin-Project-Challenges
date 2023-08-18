@@ -34,10 +34,10 @@ function createLink(location) {
 
 //function to get the location entered by the user when the search button is clicked
 let searchButton = document.querySelector('.searchButton');
-let searchValue = document.querySelector('#search').value;
 searchButton.addEventListener('click', function() {
+    let searchValue = document.getElementById('searchValue').value;
     if (searchValue === "") {
-        alert("there is no value entered");
+        //
     }
     else {
         createLink(searchValue);
@@ -46,6 +46,12 @@ searchButton.addEventListener('click', function() {
 
 function dataInitializer(weatherData) {
     conditionIcon = weatherData.current.condition.icon;
+    displayData();
+}
+
+function displayData() {
+    let conditionIconScreen = document.querySelector('.conditionIcon');
+    conditionIconScreen.setAttribute('src', conditionIcon);
 }
 
 
