@@ -22,8 +22,7 @@ let gust_kph;
 async function getWeatherInfo(location) {
     const response = await fetch(location, {mode: 'cors'});
     const weatherData = await response.json();
-    console.log(weatherData);
-    localTime = weatherData.current.cloud;
+    dataInitializer(weatherData);
   }
 
 
@@ -33,10 +32,22 @@ function createLink(location) {
     getWeatherInfo(location);
 } 
 
+//function to get the location entered by the user when the search button is clicked
+let searchButton = document.querySelector('.searchButton');
+let searchValue = document.querySelector('#search').value;
+searchButton.addEventListener('click', function() {
+    if (searchValue === "") {
+        alert("there is no value entered");
+    }
+    else {
+        createLink(searchValue);
+    }
+})
 
 
-createLink('cape town');
-console.log(localTime);
+
+
+
 
 
 
