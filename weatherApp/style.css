@@ -117,6 +117,42 @@
     font-weight: bold;
 }
 
+/* styling the second page */
+
+.possibleActivities {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 25px;
+}
+
+.activity {
+    width: 25%;
+    min-width: 240px;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.activity > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-img {
+    display: flex;
+    align-items: center;
+}
+
+.activity-img img {
+    width: 50px;
+    margin: 5px;
+}
+
+
 /* styling the footer*/
 footer {
     text-align: center;
