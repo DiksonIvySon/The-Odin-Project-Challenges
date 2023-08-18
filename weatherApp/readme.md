@@ -20,3 +20,4 @@ snowing, Trang Pham
 foggy - Aleksandar Pasaric
 thunder and lightning - Tsvetoslav Hristov
 windy - Liza Summer
+backup-image - Rudolf Kirchner

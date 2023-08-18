@@ -107,6 +107,7 @@ function dataInitializer(weatherData) {
     console.log(weatherData); //
     displayData();
     changeBackground()        // change the first page background image.
+    document.getElementById('searchValue').value = "";  //setting set value to be empty
 }
 
 //function to display the data.
@@ -154,6 +155,7 @@ function isDayOrNight() {
 
 //function to change the first page background to match the weather condition.
 function changeBackground() {
+    document.querySelector('.firstPage-weather').style.color = 'black';
     let firstPageBackground = document.querySelector('.firstPage');
     if (conditionText === "cloudy") {
         firstPageBackground.style.backgroundImage = "url(images/cloudy.jpeg)";
@@ -184,6 +186,10 @@ function changeBackground() {
     }
     else if (conditionText === "windy") {
         firstPageBackground.style.backgroundImage = "url(images/windy.webp)";
+    }
+    else {
+        firstPageBackground.style.backgroundImage = "url(images/backup-image.jpeg)";
+        document.querySelector('.firstPage-weather').style.color = 'white';
     }
 }
 
