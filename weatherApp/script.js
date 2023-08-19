@@ -46,7 +46,7 @@ async function getWeatherInfo(location) {
 
 //function to create the URL link.
 function createLink(location) {
-    location = 'https://api.weatherapi.com/v1/current.json?key=8badefafba8c47eb9f7184239231608&q=' + location;
+    location = 'https://api.weatherapi.com/v1/forecast.json?key=8badefafba8c47eb9f7184239231608&q=' + location;
     getWeatherInfo(location);
 } 
 
@@ -125,7 +125,7 @@ function displayData() {
     dayTime.textContent = isDayOrNight();
 
     let currentCloudCover = document.querySelector('.current-cloudCover');
-    currentCloudCover.textContent = cloud;
+    currentCloudCover.textContent = cloud + "%";
 
     let currentUV = document.querySelector('.current-uv');
     currentUV.textContent = uv;
@@ -155,7 +155,7 @@ function isDayOrNight() {
 
 //function to change the first page background to match the weather condition.
 function changeBackground() {
-    document.querySelector('.firstPage-weather').style.color = 'black';
+    document.querySelector('.firstPage-weather').style.color = 'white';
     let firstPageBackground = document.querySelector('.firstPage');
     if (conditionText === "Cloudy") {
         firstPageBackground.style.backgroundImage = "url(images/cloudy.jpeg)";
@@ -168,15 +168,17 @@ function changeBackground() {
     }
     else if (conditionText === "Partly cloudy" || conditionText === "Partly cloudy rain" || conditionText === "Partly cloudy rainy") {
         firstPageBackground.style.backgroundImage = "url(images/partly-cloudy.webp)";
+        document.querySelector('.firstPage-weather').style.color = 'black';  
     }
     else if (conditionText === "Rainy" || conditionText === "Rain" || conditionText === "Light rain" || conditionText === "heavy rain") {
         firstPageBackground.style.backgroundImage = "url(images/rainy.jpeg)";
     }
     else if (conditionText === "snowing" || conditionText === "snow") {
         firstPageBackground.style.backgroundImage = "url(images/snowing.jpeg)";
+        document.querySelector('.firstPage-weather').style.color = 'black';
     }
     else if (conditionText === "Sunny" || conditionText === "sun") {
-        firstPageBackground.style.backgroundImage = "url(images/sunny.jpeg)";
+        firstPageBackground.style.backgroundImage = "url(images/sunny.webp)";
     }
     else if (conditionText === "thunder and lightning" || conditionText === "thunder" || conditionText === "lightning") {
         firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
@@ -189,7 +191,6 @@ function changeBackground() {
     }
     else {
         firstPageBackground.style.backgroundImage = "url(images/backup-image.jpeg)";
-        document.querySelector('.firstPage-weather').style.color = 'white';
     }
 }
 

@@ -12,7 +12,21 @@
 </head>
 <body>
     <header class="header">
-        <h1>WeatherApp</h1>
+        <div class="logo-container">
+            <div class="logo">
+                <div>
+                    <img src="icons/clear-sky.png" alt="">
+                    <h2>ivy</2>
+                </div>
+                <div>
+                    <h1>Weather</h1>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <p>Powered by weatherAPI.com</p>
+            </div>
+        </div>  
     </header>
 
     <main>
@@ -44,13 +58,6 @@
                 </div>
                 <div class="currentWeather">
                     <div>
-                        <div><img src="icons/clear-sky.png" alt=""></div>
-                        <div>
-                            <div>cloud cover</div>
-                            <div><text class="current-cloudCover">0</text></div>
-                        </div>
-                    </div>
-                    <div>
                         <div><img src="icons/uv (1).png" alt=""></div>
                         <div>
                             <div>UV</div>
@@ -65,13 +72,6 @@
                         </div>
                     </div>
                     <div>
-                        <div><img src="icons/wind.png" alt=""></div>
-                        <div>
-                            <div>Wind Speed</div>
-                            <div><text class="current-windSpeed">2mph</text></div>
-                        </div>
-                    </div>
-                    <div>
                         <div><img src="icons/humidity.png" alt=""></div>
                         <div>
                             <div>Feels like</div>
@@ -79,10 +79,24 @@
                         </div>
                     </div>
                     <div>
+                        <div><img src="icons/wind.png" alt=""></div>
+                        <div>
+                            <div>Wind Speed</div>
+                            <div><text class="current-windSpeed">2mph</text></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="icons/clear-sky.png" alt=""></div>
+                        <div>
+                            <div>cloud cover</div>
+                            <div><text class="current-cloudCover">0%</text></div>
+                        </div>
+                    </div>
+                    <div>
                         <div><img src="icons/rainy.png" alt=""></div>
                         <div>
                             <div>Chance of Rain</div>
-                            <div><text class="current-chanceOfRain">0</text></div>
+                            <div><text class="current-chanceOfRain">0%</text></div>
                         </div>
                     </div>
                 </div>
@@ -451,14 +465,14 @@
                 
                 <!-- The dots/circles -->
                 <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(1)">Hourly</span>
+                    <span class="dot" onclick="currentSlide(2)">Daily</span>
+                    <span class="dot" onclick="currentSlide(3)">Weekly</span>
                 </div>
             </div>
 
             <div class="moreButton">
-                <button>More</button>
+                <button><a href="https://www.weatherapi.com/weather/">MORE</a></button>
             </div>
         </section>
 
