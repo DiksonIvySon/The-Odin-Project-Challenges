@@ -229,6 +229,22 @@ button:hover {
 
 .dayWeather-container {
     display: flex;
+    overflow-x: auto;
+}
+
+.dayWeather-container .dayWeather {
+    min-width: 100px;
+}
+
+.dayWeather-container::-webkit-scrollbar {
+    background-color: gray;
+    height: 10px;
+}
+
+.dayWeather-container::-webkit-scrollbar-thumb {
+    background-color: #6DAFFE;
+    border-radius: 10px;
+    height: 15px;
 }
 
 /* Next & previous buttons */
