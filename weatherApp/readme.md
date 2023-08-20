@@ -11,7 +11,7 @@ There are nine common types of weather: sunny,
                                         windy
 
 
-sunny - ROMAN ODINTSOV
+sunny - Todoran Bogdan
 cloudy - Pavel Danilyuk
 partly cloudy - Pixabay
 overcast - Josh Sorenson 

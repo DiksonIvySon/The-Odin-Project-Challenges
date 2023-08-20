@@ -223,7 +223,7 @@ function changeBackground() {
         document.querySelector('.firstPage-weather').style.color = 'black';
     }
     else if (conditionText === "Sunny" || conditionText === "sun") {
-        firstPageBackground.style.backgroundImage = "url(images/sunny.webp)";
+        firstPageBackground.style.backgroundImage = "url(images/sunny.jpeg)";
     }
     else if (conditionText === "thunder and lightning" || conditionText === "thunder" || conditionText === "lightning") {
         firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
