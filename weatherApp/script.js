@@ -50,6 +50,11 @@ function createLink(location) {
     getWeatherInfo(location);
 } 
 
+//****** */
+console.log(createLink("johannesburg"))
+
+
+
 //function to get the location entered by the user when the search button is clicked.
 let searchButton = document.querySelector('.searchButton');
 searchButton.addEventListener('click', function() {
@@ -106,6 +111,7 @@ function dataInitializer(weatherData) {
 
     console.log(weatherData); //
     displayData();
+    displayCurrentLocation()  
     changeBackground()        // change the first page background image.
     document.getElementById('searchValue').value = "";  //setting set value to be empty
 }
@@ -141,6 +147,24 @@ function displayData() {
 
     let currentChanceOfRain = document.querySelector('.current-chanceOfRain');
     currentChanceOfRain.textContent = precipitation_in + "mm";  //precipitation represents the chance of rain
+}
+
+/*
+let localTime;
+let country;
+let lat;
+let lon;
+let locationName;
+let region;
+let tz_id; 
+*/
+function displayCurrentLocation() {
+    document.querySelector('.locationName').textContent = locationName;
+    document.querySelector('.locationRegion').textContent = region;
+    document.querySelector('.locationCountry').textContent = country;
+    document.querySelector('.locationLatitude').textContent = lat;
+    document.querySelector('.locationLongitude').textContent = lon;
+    document.querySelector('.locationLastUpdate').textContent = last_updated;
 }
 
 //function to determine if it is day or night.
@@ -199,7 +223,22 @@ function changeBackground() {
 
 
 
+//function to make the location information button to toggle between showing and hiding information.
+let  currentLocationButton = document.querySelector('.currentLocation');
+currentLocationButton.addEventListener('click', function() {
+    let currentLocationInfo = document.querySelector('.currentLocationInfo');
+    hideOrShow(currentLocationInfo);
+})
 
+//function to hide or show a dom element.
+function hideOrShow(element) {
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    }
+    else {
+        element.style.display = "none";
+    }
+}
 
 //Making the slide show function .....................................................................
 let slideIndex = 1;

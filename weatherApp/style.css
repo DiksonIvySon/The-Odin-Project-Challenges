@@ -118,6 +118,22 @@ body {
     color: white;
 }
 
+.currentLocation {
+    font-size: 13px;
+    width: 200px;
+    margin: 5px;
+}
+
+.currentLocationInfo {
+    font-size: 12px;
+    font-weight: lighter;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    position: absolute;
+}
+
 .firstPage-weather {
     text-align: center;
     color: white;
