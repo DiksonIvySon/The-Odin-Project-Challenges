@@ -157,6 +157,27 @@ body {
     margin: 0px;
 }
 
+.astro-data-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 0px 10px 0px 10px;
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: white;
+    border-radius: 10px;
+    width: 95%;
+    text-align: center;
+}
+
+.astro-data-container > div {
+    margin: 5px 20px;
+}
+
+.astro-data-container h3 {
+    margin: 0px;
+}
+
 .currentWeather {
     display: flex;
     justify-content: center;

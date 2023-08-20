@@ -117,17 +117,18 @@ function dataInitializer(weatherData) {
      gust_mph = weatherData.current.gust_mph;
 
      //forecast
-     sunrise = weatherData.forecast.forecastday[0].sunrise;
-     sunset = weatherData.forecast.forecastday[0].sunset;
-     moonrise = weatherData.forecast.forecastday[0].moonrise;
-     moonset = weatherData.forecast.forecastday[0].moonset;
-     moon_phase = weatherData.forecast.forecastday[0].moon_phase;
+     sunrise = weatherData.forecast.forecastday[0].astro.sunrise;
+     sunset = weatherData.forecast.forecastday[0].astro.sunset;
+     moonrise = weatherData.forecast.forecastday[0].astro.moonrise;
+     moonset = weatherData.forecast.forecastday[0].astro.moonset;
+     moon_phase = weatherData.forecast.forecastday[0].astro.moon_phase;
 
 
 
     console.log(weatherData); //
     displayData();
     displayCurrentLocation()  
+    displayAstroData()
     changeBackground()        // change the first page background image.
     document.getElementById('searchValue').value = "";  //setting set value to be empty
 }
@@ -173,6 +174,15 @@ function displayCurrentLocation() {
     document.querySelector('.locationLatitude').textContent = lat;
     document.querySelector('.locationLongitude').textContent = lon;
     document.querySelector('.locationLastUpdate').textContent = last_updated;
+}
+
+//function to display the astro data.
+function displayAstroData() {
+    document.querySelector('.sunrise').textContent = sunrise;
+    document.querySelector('.sunset').textContent = sunset;
+    document.querySelector('.moonrise').textContent = moonrise;
+    document.querySelector('.moonset').textContent = moonset;
+    document.querySelector('.moon_phase').textContent = moon_phase;
 }
 
 //function to determine if it is day or night.
