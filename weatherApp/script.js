@@ -41,6 +41,7 @@ let sunset;
 let moonrise;
 let moonset;
 let moon_phase;
+let daily_chance_of_rain;
 
 
 
@@ -122,6 +123,7 @@ function dataInitializer(weatherData) {
      moonrise = weatherData.forecast.forecastday[0].astro.moonrise;
      moonset = weatherData.forecast.forecastday[0].astro.moonset;
      moon_phase = weatherData.forecast.forecastday[0].astro.moon_phase;
+     daily_chance_of_rain = weatherData.forecast.forecastday[0].day.daily_chance_of_rain;
 
 
 
@@ -163,7 +165,7 @@ function displayData() {
     currentFeelsLike.textContent = feelsLike_c + "°C";
 
     let currentChanceOfRain = document.querySelector('.current-chanceOfRain');
-    currentChanceOfRain.textContent = precipitation_in + "mm";  //precipitation represents the chance of rain
+    currentChanceOfRain.textContent = daily_chance_of_rain + "%";
 }
 
 //function to display the current location information. 
