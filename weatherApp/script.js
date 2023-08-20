@@ -169,6 +169,7 @@ function displayData() {
 //function to display the current location information. 
 function displayCurrentLocation() {
     document.querySelector('.locationName').textContent = locationName;
+    document.querySelector('.currentLocation').textContent = locationName; //make location to show 0n the button
     document.querySelector('.locationRegion').textContent = region;
     document.querySelector('.locationCountry').textContent = country;
     document.querySelector('.locationLatitude').textContent = lat;
