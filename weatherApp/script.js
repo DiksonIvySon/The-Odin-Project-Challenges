@@ -131,6 +131,7 @@ function dataInitializer(weatherData) {
     displayData();
     displayCurrentLocation()  
     displayAstroData()
+    getHourlyData(weatherData);
     changeBackground()        // change the first page background image.
     document.getElementById('searchValue').value = "";  //setting set value to be empty
 }
@@ -186,6 +187,30 @@ function displayAstroData() {
     document.querySelector('.moonrise').textContent = moonrise;
     document.querySelector('.moonset').textContent = moonset;
     document.querySelector('.moon_phase').textContent = moon_phase;
+}
+
+//function to get hourly data
+function getHourlyData(weatherData) {
+    let hourlyTime;
+    let hourlyConditionImg;
+    let hourlyCondition;
+    let hourly_chanceOfRain;
+    let hourlyWind;
+
+    for (let i=0; i < 24; i++) {
+        hourlyTime = i;
+        hourlyConditionImg = weatherData.forecast.forecastday[0].hour[i].condition.text;
+        hourlyCondition = weatherData.forecast.forecastday[0].hour[i].condition.icon;
+        hourly_chanceOfRain = weatherData.forecast.forecastday[0].hour[i].chance_of_rain;
+        hourlyWind = weatherData.forecast.forecastday[0].hour[i].wind_kph
+
+        if (hourlyTime < 10) {
+            hourlyTime = "0" + hourlyTime + ":00";
+        }
+        else {
+            hourlyTime = hourlyTime + ":00";
+        }
+    }
 }
 
 //function to determine if it is day or night.
