@@ -19,5 +19,6 @@ raining - Kaique Rocha
 snowing, Trang Pham
 foggy - Aleksandar Pasaric
 thunder and lightning - Tsvetoslav Hristov
-windy - Liza Summer
+windy - The Lazy Artist Gallery
 backup-image - Rudolf Kirchner
+clear - John Tekeridis

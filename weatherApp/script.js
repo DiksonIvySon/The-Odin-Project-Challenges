@@ -229,10 +229,10 @@ function changeBackground() {
         firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
     }
     else if (conditionText === "Windy") {
-        firstPageBackground.style.backgroundImage = "url(images/windy.webp)";
+        firstPageBackground.style.backgroundImage = "url(images/windy.jpeg)";
     }
     else if (conditionText === "Clear") {
-        firstPageBackground.style.backgroundImage = "url(images/windy.webp)";
+        firstPageBackground.style.backgroundImage = "url(images/clear.jpeg)";
     }
     else {
         firstPageBackground.style.backgroundImage = "url(images/backup-image.jpeg)";
