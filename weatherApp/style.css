@@ -311,8 +311,23 @@ a:hover {
   margin: auto;
 }
 
-.mySlides .dayWeather img {
-    width: 60px;
+.mySlides img {
+    width: 80px;
+}
+
+.HourlyInfo img {
+    width: 25px;
+}
+
+.HourlyInfo > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.HourlyTemp {
+    margin: 0px;
 }
 
 .dayWeather-container {
