@@ -35,6 +35,15 @@ let uv;
 let gust_kph;
 let gust_mph;
 
+//forecast
+let sunrise;
+let sunset;
+let moonrise;
+let moonset;
+let moon_phase;
+
+
+
 
 //function to get the data from the API and initialize the weather information variables.
 async function getWeatherInfo(location) {
@@ -107,6 +116,13 @@ function dataInitializer(weatherData) {
      gust_kph = weatherData.current.gust_kph;
      gust_mph = weatherData.current.gust_mph;
 
+     //forecast
+     sunrise = weatherData.forecast.forecastday[0].sunrise;
+     sunset = weatherData.forecast.forecastday[0].sunset;
+     moonrise = weatherData.forecast.forecastday[0].moonrise;
+     moonset = weatherData.forecast.forecastday[0].moonset;
+     moon_phase = weatherData.forecast.forecastday[0].moon_phase;
+
 
 
     console.log(weatherData); //
@@ -149,15 +165,7 @@ function displayData() {
     currentChanceOfRain.textContent = precipitation_in + "mm";  //precipitation represents the chance of rain
 }
 
-/*
-let localTime;
-let country;
-let lat;
-let lon;
-let locationName;
-let region;
-let tz_id; 
-*/
+//function to display the current location information. 
 function displayCurrentLocation() {
     document.querySelector('.locationName').textContent = locationName;
     document.querySelector('.locationRegion').textContent = region;
