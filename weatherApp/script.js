@@ -189,18 +189,18 @@ function displayAstroData() {
     document.querySelector('.moon_phase').textContent = moon_phase;
 }
 
-//function to get hourly data
+//function to get weather hourly data and structure is well
 function getHourlyData(weatherData) {
     let hourlyTime;
     let hourlyConditionImg;
-    let hourlyCondition;
+    let hourlyTemp;
     let hourly_chanceOfRain;
     let hourlyWind;
 
     for (let i=0; i < 24; i++) {
         hourlyTime = i;
-        hourlyConditionImg = weatherData.forecast.forecastday[0].hour[i].condition.text;
-        hourlyCondition = weatherData.forecast.forecastday[0].hour[i].condition.icon;
+        hourlyConditionImg = weatherData.forecast.forecastday[0].hour[i].condition.icon;
+        hourlyTemp = weatherData.forecast.forecastday[0].hour[i].temp_c;
         hourly_chanceOfRain = weatherData.forecast.forecastday[0].hour[i].chance_of_rain;
         hourlyWind = weatherData.forecast.forecastday[0].hour[i].wind_kph
 
@@ -210,7 +210,40 @@ function getHourlyData(weatherData) {
         else {
             hourlyTime = hourlyTime + ":00";
         }
+
+        displayHourlyWeather(hourlyTime, hourlyConditionImg, hourlyTemp, hourly_chanceOfRain, hourlyWind);
     }
+}
+
+//function to display all 24 hourly weather conditions
+function displayHourlyWeather(hourlyTime, hourlyConditionImg, hourlyTemp, hourly_chanceOfRain, hourlyWind) {
+
+    let HourlyWeatherContainer = document.querySelector('.HourlyWeather-container');
+    let singleHourlyWeather = document.createElement('div');
+    singleHourlyWeather.setAttribute('class', 'HourlyWeather')
+    singleHourlyWeather.innerHTML = `
+                                    
+                                    <h2 class="HourlyTime">${hourlyTime}</h2>
+                                    <div>
+                                        <div><img class="HourlyConditionImg" src="${hourlyConditionImg}" alt="weather type image"></div>
+                                        <h1 class="HourlyTemp">${hourlyTemp}°C</h1>
+                                        <hr>
+                                        <div class="HourlyInfo">
+                                            <div>
+                                                <img src="icons/rainy.png" alt="" width="50px">
+                                                <text class="Hourly-chanceOfRain">${hourly_chanceOfRain}%</text>
+                                            </div>
+                                            <div>
+                                                <img src="icons/wind.png" alt="" width="50px">
+                                                <text class="Hourly-wind">${hourlyWind}kph</text>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                `;
+
+    HourlyWeatherContainer.appendChild(singleHourlyWeather);
+    
 }
 
 //function to determine if it is day or night.

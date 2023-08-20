@@ -326,6 +326,10 @@ a:hover {
     padding: 5px;
 }
 
+.HourlyWeather-container {
+    width: 100px;
+}
+
 .HourlyTemp {
     margin: 0px;
 }
