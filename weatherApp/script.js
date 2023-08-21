@@ -1,5 +1,7 @@
 
 //Variables of all the information that will be needed from the Weather API.
+let inputLocation = "johannesburg"; //show johannesburg data on load.
+
 //location
 let localTime;
 let country;
@@ -42,26 +44,27 @@ let moonrise;
 let moonset;
 let moon_phase;
 let daily_chance_of_rain;
+let dayDate;
 
 
 
 
-//function to get the data from the API and initialize the weather information variables.
-async function getWeatherInfo(location) {
-    const response = await fetch(location, {mode: 'cors'});
+//function to fetch the data from the API and initialize the weather information variables.
+async function getWeatherInfo(linkLocation) {
+    const response = await fetch(linkLocation, {mode: 'cors'});
     const weatherData = await response.json();
     dataInitializer(weatherData);
 }
 
 
 //function to create the URL link.
-function createLink(location) {
-    location = 'https://api.weatherapi.com/v1/forecast.json?key=8badefafba8c47eb9f7184239231608&q=' + location;
-    getWeatherInfo(location);
+function createLink() {
+    let linkLocation = 'https://api.weatherapi.com/v1/forecast.json?key=8badefafba8c47eb9f7184239231608&q=' + inputLocation;
+    getWeatherInfo(linkLocation);
 } 
 
 //****** */
-console.log(createLink("johannesburg"))
+console.log(createLink())
 
 
 
@@ -69,11 +72,12 @@ console.log(createLink("johannesburg"))
 let searchButton = document.querySelector('.searchButton');
 searchButton.addEventListener('click', function() {
     let searchValue = document.getElementById('searchValue').value;
+    inputLocation = searchValue;
     if (searchValue === "") {
         //
     }
     else {
-        createLink(searchValue);
+        createLink();
     }
 })
 
@@ -124,6 +128,7 @@ function dataInitializer(weatherData) {
      moonset = weatherData.forecast.forecastday[0].astro.moonset;
      moon_phase = weatherData.forecast.forecastday[0].astro.moon_phase;
      daily_chance_of_rain = weatherData.forecast.forecastday[0].day.daily_chance_of_rain;
+     dayDate = weatherData.forecast.forecastday[0].date;
 
 
 
@@ -132,6 +137,7 @@ function dataInitializer(weatherData) {
     displayCurrentLocation()  
     displayAstroData()
     getHourlyData(weatherData);
+    makeDate();
     changeBackground()        // change the first page background image.
     document.getElementById('searchValue').value = "";  //setting set value to be empty
 }
@@ -246,6 +252,65 @@ function displayHourlyWeather(hourlyTime, hourlyConditionImg, hourlyTemp, hourly
     
 }
 
+//function to get the daily data
+function makeDate() {
+
+    let dayDate_Day;
+
+    
+    dayDate_Day = parseInt(dayDate.substr(8, 2));
+    
+    
+    for (let i = dayDate_Day; i < dayDate_Day + 3; i++) {
+        let new_dayDate = dayDate.substr(0, 4) + "-" + dayDate.substr(5, 2) + "-" + dayDate_Day.toString();
+        getDailyData(new_dayDate);
+    }
+}
+
+//function to fetch the daily data
+async function getDailyData(new_dayDate) {
+    let dailyDataLink = "http://api.weatherapi.com/v1/future.json?key=8badefafba8c47eb9f7184239231608&q=" + inputLocation + "&dt=" + new_dayDate;
+    const response = await fetch(dailyDataLink, {mode: 'cors'});
+    const dailyDataInfo = await response.json();
+    displayDailyDataInfo(dailyDataInfo);
+}
+
+//function to display the daily data information
+function displayDailyDataInfo(dailyDataInfo) {
+
+    let dailyData_date = dailyDataInfo.forecast.forecastday.date;
+    let dailyData_icon = dailyDataInfo.forecast.forecastday.day.condition.icon;
+    let dailyData_avgtemp = dailyDataInfo.forecast.forecastday.day.avgtemp_c;
+    let dailyData_maxwind_kph = dailyDataInfo.forecast.forecastday.day.maxwind_kph;
+    let dailyData_totalprecip_mm = dailyDataInfo.forecast.forecastday.day.totalprecip_mm;
+
+    let dayWeatherContainer = document.querySelector('#dayWeather-container');
+    let singleDailyWeather = document.createElement('div');
+    singleDailyWeather.setAttribute('class', 'dayWeather')
+    singleDailyWeather.innerHTML = `
+                                    
+                                    <h2 class="HourlyTime">${dailyData_date}</h2>
+                                    <div>
+                                        <div><img class="HourlyConditionImg" src="${dailyData_icon}" alt="weather type image"></div>
+                                        <h1 class="HourlyTemp">${dailyData_avgtemp}°C</h1>
+                                        <hr>
+                                        <div class="HourlyInfo">
+                                            <div>
+                                                <img src="icons/rainy.png" alt="" width="50px">
+                                                <text class="Hourly-chanceOfRain">${dailyData_totalprecip_mm}mm</text>
+                                            </div>
+                                            <div>
+                                                <img src="icons/wind.png" alt="" width="50px">
+                                                <text class="Hourly-wind">${dailyData_maxwind_kph}kph</text>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                `;
+
+    dayWeatherContainer.appendChild(singleDailyWeather);
+}
+
 //function to determine if it is day or night.
 function isDayOrNight() {
     if (is_day === 1) {
@@ -273,7 +338,7 @@ function changeBackground() {
         firstPageBackground.style.backgroundImage = "url(images/partly-cloudy.webp)";
         document.querySelector('.firstPage-weather').style.color = 'black';  
     }
-    else if (conditionText === "Rainy" || conditionText === "Rain" || conditionText === "Light rain" || conditionText === "heavy rain") {
+    else if (conditionText === "Rainy" || conditionText === "Rain" || conditionText === "Light rain" || conditionText === "Heavy rain" || conditionText === "Moderate rain") {
         firstPageBackground.style.backgroundImage = "url(images/rainy.jpeg)";
     }
     else if (conditionText === "snowing" || conditionText === "snow") {
