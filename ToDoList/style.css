@@ -130,18 +130,19 @@
     cursor: pointer;
 }
 
-.add-btn {
+.add-btn-container {
     display: flex;
     justify-content: center;
 }
 
-.add-btn button {
+.add-btn {
     color: black;
     border-radius: 5px;
     font-weight: bold;
+    width: 100px;
 }
 
-.add-btn button:hover {
+.add-btn:hover {
     cursor: pointer;
     background-color: #52D6F4;
 }
@@ -342,6 +343,10 @@ main .pop-up .pop-up-content {
 }
 
 /* styling the add project form*/
+.add-project-button-container {
+    width: 150px;
+}
+
 .add-project-button {
     width: 50%;
     text-align: center;
@@ -372,5 +377,10 @@ main .pop-up .pop-up-content {
     width: 95%;
     padding: 5px;
     border-radius: 5px;
+    color: black;
+}
+
+.add-project {
+    margin: auto;
 }
 

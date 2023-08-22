@@ -1,28 +1,45 @@
 
 
-//list to contain all of the toDos added
-let allToDos = [];
+//lists to contain all of the toDos added
+let allToDoList = [];
+let todayList = [];
+let nextWeekList = [];
+let selectedArray;
 
 // function to convert the form inputs to a single todo object
-function toDo(title, description, notes, dueDate, priority) {
+function toDo(title, description, notes, dueDate, option, priority) {
     this.title = title;
     this.description = description;
     this.notes = notes;
     this.dueDate = dueDate;
+    this.option = option;
     this.priority = priority;
 }
 
 //function to render the todo event to the main when it is added using the add form
-function renderTodo() {
-    let allToDosContainer = document.querySelector('#allToDos');
-    allToDosContainer.textContent = "";
+function renderTodo(option) {
+    let toDosContainer;
+    if (option === "today") {
+        toDosContainer = document.querySelector('#today');
+        selectedArray = todayList;
+    }
+    else if (option === "nextWeek") {
+        toDosContainer = document.querySelector('#nextWeek');
+        selectedArray = nextWeekList;
+    }
+    else {
+        toDosContainer = document.querySelector('#allToDos');
+        selectedArray = allToDoList;
+    }
 
-    for (let i = 0; i < allToDos.length; i++) {
-        let todo = allToDos[i];
+    toDosContainer.textContent = "";
+
+    for (let i = 0; i < selectedArray.length; i++) {
+        let todo = selectedArray[i];
         let priorityColor = setPriorityColor(i); 
-        let todoContainer = document.createElement('div');
-        todoContainer.setAttribute('class', 'todo-item');
-        todoContainer.innerHTML = ` 
+        let todoDiv = document.createElement('div');
+        todoDiv.setAttribute('class', 'todo-item');
+        todoDiv.innerHTML = ` 
                                     <div class="item-properties">
                                         <div class="priority-box" style="background-color: ${priorityColor}"></div>
                                         <h2 class="item-title">${todo.title}</h2>
@@ -37,19 +54,18 @@ function renderTodo() {
                                     </div>
                                   `;
 
-    allToDosContainer.appendChild(todoContainer);
+    toDosContainer.appendChild(todoDiv);
     }
-
-    console.log(allToDos);
 }
 
 //function that will take all of the input values and store them as constants.
-//And also call the toDo function which will then add the new toDo to allToDos array
+//And also call the toDo function which will then add the new toDo to selectedArray array
 function addToDo() {
     let title = document.querySelector('#title').value;
     let description = document.querySelector('#description').value;
     let notes = document.querySelector('#notes').value;
     let dueDate = document.querySelector('#date').value;
+    let option = document.querySelector('#taskFolder').value;
 
     //function to get the checked value of the radio buttons
     function radioValue() {
@@ -62,16 +78,34 @@ function addToDo() {
     }
 
     let priority = radioValue();
-    let newToDo = new toDo(title, description, notes, dueDate, priority);
+    let newToDo = new toDo(title, description, notes, dueDate, option, priority);
     
-    //adding the new toDo to allToDos array
-    allToDos.push(newToDo);
-    renderTodo();  //must be included to call the renderTodo function.
+    //adding the new toDo to an array
+    
+
+    if (option === "today") {
+        todayList.push(newToDo);
+        renderTodo(option); //must be included to call the renderTodo function.
+
+        allToDoList.push(newToDo); //must always add to allToDoList
+        renderTodo('allToDo'); 
+    }
+    else if (option === "nextWeek") {
+        nextWeekList.push(newToDo);
+        renderTodo(option); 
+
+        allToDoList.push(newToDo); 
+        renderTodo('allToDo'); 
+    }
+
+    console.log(todayList);
+    console.log(allToDoList);
+    console.log(nextWeekList);
 };
 
 //function to remove the todo activity when delete button is clicked
 function removeToDo(index) {
-    allToDos.splice(index, 1);
+    selectedArray.splice(index, 1);
     renderTodo(); //must re-render the list of toDos after removing a todo activity
 }
 
@@ -81,6 +115,25 @@ document.querySelector('.add-btn').addEventListener('click', function(event) {
     addToDo();
     hideOrReveal('#addForm'); //this will close the form
 });
+
+//event handler to handle the click on the Activity button and call the addToDo function.
+document.querySelector('.add-project').addEventListener('click', function() {
+    let projectTitle = document.querySelector('#ProjectTitle').value;
+    let addedProjects = document.querySelector('.added-projects');
+    
+    let newProject = document.createElement('button');
+    newProject.setAttribute('class', projectTitle);
+    newProject.innerHTML = projectTitle;
+
+    addedProjects.appendChild(newProject);
+
+    let taskFolder = document.querySelector('#taskFolder');
+    let newProjectOption = document.createElement('option');
+    newProjectOption.setAttribute('class',projectTitle);
+    newProjectOption.setAttribute('value', projectTitle);
+    newProjectOption.innerHTML = projectTitle;
+    taskFolder.appendChild(newProjectOption); 
+})
 
 
 //function for the form to be revealed and hidden when the add toDo button is clicked
@@ -120,6 +173,8 @@ function asb() {
     }
 }
 
+
+
 /*
 let itemNotes = document.querySelectorAll('.item-notes');
 itemNotes.forEach(itemNote => {
@@ -138,7 +193,7 @@ popUpCancel.addEventListener('click', function() {
 function displayPopUp(index) {
     document.querySelector('.pop-up').style.display = 'block';
 
-    let displayNotes = allToDos[index].notes;
+    let displayNotes = selectedArray[index].notes;
     let popUpContent = document.querySelector('.pop-up-content');
     popUpContent.textContent = displayNotes;
 }
@@ -150,13 +205,13 @@ function removePopUp() {
 
 //function to manage the priority color to be displayed
 function setPriorityColor(index) {
-    if (allToDos[index].priority === "low") {
+    if (selectedArray[index].priority === "low") {
         return "green";
     }
-    else if (allToDos[index].priority === "medium") {
+    else if (selectedArray[index].priority === "medium") {
         return "blue";
     }
-    else if (allToDos[index].priority === "high") {
+    else if (selectedArray[index].priority === "high") {
         return "red";
     }
     else {

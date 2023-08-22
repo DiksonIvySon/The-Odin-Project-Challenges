@@ -31,13 +31,12 @@
                         <h3>Projects</h3> 
                         <button class="tabLinks viewAllProjects"  onclick="openActivity(event, 'projects')">View all projects</button>
                         <div class="project-container" style="display: none">
-                            <div>
-                                <button>Run</button>
-                                <button>Run</button>
+                            <div class="added-projects">
+                                <!--add projects here-->
                             </div>
                             <div>
-                                <div class="add-project-button">
-                                    <button onclick=""><i class="fa-solid fa-circle-plus"></i> Add Project</button>
+                                <div class="add-project-button-container">
+                                    <button class="add-project-button"><i class="fa-solid fa-circle-plus"></i> Add New Project</button>
                                 </div>
                                 <form action="" id="addProjectForm" style="display: none">
                                     <div class="cancel-project-form-button">
@@ -49,7 +48,7 @@
                                         <input type="text" id="ProjectTitle" name="ProjectTitle" placeholder="Run" required>
                                     </div>
                                     <div class="add-project">
-                                        <button>Add Project</button>
+                                        <button type="button">Add Project</button>
                                     </div> 
                                 </form>
                             </div>
@@ -100,9 +99,15 @@
                                 <label for="priority-high">High</label>
                             </div>
                         </div>
+                        <div class="taskFolder">
+                            <select name="taskFolder" id="taskFolder">
+                                <option value="today">Today</option>
+                                <option value="nextWeek">Next Week</option>
+                            </select>
+                        </div>
 
-                        <div class="add-btn">
-                            <button>Add Activity</button>
+                        <div class="add-btn-container">
+                            <button class="add-btn">Add Activity</button>
                         </div>  
                     </form>
                 </div>
