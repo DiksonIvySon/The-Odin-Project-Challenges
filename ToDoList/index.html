@@ -24,12 +24,12 @@
             <div class="navigation">
                 <div>
                     <h3>Home</h3>
-                    <button class="today">Today</button>
-                    <button>Next Week</button>
-                    <button>All ToDos</button>
+                    <button class="tabLinks" onclick="openActivity(event, 'today')">Today</button>
+                    <button class="tabLinks" onclick="openActivity(event, 'nextWeek')">Next Week</button>
+                    <button class="tabLinks" onclick="openActivity(event, 'allToDos')">All ToDos</button>
                     <div class="projects">
-                        <h3>Projects</h3>
-                        <button class="viewAllProjects">View all projects</button>
+                        <h3>Projects</h3> 
+                        <button class="tabLinks viewAllProjects"  onclick="openActivity(event, 'projects')">View all projects</button>
                         <div class="project-container" style="display: none">
                             <div>
                                 <button>Run</button>
@@ -125,6 +125,20 @@
                     <input type="checkbox" id="checkbox" name="checkbox">
                 </div>
             </div> -->
+            <div id="today" class="tabContent" style="display: none">
+                <h3>No tasks for today</h3>
+            </div>
+            
+            <div id="nextWeek" class="tabContent" style="display: none">
+                <h3>No tasks for nextWeek</h3>
+            </div>
+            
+            <div id="allToDos" class="tabContent" style="display: none">
+                <h3>No tasks in all to dos</h3>
+            </div>
+            <div id="projects" class="tabContent" style="display: none">
+                <h3>No tasks in projects</h3>
+            </div>
         </section>
 
         <section class="pop-up" style="display: none">

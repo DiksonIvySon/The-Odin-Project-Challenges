@@ -193,6 +193,11 @@
     flex: 2;
 }
 
+.toDos h3 {
+    color: black;
+    text-align: center;
+}
+
 /* styling the list item */
 
 .item-properties {
@@ -222,6 +227,10 @@
     height: 80px;
     background-color: red;
 }
+
+.item-description {
+    font-size: 12px;
+} 
 
 .item-notes {
     padding: 5px;

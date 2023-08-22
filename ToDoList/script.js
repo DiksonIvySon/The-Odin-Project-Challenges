@@ -14,14 +14,15 @@ function toDo(title, description, notes, dueDate, priority) {
 
 //function to render the todo event to the main when it is added using the add form
 function renderTodo() {
-    let toDos = document.querySelector('.toDos');
-    toDos.textContent = "";
+    let allToDosContainer = document.querySelector('#allToDos');
+    allToDosContainer.textContent = "";
+
     for (let i = 0; i < allToDos.length; i++) {
         let todo = allToDos[i];
         let priorityColor = setPriorityColor(i); 
         let todoContainer = document.createElement('div');
         todoContainer.setAttribute('class', 'todo-item');
-        todoContainer.innerHTML = `
+        todoContainer.innerHTML = ` 
                                     <div class="item-properties">
                                         <div class="priority-box" style="background-color: ${priorityColor}"></div>
                                         <h2 class="item-title">${todo.title}</h2>
@@ -36,7 +37,7 @@ function renderTodo() {
                                     </div>
                                   `;
 
-    toDos.appendChild(todoContainer);
+    allToDosContainer.appendChild(todoContainer);
     }
 
     console.log(allToDos);
@@ -183,6 +184,27 @@ cancelProjectFormButton.addEventListener('click', function() {
     hideOrReveal('#addProjectForm');
 });
 
+
+//
+function openActivity(evt, activityName) {
+    
+  
+    // Get all elements with class="tabContent" and hide them
+    let tabContent = document.getElementsByClassName("tabContent");
+    for (let i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tabLinks" and remove the class "active"
+    let tabLinks = document.getElementsByClassName("tabLinks");
+    for (let i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(activityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
 
 
 
