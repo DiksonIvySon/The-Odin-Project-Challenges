@@ -269,6 +269,7 @@ function makeDate() {
     }
 }
 
+
 //function to fetch the daily data
 async function getDailyData(new_dayDate) {
     let dailyDataLink = "http://api.weatherapi.com/v1/future.json?key=8badefafba8c47eb9f7184239231608&q=" + inputLocation + "&dt=" + new_dayDate;

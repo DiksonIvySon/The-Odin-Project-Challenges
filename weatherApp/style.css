@@ -1,5 +1,4 @@
 
-
 body {
 overflow-y: scroll; /* Adding the ability to scroll */
 }
@@ -363,6 +362,13 @@ a:hover {
     background-color: #6DAFFE;
     border-radius: 10px;
     height: 15px;
+}
+
+.dayWeather-container-message {
+    width: 600px;
+    margin: auto;
+    padding: 50px;
+    font-size: 20px;
 }
 
 /* Next & previous buttons */
