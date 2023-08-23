@@ -365,10 +365,14 @@ a:hover {
 }
 
 .dayWeather-container-message {
-    width: 600px;
+    width: 650px;
     margin: auto;
     padding: 50px;
     font-size: 20px;
+}
+
+.previousWeather-container {
+    margin-bottom: 40px;
 }
 
 /* Next & previous buttons */
@@ -425,7 +429,7 @@ a:hover {
   padding: 10px;
   cursor: pointer;
   height: 35px;
-  width: 70px;
+  width: 85px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;

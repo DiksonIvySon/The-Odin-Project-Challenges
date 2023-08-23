@@ -62,7 +62,7 @@ function createLink() {
 } 
 
 //****** */
-console.log(createLink())
+createLink()
 
 
 
@@ -129,8 +129,6 @@ function dataInitializer(weatherData) {
      dayDate = weatherData.forecast.forecastday[0].date;
 
 
-
-    console.log(weatherData); //
     displayData();
     displayCurrentLocation()  
     displayAstroData()
@@ -253,65 +251,80 @@ function displayHourlyWeather(hourlyTime, hourlyConditionImg, hourlyTemp, hourly
     HourlyWeatherContainer.appendChild(singleHourlyWeather);
     
 }
-
-//function to get the daily data
+ 
+//function to get the previous data
 function makeDate() {
 
     let dayDate_Day;
 
-    
     dayDate_Day = parseInt(dayDate.substr(8, 2));
+    dayDate_Day = dayDate_Day - 1;
+    let loopTimes = 7;
     
-    
-    for (let i = dayDate_Day; i < dayDate_Day + 3; i++) {
+    for (let i = loopTimes; i > 0; i--) {
+        if (dayDate_Day < 0) {
+            dayDate_Day = 31 - dayDate_Day;
+        }
+
         let new_dayDate = dayDate.substr(0, 4) + "-" + dayDate.substr(5, 2) + "-" + dayDate_Day.toString();
-        getDailyData(new_dayDate);
+        console.log(new_dayDate)
+
+        //empty the previous weather container
+        let previousWeatherContainer = document.querySelector('.previousWeather-container');
+        previousWeatherContainer.textContent = "";
+
+        getPreviousData(new_dayDate);
+        dayDate_Day -= 1;
     }
+
 }
 
 
-//function to fetch the daily data
-async function getDailyData(new_dayDate) {
-    let dailyDataLink = "http://api.weatherapi.com/v1/future.json?key=8badefafba8c47eb9f7184239231608&q=" + inputLocation + "&dt=" + new_dayDate;
-    const response = await fetch(dailyDataLink, {mode: 'cors'});
-    const dailyDataInfo = await response.json();
-    displayDailyDataInfo(dailyDataInfo);
+//function to fetch the previous data
+async function getPreviousData(new_dayDate) {
+    let previousDataLink = "http://api.weatherapi.com/v1/history.json?key=8badefafba8c47eb9f7184239231608&q=" + inputLocation + "&dt=" + new_dayDate;
+    const response = await fetch(previousDataLink, {mode: 'cors'});
+    const previousDataInfo = await response.json();
+    displayPreviousDataInfo(previousDataInfo);
+    
 }
 
-//function to display the daily data information
-function displayDailyDataInfo(dailyDataInfo) {
+//function to display the previous data information
+function displayPreviousDataInfo(previousDataInfo) {
 
-    let dailyData_date = dailyDataInfo.forecast.forecastday.date;
-    let dailyData_icon = dailyDataInfo.forecast.forecastday.day.condition.icon;
-    let dailyData_avgtemp = dailyDataInfo.forecast.forecastday.day.avgtemp_c;
-    let dailyData_maxwind_kph = dailyDataInfo.forecast.forecastday.day.maxwind_kph;
-    let dailyData_totalprecip_mm = dailyDataInfo.forecast.forecastday.day.totalprecip_mm;
+    console.log(previousDataInfo);
 
-    let dayWeatherContainer = document.querySelector('#dayWeather-container');
-    let singleDailyWeather = document.createElement('div');
-    singleDailyWeather.setAttribute('class', 'dayWeather')
-    singleDailyWeather.innerHTML = `
+    let previousData_date = previousDataInfo.forecast.forecastday[0].date;
+    let previousData_icon = previousDataInfo.forecast.forecastday[0].day.condition.icon;
+    let previousData_avgtemp = previousDataInfo.forecast.forecastday[0].day.avgtemp_c;
+    let previousData_maxwind_kph = previousDataInfo.forecast.forecastday[0].day.maxwind_kph;
+    let previousData_totalprecip_mm = previousDataInfo.forecast.forecastday[0].day.totalprecip_mm;
+
+    let previousWeatherContainer = document.querySelector('.previousWeather-container');
+    let singlePreviousWeather = document.createElement('div');
+    singlePreviousWeather.setAttribute('class', 'dayWeather')
+    singlePreviousWeather.innerHTML = `
                                     
-                                    <h2 class="HourlyTime">${dailyData_date}</h2>
+                                    <h2 class="HourlyTime">${previousData_date}</h2>
                                     <div>
-                                        <div><img class="HourlyConditionImg" src="${dailyData_icon}" alt="weather type image"></div>
-                                        <h1 class="HourlyTemp">${dailyData_avgtemp}°C</h1>
+                                        <div><img class="HourlyConditionImg" src="${previousData_icon}" alt="weather type image"></div>
+                                        <h1 class="HourlyTemp">${previousData_avgtemp}°C</h1>
                                         <hr>
                                         <div class="HourlyInfo">
                                             <div>
                                                 <img src="icons/rainy.png" alt="" width="50px">
-                                                <text class="Hourly-chanceOfRain">${dailyData_totalprecip_mm}mm</text>
+                                                <text class="Hourly-chanceOfRain">${previousData_totalprecip_mm}mm</text>
                                             </div>
                                             <div>
                                                 <img src="icons/wind.png" alt="" width="50px">
-                                                <text class="Hourly-wind">${dailyData_maxwind_kph}kph</text>
+                                                <text class="Hourly-wind">${previousData_maxwind_kph}kph</text>
                                             </div>
                                         </div>
                                     </div>
                                     
                                 `;
 
-    dayWeatherContainer.appendChild(singleDailyWeather);
+    previousWeatherContainer.appendChild(singlePreviousWeather);
 }
 
 //function to determine if it is day or night.
