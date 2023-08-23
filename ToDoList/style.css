@@ -130,6 +130,32 @@
     cursor: pointer;
 }
 
+.taskFolder {
+    display: flex;
+    justify-content: center;
+}
+
+.taskFolder div {
+    display: flex;
+    flex-direction: column;
+}
+
+.taskFolder select {
+    color: black;
+    text-align: center;
+    width: 190px;
+    border-radius: 10px;
+}
+
+.taskFolder select:hover {
+    background-color: #52D6F4;
+    cursor: pointer;
+}
+
+.taskFolder option {
+    color: black;
+}
+
 .add-btn-container {
     display: flex;
     justify-content: center;
@@ -344,16 +370,18 @@ main .pop-up .pop-up-content {
 
 /* styling the add project form*/
 .add-project-button-container {
-    width: 150px;
+    display: flex;
+    justify-content: center;
 }
 
-.add-project-button {
-    width: 50%;
+.add-project-button-container button {
+    width: 180px;
     text-align: center;
 }
 
 .add-project-button i {
     color: #408697;
+    padding: 0px 5px 0px 0px;
 }
 
 #addProjectForm {
@@ -380,7 +408,11 @@ main .pop-up .pop-up-content {
     color: black;
 }
 
-.add-project {
-    margin: auto;
+.add-project-container {
+    display: flex;
+    justify-content: center;
 }
 
+.add-project-container button {
+    width: 100px;
+}

@@ -36,7 +36,7 @@
                             </div>
                             <div>
                                 <div class="add-project-button-container">
-                                    <button class="add-project-button"><i class="fa-solid fa-circle-plus"></i> Add New Project</button>
+                                    <button class="add-project-button"><i class="fa-solid fa-circle-plus"></i>Create New Project folder</button>
                                 </div>
                                 <form action="" id="addProjectForm" style="display: none">
                                     <div class="cancel-project-form-button">
@@ -47,15 +47,15 @@
                                         <br>
                                         <input type="text" id="ProjectTitle" name="ProjectTitle" placeholder="Run" required>
                                     </div>
-                                    <div class="add-project">
-                                        <button type="button">Add Project</button>
+                                    <div class="add-project-container">
+                                        <button class="add-project" type="button">Create Project</button>
                                     </div> 
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <button>Done</button>
-                    <button>Recycle Bin</button>
+                    <button class="doneButton"><i class="fa-solid fa-check-double"></i>Done</button>
+                    <button class="recycleBin-btn"><i class="fa-solid fa-recycle"></i>Recycle Bin</button>
                 </div>
             </div>
             <div class="add-section-button" style="display: block;">
@@ -78,12 +78,23 @@
                             <input type="text" id="description" name="description" placeholder="Dikson Manganye" required>
                         </div>
                         <div>
+                            <label for="notes">Notes</label>
+                            <br>
                             <textarea name="notes" id="notes" form="usrform" placeholder="Write notes here..."></textarea>
                         </div>
                         <div>
                             <label for="date">Due date</label>
                             <br>
                             <input type="date" id="date" name="date" placeholder="15/05/2000" required>
+                        </div>
+                        <div class="taskFolder">
+                            <div>
+                                <label for="selectFolder">Select a folder</label>
+                                <select name="taskFolder" id="taskFolder">
+                                    <option value="today">Today</option>
+                                    <option value="nextWeek">Next Week</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="radio-buttons">
                             <div>
@@ -98,12 +109,6 @@
                                 <input type="radio" id="priority-high" name="priority" value="high">
                                 <label for="priority-high">High</label>
                             </div>
-                        </div>
-                        <div class="taskFolder">
-                            <select name="taskFolder" id="taskFolder">
-                                <option value="today">Today</option>
-                                <option value="nextWeek">Next Week</option>
-                            </select>
                         </div>
 
                         <div class="add-btn-container">
