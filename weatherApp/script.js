@@ -128,6 +128,7 @@ function dataInitializer(weatherData) {
      daily_chance_of_rain = weatherData.forecast.forecastday[0].day.daily_chance_of_rain;
      dayDate = weatherData.forecast.forecastday[0].date;
 
+    console.log(weatherData);
 
     displayData();
     displayCurrentLocation()  
@@ -267,7 +268,6 @@ function makeDate() {
         }
 
         let new_dayDate = dayDate.substr(0, 4) + "-" + dayDate.substr(5, 2) + "-" + dayDate_Day.toString();
-        console.log(new_dayDate)
 
         //empty the previous weather container
         let previousWeatherContainer = document.querySelector('.previousWeather-container');
@@ -312,7 +312,7 @@ function displayPreviousDataInfo(previousDataInfo) {
                                         <hr>
                                         <div class="HourlyInfo">
                                             <div>
-                                                <img src="icons/rainy.png" alt="" width="50px">
+                                                <img src="icons/precipitation.png" alt="" width="50px">
                                                 <text class="Hourly-chanceOfRain">${previousData_totalprecip_mm}mm</text>
                                             </div>
                                             <div>

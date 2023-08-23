@@ -365,14 +365,14 @@ a:hover {
 }
 
 .dayWeather-container-message {
-    width: 650px;
+    width: 750px;
     margin: auto;
-    padding: 50px;
+    padding: 55px;
     font-size: 20px;
 }
 
 .previousWeather-container {
-    margin-bottom: 40px;
+    margin: 10px 0px 40px 0px;
 }
 
 /* Next & previous buttons */
@@ -476,5 +476,40 @@ footer .social-icons i:hover {
     font-size: 25px;
     cursor: pointer;
     direction: rtl;
+}
+
+/* styling the map page*/
+.pageThree {
+    margin: 10px;
+    background-image: linear-gradient(10deg, black, black, white, white, white);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.mapButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mapButtons button {
+    max-width: 200px;
+    height: 30px;
+    margin: 10px 5px 10px 5px;
+    font-size: 12px;
+    background-color: #717171;
+}
+
+.mapButtons button:hover {
+    background-color: #6DAFFE;
+}
+
+.pageThree > .map-container {
+    width: auto;
+    height: 500px;
+    background-color: #717171;
+    border-radius: 10px;
+    margin: 30px 20px 20px 20px;
 }
 
