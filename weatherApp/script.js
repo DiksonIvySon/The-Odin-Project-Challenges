@@ -47,8 +47,6 @@ let daily_chance_of_rain;
 let dayDate;
 
 
-
-
 //function to fetch the data from the API and initialize the weather information variables.
 async function getWeatherInfo(linkLocation) {
     const response = await fetch(linkLocation, {mode: 'cors'});
@@ -202,6 +200,10 @@ function getHourlyData(weatherData) {
     let hourlyTemp;
     let hourly_chanceOfRain;
     let hourlyWind;
+    
+    //clear the hourly weather container before adding into it when a location changes.
+    let HourlyWeatherContainer = document.querySelector('.HourlyWeather-container');
+    HourlyWeatherContainer.textContent = ""; 
 
     for (let i=0; i < 24; i++) {
         hourlyTime = i;
@@ -216,7 +218,7 @@ function getHourlyData(weatherData) {
         else {
             hourlyTime = hourlyTime + ":00";
         }
-
+        
         displayHourlyWeather(hourlyTime, hourlyConditionImg, hourlyTemp, hourly_chanceOfRain, hourlyWind);
     }
 }
