@@ -134,7 +134,7 @@ function dataInitializer(weatherData) {
     displayCurrentLocation()  
     displayAstroData()
     getHourlyData(weatherData);
-    makeDate();
+    //makeDate();
     changeBackground()        // change the first page background image.
     document.getElementById('searchValue').value = "";  //setting set value to be empty
 }
@@ -252,80 +252,8 @@ function displayHourlyWeather(hourlyTime, hourlyConditionImg, hourlyTemp, hourly
     HourlyWeatherContainer.appendChild(singleHourlyWeather);
     
 }
- 
-//function to get the previous data
-function makeDate() {
 
-    let dayDate_Day;
-
-    dayDate_Day = parseInt(dayDate.substr(8, 2));
-    dayDate_Day = dayDate_Day - 1;
-    let loopTimes = 7;
-    
-    for (let i = loopTimes; i > 0; i--) {
-        if (dayDate_Day < 0) {
-            dayDate_Day = 31 - dayDate_Day;
-        }
-
-        let new_dayDate = dayDate.substr(0, 4) + "-" + dayDate.substr(5, 2) + "-" + dayDate_Day.toString();
-
-        //empty the previous weather container
-        let previousWeatherContainer = document.querySelector('.previousWeather-container');
-        previousWeatherContainer.textContent = "";
-
-        getPreviousData(new_dayDate);
-        dayDate_Day -= 1;
-    }
-
-}
-
-
-//function to fetch the previous data
-async function getPreviousData(new_dayDate) {
-    let previousDataLink = "http://api.weatherapi.com/v1/history.json?key=8badefafba8c47eb9f7184239231608&q=" + inputLocation + "&dt=" + new_dayDate;
-    const response = await fetch(previousDataLink, {mode: 'cors'});
-    const previousDataInfo = await response.json();
-    displayPreviousDataInfo(previousDataInfo);
-    
-}
-
-//function to display the previous data information
-function displayPreviousDataInfo(previousDataInfo) {
-
-    console.log(previousDataInfo);
-
-    let previousData_date = previousDataInfo.forecast.forecastday[0].date;
-    let previousData_icon = previousDataInfo.forecast.forecastday[0].day.condition.icon;
-    let previousData_avgtemp = previousDataInfo.forecast.forecastday[0].day.avgtemp_c;
-    let previousData_maxwind_kph = previousDataInfo.forecast.forecastday[0].day.maxwind_kph;
-    let previousData_totalprecip_mm = previousDataInfo.forecast.forecastday[0].day.totalprecip_mm;
-
-    let previousWeatherContainer = document.querySelector('.previousWeather-container');
-    let singlePreviousWeather = document.createElement('div');
-    singlePreviousWeather.setAttribute('class', 'dayWeather')
-    singlePreviousWeather.innerHTML = `
-                                    
-                                    <h2 class="HourlyTime">${previousData_date}</h2>
-                                    <div>
-                                        <div><img class="HourlyConditionImg" src="${previousData_icon}" alt="weather type image"></div>
-                                        <h1 class="HourlyTemp">${previousData_avgtemp}°C</h1>
-                                        <hr>
-                                        <div class="HourlyInfo">
-                                            <div>
-                                                <img src="icons/precipitation.png" alt="" width="50px">
-                                                <text class="Hourly-chanceOfRain">${previousData_totalprecip_mm}mm</text>
-                                            </div>
-                                            <div>
-                                                <img src="icons/wind.png" alt="" width="50px">
-                                                <text class="Hourly-wind">${previousData_maxwind_kph}kph</text>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                `;
-
-    previousWeatherContainer.appendChild(singlePreviousWeather);
-}
+//**************************************************** */
 
 //function to determine if it is day or night.
 function isDayOrNight() {
@@ -431,7 +359,7 @@ function showSlides(n) {
 }
 
 
-
+///Event listen with anonymous function to hide the maps
 let mapButtons = document.querySelectorAll('.mapBtn');
 mapButtons.forEach( mapButton => mapButton.addEventListener('click', function() {
     let mapButtonValue = mapButton.textContent;
