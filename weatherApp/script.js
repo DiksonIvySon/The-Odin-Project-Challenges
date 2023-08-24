@@ -128,14 +128,13 @@ function dataInitializer(weatherData) {
      daily_chance_of_rain = weatherData.forecast.forecastday[0].day.daily_chance_of_rain;
      dayDate = weatherData.forecast.forecastday[0].date;
 
-    console.log(weatherData);
-
     displayData();
     displayCurrentLocation()  
     displayAstroData()
     getHourlyData(weatherData);
     makeDate();
     changeBackground()        // change the first page background image.
+    prepareWeatherInfo()
     document.getElementById('searchValue').value = "";  //setting set value to be empty
 }
 
@@ -292,8 +291,6 @@ async function getPreviousData(new_dayDate) {
 //function to display the previous data information
 function displayPreviousDataInfo(previousDataInfo) {
 
-    console.log(previousDataInfo);
-
     let previousData_date = previousDataInfo.forecast.forecastday[0].date;
     let previousData_icon = previousDataInfo.forecast.forecastday[0].day.condition.icon;
     let previousData_avgtemp = previousDataInfo.forecast.forecastday[0].day.avgtemp_c;
@@ -431,7 +428,7 @@ function showSlides(n) {
 }
 
 
-///Event listen with anonymous function to hide the maps
+///Event listen with anonymous function
 let mapButtons = document.querySelectorAll('.mapBtn');
 mapButtons.forEach( mapButton => mapButton.addEventListener('click', function() {
     let mapButtonValue = mapButton.textContent;
@@ -463,7 +460,35 @@ function displayThisMap(mapButtonValue) {
     else {
         classValue = "." + "temperatureMap";
     }
-
+    
     document.querySelector(classValue).style.display = "block";
-
+    
 }
+
+function prepareWeatherInfo() {
+
+    let clouds_img = getWeatherImg("clouds_new");
+    document.querySelector(".cloudsMap").innerHTML = clouds_img;
+
+    let precipitation_img = getWeatherImg("precipitation_new");
+    document.querySelector(".precipitationMap").innerHTML = precipitation_img;
+
+    let pressure_img = getWeatherImg("pressure_new");
+    document.querySelector(".pressureMap").innerHTML = pressure_img;
+
+    let wind_img = getWeatherImg("wind_new");
+    document.querySelector(".windMap").innerHTML = wind_img;
+
+    let temp_img = getWeatherImg("temp_new");
+    document.querySelector(".temperatureMap").innerHTML = temp_img;
+}
+
+//function to fetch the data from the API and initialize the weather information variables.
+async function getWeatherImg(layer) {
+    let mapLink = "https://tile.openweathermap.org/map/" + layer + "/" + 4 + "/" + lon + "/" + lat + ".png?appid=8badefafba8c47eb9f7184239231608";
+    const response = await fetch( mapLink, {mode: 'cors'});
+    const mapData = await response.json();
+    return mapData;
+}
+
+
