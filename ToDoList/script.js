@@ -261,6 +261,13 @@ function openActivity(evt, activityName) {
     evt.currentTarget.className += " active";
   }
 
+//function to manage the burger nav bar
+function handleNavBar() {
+    hideOrReveal('.nav-bar-menu')
+} 
+
+
+
 
 
 

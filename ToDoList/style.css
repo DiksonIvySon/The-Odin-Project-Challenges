@@ -1,15 +1,15 @@
  * {
-    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
 
  body {
+    color: white;
     margin: 0px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #F6F6F6;
     display: grid;
     grid-template-columns: 1fr ;
-    grid-template-rows: 70px 1fr 90px;
+    grid-template-rows: 70px 2fr 90px;
     grid-template-areas: "header"
                          "main"
                          "footer";
@@ -19,8 +19,10 @@
 .header {
     grid-area: header;
     background-color: #408697;
-    
     padding-left: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
  }
 
  .header h1 i {
@@ -28,6 +30,57 @@
     color: #52D6F4;
  }
 
+ .nav-bar-icon i {
+    font-size: 30px;
+    padding: 10px;
+    margin: 0px 20px;
+ }
+
+ .nav-bar-menu {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+    height: 510px;
+    padding: 0px 20px;
+    border-radius: 0px 0px 0px 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px 0px black;
+ }
+
+ .nav-bar-menu > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #52D6F4;
+ }
+
+ .nav-bar-icon > div img {
+    border-radius: 10px 20px;
+ }
+
+ .cancel-nav-bar i {
+    margin: 2px 2px 2px auto;
+    color: white;
+ }
+
+ .cancel-nav-bar i:hover {
+    color: #52D6F4;
+    cursor: pointer;
+    font-size: 40px;
+ }
+
+ .nav-bar-content {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+ }
+
+ .nav-bar-content > div {
+    display: flex;
+    justify-content: space-between;
+ }
 
  /* styling the side-bar..............................................................*/
 .side-bar {
