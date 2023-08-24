@@ -429,3 +429,41 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+
+
+let mapButtons = document.querySelectorAll('.mapBtn');
+mapButtons.forEach( mapButton => mapButton.addEventListener('click', function() {
+    let mapButtonValue = mapButton.textContent;
+    
+    let maps = document.querySelectorAll('.map');
+    maps.forEach(map => {map.style.display = "none"});
+
+    displayThisMap(mapButtonValue);
+    
+}))
+
+//function to display selected weather map and hide the others
+function displayThisMap(mapButtonValue) {
+    console.log(mapButtonValue);
+    let classValue;
+
+    if (mapButtonValue === "Clouds") {
+        classValue = "." + "cloudsMap";
+    }
+    else if (mapButtonValue === "Precipitation") {
+        classValue = "." + "precipitationMap";
+    }
+    else if (mapButtonValue === "Pressure") {
+        classValue = "." + "pressureMap";
+    }
+    else if (mapButtonValue === "Wind") {
+        classValue = "." + "windMap";
+    }
+    else {
+        classValue = "." + "temperatureMap";
+    }
+
+    document.querySelector(classValue).style.display = "block";
+
+}
