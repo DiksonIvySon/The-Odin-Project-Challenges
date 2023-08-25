@@ -109,6 +109,10 @@ body {
     background: linear-gradient(70deg, #408697, #cbc9d1, #cbc9d1);
 }
 
+.loginOut-btn {
+    width: 100%;
+}
+
 .setting-sub {
     margin-left: 50px;
 }
@@ -522,4 +526,18 @@ main .pop-up .pop-up-content {
 
 .add-project-container button {
     width: 100px;
+}
+
+/*styling the login page*/
+
+.home-btn a{
+    width: 50px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 25px;
+}
+
+.home-btn a:hover {
+    font-size: 30px;
+    color: #52D6F4;
 }

@@ -267,6 +267,12 @@ function handleNavBar() {
 } 
 
 //function to manage the burger nav bar
+function handleLoginOut() {
+    hideOrReveal('.nav-bar-menu');
+} 
+
+
+//function to manage the burger nav bar
 function handleSetting() {
     console.log("hey");
     let settingSubs = document.querySelectorAll('.setting-sub');
@@ -279,6 +285,9 @@ function handleSetting() {
         }
     })
 } 
+
+
+
 
 
 
