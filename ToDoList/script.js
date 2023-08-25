@@ -286,7 +286,15 @@ function handleSetting() {
     })
 } 
 
-
+function handleCreateAccountForm() {
+    hideOrReveal('.createAccountForm');
+    
+    let createAccountForm = document.querySelector('createAccountForm');
+    let loginForm = document.querySelector('.loginForm-div');
+    if (createAccountForm.style.display === "block") {
+        loginForm.style.display = "none";
+    }
+}
 
 
 

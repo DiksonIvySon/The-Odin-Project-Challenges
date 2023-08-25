@@ -555,7 +555,7 @@ main {
     color: white;
 }
 
-.loginForm {
+.loginForm-div {
     padding: 30px;
     background-color: #363538;
     border-radius: 10px;

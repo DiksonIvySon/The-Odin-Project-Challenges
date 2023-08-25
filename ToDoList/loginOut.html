@@ -24,29 +24,29 @@
 
     <main>
         <div class="forms-container">
-            <div class="loginForm">
+            <div class="loginForm-div" style="display: block">
                 <form action="">
                     <h4>Login</h4>
                     <div>
-                        <label for="last-name">Email*</label>
+                        <label for="login-email">Email*</label>
                         <br>
-                        <input type="text" id="last-name" name="last-name" placeholder="ivySon@gmail.com" required>
+                        <input type="text" id="login-email" name="login-email" placeholder="ivySon@gmail.com" required>
                     </div>
                     <div>
-                        <label for="user-password">Password*</label>
+                        <label for="login-password">Password*</label>
                         <br>
-                        <input type="password" id="user-password" name="user-password" required>
+                        <input type="password" id="login-password" name="login-password" required>
                     </div>
                     <button class="loginButton">Login</button>
                 </form>
                 <div>
-                    <h4>Don't have an account? <text class="createAccountText">Create an account</text></h4>
+                    <h4>Don't have an account? <text class="createAccountText" onclick="handleCreateAccountForm()">Create an account</text></h4>
                 </div>
             </div>
-            <div class="createAccountForm">
+            <div class="createAccountForm" style="display: none">
                 <form action="" method="post">
                     <div class="form">
-                        <i class="fa-solid fa-xmark" onclick="handleNavBar()"></i>
+                        <i class="fa-solid fa-xmark" onclick="handleCreateAccountForm()"></i>
                         <h4>Create New Account</h4>
                         <div>
                             <label for="first-name">First Name*</label>
@@ -59,9 +59,9 @@
                             <input type="text" id="last-name" name="last-name" placeholder="Manganye" required>
                         </div>
                         <div>
-                            <label for="last-name">Email*</label>
+                            <label for="email">Email*</label>
                             <br>
-                            <input type="text" id="last-name" name="last-name" placeholder="ivySon@gmail.com" required>
+                            <input type="text" id="email" name="email" placeholder="ivySon@gmail.com" required>
                         </div>
                         <div>
                             <label for="phone-number">Phone Number (optional)</label>
