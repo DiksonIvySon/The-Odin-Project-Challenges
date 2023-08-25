@@ -20,24 +20,40 @@
         <div class="nav-bar">
             <div class="nav-bar-icon" onclick="handleNavBar()">
                 <i class="fa-solid fa-bars"></i>
-            <div>
+            </div>
             <div class="nav-bar-menu">
                 <div class="cancel-nav-bar">
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-xmark" onclick="handleNavBar()"></i>
                 </div>
                 <div>
                     <h3>Dikson <br> Manganye</h3>
                     <img src="images/Screenshot_20210512-141131_WhatsApp (2).jpg" alt="" width="50px">
                 </div>
                 <hr>
-                <div class="nav-bar-content">
-                    <div>
-                        <button class="doneButton"><i class="fa-solid fa-check-double"></i>Done</button>
-                        <h3></h3> Done</h3>
-                    </div>
-                    <div>
-                        <button class="recycleBin-btn"><i class="fa-solid fa-recycle"></i>Recycle Bin</button>
-                    </div>
+                <div>
+                    <button class="doneButton"><i class="fa-solid fa-check-double"></i>Done</button>
+                    <text>122</text>
+                </div>
+                <div>
+                    <button class="recycleBin-btn"><i class="fa-solid fa-recycle"></i>Recycle Bin</button>
+                    <text>15</text>
+                </div>
+                <div>
+                    <button class="loginOut-btn"><i class="fa-solid fa-right-to-bracket"></i>Login/out</button>
+                    <text>2</text>
+                </div>
+                <div>
+                    <button class="settings-btn" onclick="handleSetting()"><i class="fa-solid fa-gear"></i>Settings</button>
+                    <text>3</text>
+                </div>
+                <div class="setting-sub" style="display: none;">
+                    <button>Setting 1</button>
+                </div>
+                <div class="setting-sub" style="display: none;">
+                    <button>Setting 2</button>
+                </div>
+                <div class="setting-sub" style="display: none;">
+                    <button>Setting 3</button>
                 </div>
             </div>
         </div>

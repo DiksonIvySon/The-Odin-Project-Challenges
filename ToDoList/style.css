@@ -1,8 +1,8 @@
- * {
+* {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
 
- body {
+body {
     color: white;
     margin: 0px;
     min-height: 100vh;
@@ -25,23 +25,29 @@
     align-items: center;
  }
 
- .header h1 i {
+.header h1 i {
     padding-right: 5px;
     color: #52D6F4;
  }
 
- .nav-bar-icon i {
+.nav-bar-icon i {
     font-size: 30px;
     padding: 10px;
     margin: 0px 20px;
  }
 
- .nav-bar-menu {
+.nav-bar-icon i:hover {
+    cursor: pointer;
+    color: #52D6F4;
+    font-size: 35px;
+}
+
+.nav-bar-menu {
     position: absolute;
     right: 0px;
     top: 0px;
     width: 50%;
-    height: 510px;
+    height: 580px;
     padding: 0px 20px;
     border-radius: 0px 0px 0px 20px;
     backdrop-filter: blur(10px);
@@ -49,38 +55,74 @@
     box-shadow: 0px 0px 10px 0px black;
  }
 
- .nav-bar-menu > div {
+.nav-bar-menu > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #52D6F4;
  }
 
- .nav-bar-icon > div img {
+.nav-bar img {
     border-radius: 10px 20px;
  }
 
- .cancel-nav-bar i {
-    margin: 2px 2px 2px auto;
+.cancel-nav-bar i {
+    margin: 15px 15px 0px auto;
+    height: 50px;
     color: white;
+    font-size: 30px;
+    position: relative;
  }
 
- .cancel-nav-bar i:hover {
+.cancel-nav-bar i:hover {
     color: #52D6F4;
     cursor: pointer;
     font-size: 40px;
  }
 
- .nav-bar-content {
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
- }
+.nav-bar button {
+    flex: 1;
+    text-align: left;
+    margin: 5px 0px;
+    height: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
- .nav-bar-content > div {
-    display: flex;
-    justify-content: space-between;
- }
+.nav-bar button i {
+    margin: 0px 5px 0px 5px;
+}
+
+.nav-bar-menu text {
+    height: 28px;
+    width: 50px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 0px 10px 10px 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav-bar-menu button:hover {
+    font-size: 20px;
+    color: #52D6F4;
+    cursor: pointer;
+    background: linear-gradient(70deg, #408697, #cbc9d1, #cbc9d1);
+}
+
+.setting-sub {
+    margin-left: 50px;
+}
+
+.setting-sub button {
+    height: 22px;
+    border-radius: 0px 10px 10px 0px;
+    width: 100%;
+    font-size: 12px;
+}
+
+.setting-sub button:hover {
+    font-size: 13px;
+}
 
  /* styling the side-bar..............................................................*/
 .side-bar {
