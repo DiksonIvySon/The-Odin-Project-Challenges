@@ -297,6 +297,9 @@ function displayPreviousDataInfo(previousDataInfo) {
     let previousData_maxwind_kph = previousDataInfo.forecast.forecastday[0].day.maxwind_kph;
     let previousData_totalprecip_mm = previousDataInfo.forecast.forecastday[0].day.totalprecip_mm;
 
+    //Call function updatePollen
+    updatePollen(previousData_totalprecip_mm);
+
     let previousWeatherContainer = document.querySelector('.previousWeather-container');
     let singlePreviousWeather = document.createElement('div');
     singlePreviousWeather.setAttribute('class', 'dayWeather')
@@ -375,8 +378,25 @@ function changeBackground() {
     }
 }
 
+let pollenPercentage = 0;
 
+//function to update the pollen status
+function updatePollen(previousData_totalprecip_mm) {
+    if (previousData_totalprecip_mm > 0) {
+        pollenPercentage += 14;
+    }
 
+    let pollenChancesScreen = document.querySelector('.pollenChances');
+    if (pollenPercentage < 40) {
+        pollenChancesScreen.textContent = "Low";
+    }
+    else if (pollenPercentage >= 40 && pollenPercentage <= 70) {
+        pollenChancesScreen.textContent = "Moderate";
+    }
+    else {
+        pollenChancesScreen.textContent = "High";
+    }
+}
 
 
 
