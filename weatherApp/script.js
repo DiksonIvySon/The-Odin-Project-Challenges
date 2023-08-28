@@ -343,38 +343,48 @@ function changeBackground() {
     let firstPageBackground = document.querySelector('.firstPage');
     if (conditionText === "Cloudy") {
         firstPageBackground.style.backgroundImage = "url(images/cloudy.jpeg)";
+        updateRunning("Moderate (cold)")
     }
-    else if (conditionText === "Foggy" || conditionText === "Mist") {
+    else if (conditionText === "Foggy" || conditionText === "Mist" || conditionText === "Fog") {
         firstPageBackground.style.backgroundImage = "url(images/foggy.jpeg)";
+        updateRunning("Moderate (cold)")
     }
     else if (conditionText === "Overcast") {
         firstPageBackground.style.backgroundImage = "url(images/overcast.jpeg)";
+        updateRunning("Moderate (very cold)")
     }
     else if (conditionText === "Partly cloudy" || conditionText === "Partly cloudy rain" || conditionText === "Partly cloudy rainy") {
         firstPageBackground.style.backgroundImage = "url(images/partly-cloudy.webp)";
-        document.querySelector('.firstPage-weather').style.color = 'black';  
+        document.querySelector('.firstPage-weather').style.color = 'black'; 
+        updateRunning("Good") 
     }
     else if (conditionText === "Rainy" || conditionText === "Rain" || conditionText === "Light rain" || conditionText === "Heavy rain" || conditionText === "Moderate rain") {
         firstPageBackground.style.backgroundImage = "url(images/rainy.jpeg)";
         updateDrivingDifficulty("Moderate");
+        updateRunning("Bad (Raining)")
     }
     else if (conditionText === "snowing" || conditionText === "snow") {
         firstPageBackground.style.backgroundImage = "url(images/snowing.jpeg)";
         document.querySelector('.firstPage-weather').style.color = 'black';
         updateDrivingDifficulty("Moderate");
+        updateRunning("Bad (Snowing)")
     }
     else if (conditionText === "Sunny" || conditionText === "sun") {
         firstPageBackground.style.backgroundImage = "url(images/sunny.jpeg)";
+        updateRunning("Good")
     }
     else if (conditionText === "thunder and lightning" || conditionText === "thunder" || conditionText === "lightning") {
         firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
         updateDrivingDifficulty("High");
+        updateRunning("Bad (lightning)")
     }
     else if (conditionText === "Windy") {
         firstPageBackground.style.backgroundImage = "url(images/windy.jpeg)";
+        updateRunning("Moderate (windy)")
     }
     else if (conditionText === "Clear") {
         firstPageBackground.style.backgroundImage = "url(images/clear.jpeg)";
+        updateRunning("Good (clear)")
     }
     else {
         firstPageBackground.style.backgroundImage = "url(images/backup-image.jpeg)";
@@ -406,6 +416,11 @@ function updateDrivingDifficulty(drivingDifficulty) {
     document.querySelector('.drivingDifficultyScreen').textContent = drivingDifficulty;
 }
 
+
+//function to update running 
+function updateRunning(runningDifficulty) {
+    document.querySelector('.runningDifficulty').textContent = runningDifficulty;
+}
 
 //function to make the location information button to toggle between showing and hiding information.
 let  currentLocationButton = document.querySelector('.currentLocation');
