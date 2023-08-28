@@ -134,7 +134,7 @@ function dataInitializer(weatherData) {
     getHourlyData(weatherData);
     makeDate();
     changeBackground()        // change the first page background image.
-    prepareWeatherInfo()
+    //prepareWeatherInfo()
     document.getElementById('searchValue').value = "";  //setting set value to be empty
 }
 
@@ -427,7 +427,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-
+/*
 ///Event listen with anonymous function
 let mapButtons = document.querySelectorAll('.mapBtn');
 mapButtons.forEach( mapButton => mapButton.addEventListener('click', function() {
@@ -439,6 +439,7 @@ mapButtons.forEach( mapButton => mapButton.addEventListener('click', function() 
     displayThisMap(mapButtonValue);
     
 }))
+
 
 //function to display selected weather map and hide the others
 function displayThisMap(mapButtonValue) {
@@ -481,14 +482,16 @@ function prepareWeatherInfo() {
 
     let temp_img = getWeatherImg("temp_new");
     document.querySelector(".temperatureMap").innerHTML = temp_img;
+    console.log(getWeatherImg("temp_new"));
 }
 
 //function to fetch the data from the API and initialize the weather information variables.
 async function getWeatherImg(layer) {
-    let mapLink = "https://tile.openweathermap.org/map/" + layer + "/" + 4 + "/" + lon + "/" + lat + ".png?appid=8badefafba8c47eb9f7184239231608";
+    let mapLink = "https://tile.openweathermap.org/map/" + layer + "/" + 1 + "/" + lon + "/" + lat + ".png?appid=05319f9ba4c5b0028375576bbd53d5a2";
     const response = await fetch( mapLink, {mode: 'cors'});
     const mapData = await response.json();
     return mapData;
 }
+*/
 
 
