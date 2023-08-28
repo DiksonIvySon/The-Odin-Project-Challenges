@@ -82,8 +82,8 @@ body {
     border: 5px solid gray;
     border-radius: 50px;
     width: 35%;
-    min-width: 200px;
-    max-width: 300px;
+    min-width: 300px;
+    max-width: 400px;
     margin: auto;
 }
 
@@ -102,10 +102,23 @@ body {
     padding: 5px;
     border: 0px;
     border-radius: 5px;
-    width: 55%;
-    min-width: 60px;
+    width: 70%;
+    min-width: 150px;
     background-color: transparent;
     outline: none;
+}
+
+@media (max-width: 280px) {
+    .search-bar .form input {
+        width: 30%;
+        min-width: 0px;
+    }
+
+    .search-bar {
+        width: 35%;
+        min-width: 220px;
+        max-width: 400px;
+    }
 }
 
 .search-bar .form button {
