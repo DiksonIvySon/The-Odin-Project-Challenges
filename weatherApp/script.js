@@ -356,16 +356,19 @@ function changeBackground() {
     }
     else if (conditionText === "Rainy" || conditionText === "Rain" || conditionText === "Light rain" || conditionText === "Heavy rain" || conditionText === "Moderate rain") {
         firstPageBackground.style.backgroundImage = "url(images/rainy.jpeg)";
+        updateDrivingDifficulty("Moderate");
     }
     else if (conditionText === "snowing" || conditionText === "snow") {
         firstPageBackground.style.backgroundImage = "url(images/snowing.jpeg)";
         document.querySelector('.firstPage-weather').style.color = 'black';
+        updateDrivingDifficulty("Moderate");
     }
     else if (conditionText === "Sunny" || conditionText === "sun") {
         firstPageBackground.style.backgroundImage = "url(images/sunny.jpeg)";
     }
     else if (conditionText === "thunder and lightning" || conditionText === "thunder" || conditionText === "lightning") {
         firstPageBackground.style.backgroundImage = "url(images/thunder-and-lightning.jpeg)";
+        updateDrivingDifficulty("High");
     }
     else if (conditionText === "Windy") {
         firstPageBackground.style.backgroundImage = "url(images/windy.jpeg)";
@@ -398,6 +401,10 @@ function updatePollen(previousData_totalprecip_mm) {
     }
 }
 
+//function to update the driving difficulty
+function updateDrivingDifficulty(drivingDifficulty) {
+    document.querySelector('.drivingDifficultyScreen').textContent = drivingDifficulty;
+}
 
 
 //function to make the location information button to toggle between showing and hiding information.
