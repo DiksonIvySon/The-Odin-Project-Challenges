@@ -23,18 +23,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
- }
+}
 
 .header h1 i {
     padding-right: 5px;
     color: #52D6F4;
- }
+}
 
 .nav-bar-icon i {
     font-size: 30px;
     padding: 10px;
     margin: 0px 20px;
- }
+}
 
 .nav-bar-icon i:hover {
     cursor: pointer;
@@ -53,6 +53,7 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0px 0px 10px 0px black;
+    z-index: 1;
  }
 
 .nav-bar-menu > div {
@@ -287,6 +288,7 @@ body {
     grid-area: main;
     display: flex;
     flex-wrap: wrap;
+    color: white;
 }
 
 @media (max-width: 700px) {
@@ -327,15 +329,14 @@ body {
 /* styling the list item */
 
 .item-properties {
-    margin:0px 10px;
+    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin: 20px;
+    min-height: 100px;
     padding-right: 20px;
     background-color: #8D8C8A;
     border-radius: 15px;
-
     box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.25),
     inset -5px -5px 15px rgba(255, 255, 255, 0.25),
     5px 5px 15px rgba(0, 0, 0, 0.25),
@@ -350,29 +351,46 @@ body {
 
 .priority-box {
     width: 20px;
-    height: 80px;
+    height: 100px;
     background-color: red;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.item-properties-container {
+    margin: 5px;
+    flex: 1;
+}
+
+.titleDate {
+    text-align: center;
+}
+
+.titleDate h2, h4 {
+    margin: 0px;
+}
+
+.descriptionAndButtons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .item-description {
     font-size: 12px;
+    margin: 5px 0px;
 } 
-
-.item-notes {
-    padding: 5px;
-    background-color: black;
-    border-radius: 5px;
-}
 
 .item-notes:hover {
     cursor: pointer;
     color: #52D6F4;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 #checkbox {
     width: 25px;
     height: 25px;
+    position: absolute;
+    top: 5px;
+    right: 23px;
 }
 
 #checkbox:hover {
@@ -381,16 +399,17 @@ body {
 
 .edit {
     padding: 2px;
+    color: white;
     background-color: black;
-    width: 30px;
-    height: 30hpx;
+    width: 55px;
+    height: 40px;
     border-radius: 5px;
 }
 
 .edit i:hover {
     color: #52D6F4;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 

@@ -40,19 +40,29 @@ function renderTodo(option) {
         let todoDiv = document.createElement('div');
         todoDiv.setAttribute('class', 'todo-item');
         todoDiv.innerHTML = ` 
-                                    <div class="item-properties">
-                                        <div class="priority-box" style="background-color: ${priorityColor}"></div>
-                                        <h2 class="item-title">${todo.title}</h2>
-                                        <h4 class="item-description">${todo.description}</h4>
-                                        <button class="item-notes" onclick="displayPopUp(${i})">notes</button>
-                                        <h4 class="Due date">${todo.dueDate}</h4>
-                                        <div>
-                                            <button class="edit"><i class="fa-solid fa-pen"></i></button>
-                                            <button class="delete-btn edit" onclick="removeToDo(${i})"><i class="fa-solid fa-trash-can"></i></button>
+                                <div class="item-properties">
+                                    <div class="priority-box" style="background-color: ${priorityColor}"></div>
+                                    <div class="item-properties-container">
+                                        <div class="titleDate">
+                                            <h2 class="item-title">${todo.title}</h2>
+                                            <h4 class="Due date">${todo.dueDate}</h4>
+                                        </div>
+                                        <hr>
+                                        <div class="descriptionAndButtons">
+                                            <div>
+                                                <h4>Description:</h4>
+                                                <p class="item-description">${todo.description}</p>
+                                            </div>
+                                            <div>
+                                                <button class="item-notes edit" onclick="displayPopUp(${i})">Notes</button>
+                                                <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="delete-btn edit" onclick="removeToDo(${i})"><i class="fa-solid fa-trash-can"></i></button>
+                                            </div>
                                         </div>
                                         <input type="checkbox" id="checkbox" name="checkbox">
                                     </div>
-                                  `;
+                                </div>
+                            `;
 
     toDosContainer.appendChild(todoDiv);
     }
@@ -283,14 +293,14 @@ function handleSetting() {
         else {
             settingSub.style.display = "block";
         }
-    })
+    }) 
 } 
 
 function handleCreateAccountForm() {
     hideOrReveal('.createAccountForm');
     
     let createAccountForm = document.querySelector('createAccountForm');
-    let loginForm = document.querySelector('.loginForm-div');
+    let loginForm = document.querySelector('.loginForm-d');
     if (createAccountForm.style.display === "block") {
         loginForm.style.display = "none";
     }

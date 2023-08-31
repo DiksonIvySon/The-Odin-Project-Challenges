@@ -166,18 +166,28 @@
 
         
         <section class="toDos">
-        <!-- <div class="todo-item">
+            <!-- <div class="todo-item">
                 <div class="item-properties">
-                    <div class="priority-box"></div>
-                    <h2 class="item-title">title</h2>
-                    <h4 class="item-description">description</h4>
-                    <button class="item-notes">notes</button>
-                    <h4 class="Due date">15/05/2000</h4>
-                    <div>
-                        <button class="edit"><i class="fa-solid fa-pen"></i></button>
-                        <button class="delete-btn edit" onclick="remove(${i})"><i class="fa-solid fa-trash-can"></i></button>
+                    <div class="priority-box" style="background-color: ${priorityColor}"></div>
+                    <div class="item-properties-container">
+                        <div class="titleDate">
+                            <h2 class="item-title">${todo.title}</h2>
+                            <h4 class="Due date">${todo.dueDate}</h4>
+                        </div>
+                        <hr>
+                        <div class="descriptionAndButtons">
+                            <div>
+                                <h4>Description:</h4>
+                                <h4 class="item-description">${todo.description}</h4>
+                            </div>
+                            <div>
+                                <button class="item-notes edit" onclick="displayPopUp(${i})">Notes</button>
+                                <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                                <button class="delete-btn edit" onclick="removeToDo(${i})"><i class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </div>
+                        <input type="checkbox" id="checkbox" name="checkbox">
                     </div>
-                    <input type="checkbox" id="checkbox" name="checkbox">
                 </div>
             </div> -->
             <div id="today" class="tabContent" style="display: none">
