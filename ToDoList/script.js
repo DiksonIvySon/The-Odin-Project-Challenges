@@ -60,7 +60,7 @@ function renderTodo(option) {
                                             </div>
                                             <div>
                                                 <button class="item-notes edit" onclick="displayPopUp(${i})">Notes</button>
-                                                <button class="edit"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="edit" onclick="popUpEditForm(${option},${i})"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="delete-btn edit" onclick="removeToDo(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-trash-can"></i></button>
                                             </div>
                                         </div>
@@ -188,6 +188,79 @@ function asb() {
     }
 }
 
+
+
+//function to popup an edit item form when the edit button is clicked
+function popUpEditForm(option,index) {
+
+    let Array;
+
+    if (option === "today") {
+        Array = todayList;
+    }
+    else if (option === "nextWeek") {
+        Array = nextWeekList;
+    }
+    else if (option === "allToDo") {
+        Array = allToDoList;
+    }
+    else {
+        //do nothing
+    }
+
+    let popUpContent = document.querySelector('.pop-up-content');
+    popUpContent.textContent = "";
+    let editForm_div = document.createElement('div');
+    editForm_div.setAttribute('class', 'editingForm')
+    editForm_div.innerHTML = `
+                                <form action="" id="addForm" style="display: none;">
+                                <div class="cancel-form-button">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                                <div>
+                                    <label for="title">Title</label>
+                                    <br>
+                                    <input type="text" id="title" name="title" placeholder="${Array[index].title}">
+                                </div>
+                                <div>
+                                    <label for="description">Description</label>
+                                    <br>
+                                    <input type="text" id="description" name="description" placeholder="${Array[index].description}">
+                                </div>
+                                <div>
+                                    <label for="notes">Notes</label>
+                                    <br>
+                                    <textarea name="notes" id="notes" form="form" placeholder="${Array[index].notes}"></textarea>
+                                </div>
+                                <div>
+                                    <label for="date">Due date</label>
+                                    <br>
+                                    <input type="date" id="date" name="date" placeholder="${Array[index].date}">
+                                </div>
+                                <div class="radio-buttons">
+                                    <div>
+                                        <input type="radio" id="priority-low" name="priority" value="low">
+                                        <label for="priority-low">Low</label><br>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="priority-medium" name="priority" value="medium">
+                                        <label for="priority-medium">Medium</label><br>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="priority-high" name="priority" value="high">
+                                        <label for="priority-high">High</label>
+                                    </div>
+                                </div>
+
+                                <div class="add-btn-container">
+                                    <button class="add-btn">Add Activity</button>
+                                </div>  
+                            </form>
+                             `;
+
+ popUpContent.appendChild(editForm_div);
+ hideOrReveal('.pop-up');
+}
 
 
 /*
