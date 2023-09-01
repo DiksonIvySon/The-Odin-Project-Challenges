@@ -131,7 +131,7 @@ body {
 }
 
 .loginOut-btn button {
-    width: 250px;
+    width: 140px;
     border-radius: 0px 10px 10px 0px;
 }
 
@@ -308,19 +308,12 @@ body {
         padding: 20px;
     }
 
-    body {
-        grid-template-rows: 70px 1fr 170px;
-    }
-
-    .footer {
-        text-align: center;
-        flex-direction: column;
-    }
-
     .footer i {
-        display: flex;
-        justify-content: center;
-        margin: 10px;
+        font-size: 20px;
+    }
+
+    .footer .copyright h5 {
+        font-size: 12px;
     }
 }
 

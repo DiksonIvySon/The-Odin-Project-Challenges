@@ -317,6 +317,9 @@ function handleCreateAccountForm() {
 
 function handleSidebar() {
     hideOrReveal('.side-bar');
+
+    //hide the burger menu
+    hideOrReveal('.nav-bar-menu');
 }
 
 
