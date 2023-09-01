@@ -5,6 +5,7 @@ let allToDoList = [];
 let todayList = [];
 let nextWeekList = [];
 let selectedArray;
+//let previouslySelectedArray;
 
 // function to convert the form inputs to a single todo object
 function toDo(title, description, notes, dueDate, option, priority) {
@@ -19,13 +20,17 @@ function toDo(title, description, notes, dueDate, option, priority) {
 //function to render the todo event to the main when it is added using the add form
 function renderTodo(option) {
     let toDosContainer;
+    let previouslySelectedArray;
+
     if (option === "today") {
         toDosContainer = document.querySelector('#today');
         selectedArray = todayList;
+        previouslySelectedArray = "todayList";
     }
     else if (option === "nextWeek") {
         toDosContainer = document.querySelector('#nextWeek');
         selectedArray = nextWeekList;
+        previouslySelectedArray = "nextWeekList";
     }
     else {
         toDosContainer = document.querySelector('#allToDos');
@@ -56,7 +61,7 @@ function renderTodo(option) {
                                             <div>
                                                 <button class="item-notes edit" onclick="displayPopUp(${i})">Notes</button>
                                                 <button class="edit"><i class="fa-solid fa-pen"></i></button>
-                                                <button class="delete-btn edit" onclick="removeToDo(${i})"><i class="fa-solid fa-trash-can"></i></button>
+                                                <button class="delete-btn edit" onclick="removeToDo(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-trash-can"></i></button>
                                             </div>
                                         </div>
                                         <input type="checkbox" id="checkbox" name="checkbox">
@@ -107,16 +112,16 @@ function addToDo() {
         allToDoList.push(newToDo); 
         renderTodo('allToDo'); 
     }
-
-    console.log(todayList);
-    console.log(allToDoList);
-    console.log(nextWeekList);
 };
 
 //function to remove the todo activity when delete button is clicked
-function removeToDo(index) {
+function removeToDo(index, previouslySelectedArray) {
     selectedArray.splice(index, 1);
-    renderTodo(); //must re-render the list of toDos after removing a todo activity
+    previouslySelectedArray.splice(index, 1);
+    
+    renderTodo("today"); //must re-render the list of toDos after removing a todo activity.
+    renderTodo("nextWeek"); 
+    renderTodo("allToDos"); 
 }
 
 //event handler to handle the click on the Activity button and call the addToDo function.
@@ -304,6 +309,10 @@ function handleCreateAccountForm() {
     if (createAccountForm.style.display === "block") {
         loginForm.style.display = "none";
     }
+}
+
+function handleSidebar() {
+    hideOrReveal('.side-bar');
 }
 
 

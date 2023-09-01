@@ -110,10 +110,6 @@ body {
     background: linear-gradient(70deg, #408697, #cbc9d1, #cbc9d1);
 }
 
-.loginOut-btn {
-    width: 100%;
-}
-
 .setting-sub {
     margin-left: 50px;
 }
@@ -128,6 +124,17 @@ body {
 .setting-sub button:hover {
     font-size: 13px;
 }
+
+.hide-side-bar {
+    width: 250px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.loginOut-btn button {
+    width: 250px;
+    border-radius: 0px 10px 10px 0px;
+}
+
 
  /* styling the side-bar..............................................................*/
 .side-bar {
@@ -333,7 +340,7 @@ body {
     display: flex;
     align-items: center;
     margin: 20px;
-    min-height: 100px;
+    min-height: 120px;
     padding-right: 20px;
     background-color: #8D8C8A;
     border-radius: 15px;

@@ -56,6 +56,9 @@
                     <button>Setting 3</button>
                 </div>
                 <div>
+                    <button class="hide-side-bar" onclick="handleSidebar()"><i class="fa-solid fa-bars-progress"></i>Hide/reveal side-bar</button>
+                </div>
+                <div>
                     <a class="loginOut-btn" href="loginOut.html" onclick="handleLoginOut()">
                         <button><i class="fa-solid fa-right-to-bracket"></i>Login/out</button>
                     </a>
@@ -65,7 +68,7 @@
     </header>
 
     <main class="main">
-        <section class="side-bar">  
+        <section class="side-bar" style="display: block">  
             <div class="navigation">
                 <div>
                     <h3>Home</h3>
@@ -125,7 +128,7 @@
                         <div>
                             <label for="notes">Notes</label>
                             <br>
-                            <textarea name="notes" id="notes" form="usrform" placeholder="Write notes here..."></textarea>
+                            <textarea name="notes" id="notes" form="form" placeholder="Write notes here..."></textarea>
                         </div>
                         <div>
                             <label for="date">Due date</label>
