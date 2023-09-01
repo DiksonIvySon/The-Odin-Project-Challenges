@@ -31,11 +31,11 @@
                 </div>
                 <hr>
                 <div>
-                    <button class="doneButton"><i class="fa-solid fa-check-double"></i>Done Activities</button>
+                    <button class="tabLinks doneButton" onclick="openActivity(event, 'doneActivities')"><i class="fa-solid fa-check-double"></i>Done Activities</button>
                     <text>122</text>
                 </div>
                 <div>
-                    <button class="recycleBin-btn"><i class="fa-solid fa-recycle"></i>Recycle Bin</button>
+                    <button class="tabLinks recycleBin-btn" onclick="openActivity(event, 'recycle-Bin')"><i class="fa-solid fa-recycle"></i>Recycle Bin</button>
                     <text>15</text>
                 </div>
                 <div>
@@ -204,6 +204,15 @@
             <div id="allToDos" class="tabContent" style="display: none">
                 <h3>No tasks in all to dos</h3>
             </div>
+
+            <div id="doneActivities" class="tabContent" style="display: none">
+                <h3>No tasks in Done Activities</h3>
+            </div>
+
+            <div id="recycle-Bin" class="tabContent" style="display: none">
+                <h3>No tasks in recycling bin</h3>
+            </div>
+
             <div id="projects" class="tabContent" style="display: none">
                 <h3>No tasks in projects</h3>
             </div>

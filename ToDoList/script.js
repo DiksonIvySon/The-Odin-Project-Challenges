@@ -274,20 +274,24 @@ function openActivity(evt, activityName) {
     // Show the current tab, and add an "active" class to the link that opened the tab
     document.getElementById(activityName).style.display = "block";
     evt.currentTarget.className += " active";
-  }
+
+    //hide the hamburger navbar menu if the doneActivities or recycle buttons is clicked
+    if (activityName === "doneActivities" || activityName === "recycle-Bin") {
+        hideOrReveal('.nav-bar-menu');
+    }
+}
 
 //function to manage the burger nav bar
 function handleNavBar() {
     hideOrReveal('.nav-bar-menu');
 } 
 
-//function to manage the burger nav bar
+//function to manage the login/out button
 function handleLoginOut() {
     hideOrReveal('.nav-bar-menu');
 } 
 
-
-//function to manage the burger nav bar
+//function to manage the settings button
 function handleSetting() {
     console.log("hey");
     let settingSubs = document.querySelectorAll('.setting-sub');
