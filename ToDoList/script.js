@@ -60,7 +60,7 @@ function renderTodo(option) {
                                             </div>
                                             <div>
                                                 <button class="item-notes edit" onclick="displayPopUp(${i})">Notes</button>
-                                                <button class="edit" onclick="popUpEditForm(${option},${i})"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="edit" onclick="popUpEditForm(${todo})"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="delete-btn edit" onclick="removeToDo(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-trash-can"></i></button>
                                             </div>
                                         </div>
@@ -112,6 +112,9 @@ function addToDo() {
         allToDoList.push(newToDo); 
         renderTodo('allToDo'); 
     }
+
+    //update the index ID
+    //index_ID += 1;
 };
 
 //function to remove the todo activity when delete button is clicked
@@ -191,7 +194,7 @@ function asb() {
 
 
 //function to popup an edit item form when the edit button is clicked
-function popUpEditForm(option,index) {
+function popUpEditForm(todo) {
 
     let Array;
 
@@ -207,6 +210,10 @@ function popUpEditForm(option,index) {
     else {
         //do nothing
     }
+    
+    console.log(allToDoList);
+    console.log(todayList);
+    console.log(nextWeekList);
 
     let popUpContent = document.querySelector('.pop-up-content');
     popUpContent.textContent = "";
@@ -220,22 +227,22 @@ function popUpEditForm(option,index) {
                                 <div>
                                     <label for="title">Title</label>
                                     <br>
-                                    <input type="text" id="title" name="title" placeholder="${Array[index].title}">
+                                    <input type="text" id="title" name="title" placeholder="${todo.title}">
                                 </div>
                                 <div>
                                     <label for="description">Description</label>
                                     <br>
-                                    <input type="text" id="description" name="description" placeholder="${Array[index].description}">
+                                    <input type="text" id="description" name="description" placeholder="${todo.description}">
                                 </div>
                                 <div>
                                     <label for="notes">Notes</label>
                                     <br>
-                                    <textarea name="notes" id="notes" form="form" placeholder="${Array[index].notes}"></textarea>
+                                    <textarea name="notes" id="notes" form="form" placeholder="${todo.notes}"></textarea>
                                 </div>
                                 <div>
                                     <label for="date">Due date</label>
                                     <br>
-                                    <input type="date" id="date" name="date" placeholder="${Array[index].date}">
+                                    <input type="date" id="date" name="date" placeholder="${todo.date}">
                                 </div>
                                 <div class="radio-buttons">
                                     <div>
@@ -383,9 +390,21 @@ function handleCreateAccountForm() {
     
     let createAccountForm = document.querySelector('createAccountForm');
     let loginForm = document.querySelector('.loginForm-d');
-    if (createAccountForm.style.display === "block") {
-        loginForm.style.display = "none";
+    
+    if (createAccountForm.style.display === 'none') {
+        loginForm.style.display = 'block';
     }
+    else if (createAccountForm.style.display === 'block') {
+        loginForm.style.display = 'none';
+    }
+
+    //Call a function to allow only one of the forms to show at a time
+    hideOneForm(createAccountForm, loginForm);
+}
+
+//function to allow only one of the forms to show at a time
+function hideOneForm(createAccountForm, loginForm) {
+ 
 }
 
 function handleSidebar() {
