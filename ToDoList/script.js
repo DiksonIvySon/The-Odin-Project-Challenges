@@ -39,7 +39,7 @@ function renderTodo(option) {
         selectedArray = recycleList;
         previouslySelectedArray = "recycleList";
     }
-    else if (option === "DoneActivities") {
+    else if (option === "doneActivities") {
         toDosContainer = document.querySelector('#doneActivities');
         selectedArray = doneActivitiesList;
         previouslySelectedArray = "doneActivitiesList";
@@ -76,7 +76,7 @@ function renderTodo(option) {
                                                 <button class="delete-btn edit" onclick="removeToDo(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-trash-can"></i></button>
                                             </div>
                                         </div>
-                                        <input type="checkbox" id="checkbox" name="checkbox">
+                                        <input type="checkbox" id="checkbox" name="checkbox" onclick="handleCheckBox(${i}, ${previouslySelectedArray})">
                                     </div>
                                 </div>
                             `;
@@ -108,8 +108,6 @@ function addToDo() {
     let newToDo = new toDo(title, description, notes, dueDate, option, priority);
     
     //adding the new toDo to an array
-    
-
     if (option === "today") {
         todayList.push(newToDo);
         renderTodo(option); //must be included to call the renderTodo function.
@@ -139,11 +137,20 @@ function removeToDo(index, previouslySelectedArray) {
     selectedArray.splice(index, 1);
     previouslySelectedArray.splice(index, 1);
     
-    renderTodo("today"); //must re-render the list of toDos after removing a todo activity.
+    //must re-render the list of toDos after removing a todo activity.
+    renderTodo("today"); 
     renderTodo("nextWeek"); 
     renderTodo("allToDos"); 
     renderTodo("recycleBin");
     renderTodo("doneActivities"); 
+}
+
+//function to add items to the done projects array
+function handleCheckBox(index, previouslySelectedArray) {
+    doneActivitiesList.push(previouslySelectedArray[index]);
+    
+    //Rerender done activities to show on the UI
+    renderTodo("doneActivities");
 }
 
 //event handler to handle the click on the Activity button and call the addToDo function.
