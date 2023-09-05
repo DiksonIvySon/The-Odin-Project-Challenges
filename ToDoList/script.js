@@ -4,6 +4,8 @@
 let allToDoList = [];
 let todayList = [];
 let nextWeekList = [];
+let recycleList = [];
+let doneActivitiesList = [];
 let selectedArray;
 //let previouslySelectedArray;
 
@@ -31,6 +33,16 @@ function renderTodo(option) {
         toDosContainer = document.querySelector('#nextWeek');
         selectedArray = nextWeekList;
         previouslySelectedArray = "nextWeekList";
+    }
+    else if (option === "recycleBin") {
+        toDosContainer = document.querySelector('#recycle-Bin');
+        selectedArray = recycleList;
+        previouslySelectedArray = "recycleList";
+    }
+    else if (option === "DoneActivities") {
+        toDosContainer = document.querySelector('#doneActivities');
+        selectedArray = doneActivitiesList;
+        previouslySelectedArray = "doneActivitiesList";
     }
     else {
         toDosContainer = document.querySelector('#allToDos');
@@ -119,12 +131,19 @@ function addToDo() {
 
 //function to remove the todo activity when delete button is clicked
 function removeToDo(index, previouslySelectedArray) {
+
+    //making deleted item to go to recycle bin
+    recycleList.push(previouslySelectedArray[index]);
+
+    //deleting the item
     selectedArray.splice(index, 1);
     previouslySelectedArray.splice(index, 1);
     
     renderTodo("today"); //must re-render the list of toDos after removing a todo activity.
     renderTodo("nextWeek"); 
     renderTodo("allToDos"); 
+    renderTodo("recycleBin");
+    renderTodo("doneActivities"); 
 }
 
 //event handler to handle the click on the Activity button and call the addToDo function.
