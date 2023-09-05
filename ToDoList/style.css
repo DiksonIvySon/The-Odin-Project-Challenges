@@ -654,3 +654,78 @@ main .forms-container input {
     cursor: pointer;
     color: white;
 }
+
+/* styling the profile page*/
+.profile-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-heading {
+    color: black;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+.profile-content {
+    margin: 20px 40px;
+    padding: 20px;
+    background-color: #363538;
+    border-radius: 10px;
+}
+
+.profile-content > div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.profile-content > div > div {
+    margin: 0px 20px;
+}
+
+.profile-img img {
+    width: 300px;
+    border-radius: 20px;
+}
+
+.profile-info {
+    max-width: 500px;
+    min-width: 300px;
+}
+
+.profile-info div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.updateProfile-Button {
+    width: 300px;
+    background-color: #408697;
+    border-radius: 20px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.updateProfile-Button:hover {
+    cursor: pointer;
+    background-color: #52D6F4;
+    font-size: 30px;
+}
+
+.logoutButton {
+    flex: 1;
+    background-color: #408697;
+    height: 25px;
+}
+
+.logoutButton:hover {
+    cursor: pointer;
+    background-color: #52D6F4;
+    font-size: 16px;
+    font-weight: bold;
+}
