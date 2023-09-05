@@ -473,6 +473,11 @@ function handleSidebar() {
     }
 }
 
+function handleUpdateProfileButton() {
+    //let panel = document.querySelector('.panel');
+    hideOrReveal('.panel')
+}
+
 
 
 

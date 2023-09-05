@@ -128,8 +128,17 @@ body {
     font-size: 13px;
 }
 
+.settings-btn {
+    border-radius: 0px 10px 10px 0px;
+}
+
 .toggle-side-bar {
     width: 250px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.profile-btn button {
+    width: 140px;
     border-radius: 0px 10px 10px 0px;
 }
 
@@ -663,15 +672,15 @@ main .forms-container input {
     flex-direction: column;
 }
 
-.profile-heading {
+.profile-heading h1 {
     color: black;
-    margin-top: 0px;
-    padding: 0px;
+    margin: 0px;
 }
 
 .profile-content {
     margin: 20px 40px;
     padding: 20px;
+    width: 70%;
     background-color: #363538;
     border-radius: 10px;
 }
@@ -687,13 +696,13 @@ main .forms-container input {
 }
 
 .profile-img img {
-    width: 300px;
+    width: 330px;
     border-radius: 20px;
 }
 
 .profile-info {
     max-width: 500px;
-    min-width: 300px;
+    min-width: 330px;
 }
 
 .profile-info div {
@@ -703,7 +712,7 @@ main .forms-container input {
 }
 
 .updateProfile-Button {
-    width: 300px;
+    width: 330px;
     background-color: #408697;
     border-radius: 20px;
     height: 50px;
@@ -728,4 +737,10 @@ main .forms-container input {
     background-color: #52D6F4;
     font-size: 16px;
     font-weight: bold;
+}
+
+.panel {
+    background-color: rgb(176, 176, 176);
+    margin: 0px;
+    padding: 0 18px;
 }
