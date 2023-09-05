@@ -97,7 +97,7 @@ body {
     margin: 0px 5px 0px 5px;
 }
 
-.nav-bar-menu text {
+.nav-bar-menu .textElement {
     height: 28px;
     width: 50px;
     border: 1px solid black;
@@ -128,7 +128,7 @@ body {
     font-size: 13px;
 }
 
-.hide-side-bar {
+.toggle-side-bar {
     width: 250px;
     border-radius: 0px 10px 10px 0px;
 }
@@ -403,11 +403,15 @@ body {
     cursor: pointer;
 }
 
+.itemButtons-Container {
+    min-width: 190px;
+}
+
 .edit {
     padding: 2px;
     color: white;
     background-color: black;
-    width: 55px;
+    width: 60px;
     height: 40px;
     border-radius: 5px;
 }

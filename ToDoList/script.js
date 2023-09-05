@@ -58,7 +58,7 @@ function renderTodo(option) {
                                                 <h4>Description:</h4>
                                                 <p class="item-description">${todo.description}</p>
                                             </div>
-                                            <div>
+                                            <div class="itemButtons-Container">
                                                 <button class="item-notes edit" onclick="displayPopUp(${i})">Notes</button>
                                                 <button class="edit" onclick="popUpEditForm(${todo})"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="delete-btn edit" onclick="removeToDo(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-trash-can"></i></button>
@@ -412,6 +412,15 @@ function handleSidebar() {
 
     //hide the burger menu
     hideOrReveal('.nav-bar-menu');
+
+    //toggle from show side bar to hide side bar and vise versa
+    let toggleSideBar = document.querySelector('.toggle-side-bar-text');
+    if (toggleSideBar.textContent === "Hide Side-Bar") {
+        toggleSideBar.textContent = "Show Side-Bar";
+    }
+    else {
+        toggleSideBar.textContent = "Hide Side-Bar";
+    }
 }
 
 
