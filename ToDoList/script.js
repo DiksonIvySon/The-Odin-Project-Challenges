@@ -9,6 +9,15 @@ let doneActivitiesList = [];
 let selectedArray;
 //let previouslySelectedArray;
 
+//Object to contain the user profile information
+let userProfile = {
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    password: "",
+}
+
 // function to convert the form inputs to a single todo object
 function toDo(title, description, notes, dueDate, option, priority) {
     this.title = title;
@@ -426,6 +435,21 @@ function handleCreateAccountForm() {
 
     //Call a function to allow only one of the forms to show at a time
     hideOneForm(createAccountForm, loginForm);
+}
+
+function submitCreateAccountForm() {
+    let first_name = document.querySelector('#first-name').value;
+    let last_name = document.querySelector('#last-name').value;
+    let email = document.querySelector('#email').value;
+    let phone_number = document.querySelector('#phone-number').value;
+    let password = document.querySelector('#user-password').value;
+
+    //updating the profile information properties
+    userProfile.first_name = first_name;
+    userProfile.last_name = last_name;
+    userProfile.email = email;
+    userProfile.phone_number = phone_number;
+    userProfile.password = password;
 }
 
 //function to allow only one of the forms to show at a time
