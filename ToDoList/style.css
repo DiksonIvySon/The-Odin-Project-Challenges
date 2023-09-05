@@ -23,6 +23,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 
 .header h1 i {
@@ -137,6 +140,7 @@ body {
 
 
  /* styling the side-bar..............................................................*/
+
 .side-bar {
     flex: 1;
     background-color: #363538;
@@ -167,6 +171,8 @@ body {
 
 .navigation {
     margin: 20px;
+    position: sticky;
+    top: 90px;
 }
 
 .navigation button {
