@@ -740,7 +740,65 @@ main .forms-container input {
 }
 
 .panel {
-    background-color: rgb(176, 176, 176);
-    margin: 0px;
+    margin: 0px 0px 5px 0px ;
     padding: 0 18px;
+
+}
+
+.updateForm {
+    margin: 10px;
+}
+
+.updateForm i {
+    width: 30px;
+    margin-left: 95%;
+    font-size: 20px;
+    height: 30px;
+}
+
+.updateForm i:hover {
+    font-size: 25px;
+    color: #52D6F4;
+    cursor: pointer;
+}
+
+.updateForm h4 {
+    text-align: center;
+}
+
+.updateContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.updateContainer input {
+    width: 330px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.updateContainer div {
+    margin: 5px;
+}
+
+.update-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-buttons button {
+    margin: 4px;
+    height: 30px;
+    border-radius: 20px;
+    width: 150px;
+}
+
+.update-buttons button:hover {
+    background-color: #52D6F4;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
 }

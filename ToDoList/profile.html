@@ -55,7 +55,42 @@
             </div>
             <hr>
             <div class="panel">
-                <p>Lorem ipsum...</p>
+                <form action="" method="post">
+                    <div class="updateForm">
+                        <i class="fa-solid fa-xmark" onclick="handleUpdateProfileForm()"></i>
+                        <h4>Update Your Profile information</h4>
+                        <div class="updateContainer">
+                            <div>
+                                <label for="update-first-name">First Name*</label>
+                                <br>
+                                <input type="text" id="update-first-name" name="update-first-name" placeholder="Dikson" required>
+                            </div>
+                            <div>
+                                <label for="update-last-name">Last Name*</label>
+                                <br>
+                                <input type="text" id="update-last-name" name="update-last-name" placeholder="Manganye" required>
+                            </div>
+                        </div>
+                        <div class="updateContainer">
+                            <div>
+                                <label for="update-email">Email*</label>
+                                <br>
+                                <input type="text" id="update-email" name="update-email" placeholder="ivySon@gmail.com" required>
+                            </div>
+                            <div>
+                                <label for="update-phone-number">Phone Number (optional)</label>
+                                <br>
+                                <input type="text" id="update-phone-number" name="update-phone-number" placeholder="0857648537" min="10">
+                            </div>
+                        </div>
+                        <div class="update-buttons">
+                            <div>
+                                <button class="update-reset-btn" type="reset"><b>Reset</b></button>
+                                <button class="submit-update-btn" onclick="submitUpdateProfileForm()"><b>Apply Changes</b></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div>
                 <button class="logoutButton">Log Out</button>
