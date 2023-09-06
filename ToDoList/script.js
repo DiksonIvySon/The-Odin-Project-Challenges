@@ -452,6 +452,24 @@ function submitCreateAccountForm() {
     userProfile.password = password;
 }
 
+
+function submitUpdateProfileForm(){
+    let first_name = document.querySelector('#update-first-name').value;
+    let last_name = document.querySelector('#update-last-name').value;
+    let email = document.querySelector('#update-email').value;
+    let phone_number = document.querySelector('#update-phone-number').value;
+    let password = document.querySelector('#update-user-password').value;
+
+    //updating the profile information properties
+    userProfile.first_name = first_name;
+    userProfile.last_name = last_name;
+    userProfile.email = email;
+    userProfile.phone_number = phone_number;
+    userProfile.password = password;
+}
+
+
+
 //function to allow only one of the forms to show at a time
 function hideOneForm(createAccountForm, loginForm) {
  
@@ -477,6 +495,7 @@ function handleUpdateProfileButton() {
     //let panel = document.querySelector('.panel');
     hideOrReveal('.panel')
 }
+
 
 
 
