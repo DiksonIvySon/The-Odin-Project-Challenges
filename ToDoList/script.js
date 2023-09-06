@@ -458,17 +458,27 @@ function submitUpdateProfileForm(){
     let last_name = document.querySelector('#update-last-name').value;
     let email = document.querySelector('#update-email').value;
     let phone_number = document.querySelector('#update-phone-number').value;
-    let password = document.querySelector('#update-user-password').value;
 
     //updating the profile information properties
     userProfile.first_name = first_name;
     userProfile.last_name = last_name;
     userProfile.email = email;
     userProfile.phone_number = phone_number;
-    userProfile.password = password;
+
+    displayProfileData();
 }
 
+function displayProfileData() {
+    let profile_first_name = document.querySelector('.profile-first-name');
+    let profile_last_name = document.querySelector('.profile-last-name');
+    let profile_email = document.querySelector('.profile-email');
+    let profile_phone_number = document.querySelector('.profile-phone-number');
 
+    profile_first_name.textContent = userProfile.first_name;
+    profile_last_name.textContent = userProfile.last_name;
+    profile_email.textContent = userProfile.email;
+    profile_phone_number.textContent = userProfile.phone_number;
+}
 
 //function to allow only one of the forms to show at a time
 function hideOneForm(createAccountForm, loginForm) {
