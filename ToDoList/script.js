@@ -80,7 +80,7 @@ function renderTodo(option) {
                                             </div>
                                             <div class="itemButtons-Container">
                                                 <button class="item-notes edit" onclick="displayPopUp(${i})">Notes</button>
-                                                <button class="edit" onclick="popUpEditForm(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="edit" onclick="popUpEditForm(${i}, ${previouslySelectedArray}, ${option})"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="delete-btn edit" onclick="removeToDo(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-trash-can"></i></button>
                                             </div>
                                         </div>
@@ -145,7 +145,7 @@ function removeToDo(index, previouslySelectedArray) {
     selectedArray.splice(index, 1);
     previouslySelectedArray.splice(index, 1);
     
-    //must re-render the list of toDos after removing a todo activity.
+    //must re-render the lists of toDos after removing a todo activity.
     renderTodo("today"); 
     renderTodo("nextWeek"); 
     renderTodo("allToDos"); 
@@ -228,23 +228,28 @@ function asb() {
 
 
 //function to popup an edit item form when the edit button is clicked
-function popUpEditForm(index, previouslySelectedArray) {
-    /*
-    let Array;
+function popUpEditForm(index, previouslySelectedArray, option) {
+
+    let pass_previouslySelectedArray;
     
     if (option === "today") {
-        Array = todayList;
+        pass_previouslySelectedArray = "todayList";
     }
     else if (option === "nextWeek") {
-        Array = nextWeekList;
+        pass_previouslySelectedArray = "nextWeekList";
     }
-    else if (option === "allToDo") {
-        Array = allToDoList;
+    else if (option === "recycleBin") {
+        pass_previouslySelectedArray = "recycleList";
+    }
+    else if (option === "doneActivities") {
+        pass_previouslySelectedArray = "doneActivitiesList";
     }
     else {
-        //do nothing
+        pass_previouslySelectedArray = "allToDoList";
     }
-    */
+
+    console.log(pass_previouslySelectedArray);
+
     
     console.log(allToDoList);
     console.log(todayList);
@@ -255,47 +260,44 @@ function popUpEditForm(index, previouslySelectedArray) {
     let editForm_div = document.createElement('div');
     editForm_div.setAttribute('class', 'editingForm')
     editForm_div.innerHTML = `
-                                <form action="" id="addForm">
-                                <div class="cancel-form-button">
-                                    <i class="fa-solid fa-xmark"></i>
+                                <form action="" id="addForm" style="display: block">
+                                <div>
+                                    <label for="editItem-title">Title</label>
+                                    <br>
+                                    <input type="text" id="editItem-title" name="editItem-title" placeholder="${previouslySelectedArray[index].title}">
                                 </div>
                                 <div>
-                                    <label for="title">Title</label>
+                                    <label for="editItem-description">Description</label>
                                     <br>
-                                    <input type="text" id="title" name="title" placeholder="${previouslySelectedArray[index].title}">
+                                    <input type="text" id="editItem-description" name="editItem-description" placeholder="${previouslySelectedArray[index].description}">
                                 </div>
                                 <div>
-                                    <label for="description">Description</label>
+                                    <label for="editItem-notes">Notes</label>
                                     <br>
-                                    <input type="text" id="description" name="description" placeholder="${previouslySelectedArray[index].description}">
+                                    <textarea name="editItem-notes" id="editItem-notes" form="form" placeholder="${previouslySelectedArray[index].notes}"></textarea>
                                 </div>
                                 <div>
-                                    <label for="notes">Notes</label>
+                                    <label for="editItem-date">Due date</label>
                                     <br>
-                                    <textarea name="notes" id="notes" form="form" placeholder="${previouslySelectedArray[index].notes}"></textarea>
-                                </div>
-                                <div>
-                                    <label for="date">Due date</label>
-                                    <br>
-                                    <input type="date" id="date" name="date" placeholder="${previouslySelectedArray[index].date}">
+                                    <input type="date" id="editItem-date" name="editItem-date" placeholder="${previouslySelectedArray[index].date}">
                                 </div>
                                 <div class="radio-buttons">
                                     <div>
-                                        <input type="radio" id="priority-low" name="priority" value="low">
-                                        <label for="priority-low">Low</label><br>
+                                        <input type="radio" id="editItem-priority-low" name="editItem-priority" value="low">
+                                        <label for="editItem-priority-low">Low</label><br>
                                     </div>
                                     <div>
-                                        <input type="radio" id="priority-medium" name="priority" value="medium">
-                                        <label for="priority-medium">Medium</label><br>
+                                        <input type="radio" id="editItem-priority-medium" name="editItem-priority" value="medium">
+                                        <label for="editItem-priority-medium">Medium</label><br>
                                     </div>
                                     <div>
-                                        <input type="radio" id="priority-high" name="priority" value="high">
-                                        <label for="priority-high">High</label>
+                                        <input type="radio" id="editItem-priority-high" name="editItem-priority" value="high">
+                                        <label for="editItem-priority-high">High</label>
                                     </div>
                                 </div>
 
                                 <div class="add-btn-container">
-                                    <button class="add-btn">Add Activity</button>
+                                    <button class="apply-changes-btn" type="button" onclick="handleApplyItemChanges(${index}, ${pass_previouslySelectedArray})">Apply Item Changes</button>
                                 </div>  
                             </form>
                              `;
@@ -304,6 +306,44 @@ function popUpEditForm(index, previouslySelectedArray) {
  
 }
 
+
+//function to make changes when the apply change button is clicked.
+function handleApplyItemChanges(index, pass_previouslySelectedArray) {
+
+    console.log(pass_previouslySelectedArray);
+
+    hideOrReveal('.pop-up');
+
+    let editItem_title = document.querySelector('#editItem-title').value;
+    let editItem_description = document.querySelector('#editItem-description').value;
+    let editItem_notes = document.querySelector('#editItem-notes').value;
+    let editItem_dueDate = document.querySelector('#editItem-date').value;
+
+    //function to get the checked value of the radio buttons
+    function radioValue() {
+        let radioButtons = document.getElementsByName('editItem-priority');
+        for (let i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                return radioButtons[i].value;
+            }
+        }
+    }
+    let editItem_priority = radioValue();
+
+    //edit the item from it's root object which is in an array.
+    pass_previouslySelectedArray[index].title = editItem_title;
+    pass_previouslySelectedArray[index].description = editItem_description;
+    pass_previouslySelectedArray[index].notes = editItem_notes;
+    pass_previouslySelectedArray[index].dueDate = editItem_dueDate;
+    pass_previouslySelectedArray[index].priority = editItem_priority;
+
+    //must re-render the lists of toDos after editing a todo activity.
+    renderTodo("today"); 
+    renderTodo("nextWeek"); 
+    renderTodo("allToDos"); 
+    renderTodo("recycleBin");
+    renderTodo("doneActivities"); 
+};
 
 /*
 let itemNotes = document.querySelectorAll('.item-notes');
