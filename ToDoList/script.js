@@ -80,7 +80,7 @@ function renderTodo(option) {
                                             </div>
                                             <div class="itemButtons-Container">
                                                 <button class="item-notes edit" onclick="displayPopUp(${i})">Notes</button>
-                                                <button class="edit" onclick="popUpEditForm(${todo})"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="edit" onclick="popUpEditForm(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="delete-btn edit" onclick="removeToDo(${i}, ${previouslySelectedArray})"><i class="fa-solid fa-trash-can"></i></button>
                                             </div>
                                         </div>
@@ -228,10 +228,10 @@ function asb() {
 
 
 //function to popup an edit item form when the edit button is clicked
-function popUpEditForm(todo) {
-
+function popUpEditForm(index, previouslySelectedArray) {
+    /*
     let Array;
-
+    
     if (option === "today") {
         Array = todayList;
     }
@@ -244,6 +244,7 @@ function popUpEditForm(todo) {
     else {
         //do nothing
     }
+    */
     
     console.log(allToDoList);
     console.log(todayList);
@@ -254,29 +255,29 @@ function popUpEditForm(todo) {
     let editForm_div = document.createElement('div');
     editForm_div.setAttribute('class', 'editingForm')
     editForm_div.innerHTML = `
-                                <form action="" id="addForm" style="display: none;">
+                                <form action="" id="addForm">
                                 <div class="cancel-form-button">
                                     <i class="fa-solid fa-xmark"></i>
                                 </div>
                                 <div>
                                     <label for="title">Title</label>
                                     <br>
-                                    <input type="text" id="title" name="title" placeholder="${todo.title}">
+                                    <input type="text" id="title" name="title" placeholder="${previouslySelectedArray[index].title}">
                                 </div>
                                 <div>
                                     <label for="description">Description</label>
                                     <br>
-                                    <input type="text" id="description" name="description" placeholder="${todo.description}">
+                                    <input type="text" id="description" name="description" placeholder="${previouslySelectedArray[index].description}">
                                 </div>
                                 <div>
                                     <label for="notes">Notes</label>
                                     <br>
-                                    <textarea name="notes" id="notes" form="form" placeholder="${todo.notes}"></textarea>
+                                    <textarea name="notes" id="notes" form="form" placeholder="${previouslySelectedArray[index].notes}"></textarea>
                                 </div>
                                 <div>
                                     <label for="date">Due date</label>
                                     <br>
-                                    <input type="date" id="date" name="date" placeholder="${todo.date}">
+                                    <input type="date" id="date" name="date" placeholder="${previouslySelectedArray[index].date}">
                                 </div>
                                 <div class="radio-buttons">
                                     <div>
@@ -298,9 +299,9 @@ function popUpEditForm(todo) {
                                 </div>  
                             </form>
                              `;
-
- popUpContent.appendChild(editForm_div);
  hideOrReveal('.pop-up');
+ popUpContent.appendChild(editForm_div);
+ 
 }
 
 
