@@ -1,5 +1,4 @@
 
-
 //lists to contain all of the toDos added
 let allToDoList = [];
 let todayList = [];
@@ -450,6 +449,8 @@ function submitCreateAccountForm() {
     userProfile.email = email;
     userProfile.phone_number = phone_number;
     userProfile.password = password;
+
+    displayProfileData()
 }
 
 
@@ -469,15 +470,32 @@ function submitUpdateProfileForm(){
 }
 
 function displayProfileData() {
+
+    console.log(userProfile.first_name);
+    console.log(userProfile.last_name);
+    console.log(userProfile.email);
+    console.log(userProfile.phone_number);
+
     let profile_first_name = document.querySelector('.profile-first-name');
     let profile_last_name = document.querySelector('.profile-last-name');
     let profile_email = document.querySelector('.profile-email');
     let profile_phone_number = document.querySelector('.profile-phone-number');
 
+    profile_first_name.textContent = "";
+    profile_last_name.textContent = "";
+    profile_email.textContent = "";
+    profile_phone_number.textContent = "";
+
     profile_first_name.textContent = userProfile.first_name;
     profile_last_name.textContent = userProfile.last_name;
     profile_email.textContent = userProfile.email;
     profile_phone_number.textContent = userProfile.phone_number;
+
+    //code to display the user name on the menu tab
+    let menuTab_firstName = document.querySelector('.menuTab-firstName');
+    let menuTab_lastName = document.querySelector('.menuTab-lastName');
+    menuTab_firstName.textContent = userProfile.first_name;
+    menuTab_lastName.textContent = userProfile.last_name;
 }
 
 //function to allow only one of the forms to show at a time
@@ -505,7 +523,6 @@ function handleUpdateProfileButton() {
     //let panel = document.querySelector('.panel');
     hideOrReveal('.panel')
 }
-
 
 
 
