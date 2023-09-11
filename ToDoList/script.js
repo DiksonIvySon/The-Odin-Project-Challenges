@@ -55,6 +55,7 @@ function renderTodo(option) {
     else {
         toDosContainer = document.querySelector('#allToDos');
         selectedArray = allToDoList;
+        //previouslySelectedArray = "allToDoList";
     }
 
     toDosContainer.textContent = "";
@@ -230,7 +231,7 @@ function asb() {
 //function to popup an edit item form when the edit button is clicked
 function popUpEditForm(index, previouslySelectedArray, option) {
 
-    let pass_previouslySelectedArray;
+    let pass_previouslySelectedArray;   
     
     if (option === "today") {
         pass_previouslySelectedArray = "todayList";
@@ -247,7 +248,7 @@ function popUpEditForm(index, previouslySelectedArray, option) {
     else {
         pass_previouslySelectedArray = "allToDoList";
     }
-
+  
     console.log(pass_previouslySelectedArray);
 
     

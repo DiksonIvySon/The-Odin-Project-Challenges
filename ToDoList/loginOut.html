@@ -43,14 +43,15 @@
                     <button class="loginButton">Login</button>
                 </form>
                 <div>
-                    <h4>Don't have an account?
-                        <text class="createAccountText" onclick="handleCreateAccountForm()">Create an account</text>
-                    </h4>
+                    <div>
+                        <h4>Don't have an account?</h4>
+                        <button class="createAccountText" onclick="handleCreateAccountForm()">Create an account</button>
+                    </div>
                 </div>
             </div>
             <div class="createAccountForm" style="display: none">
-                <form action="" method="post">
-                    <div class="form">
+                <form action="" id="createAccountForm" method="post">
+                    <div>
                         <i class="fa-solid fa-xmark" onclick="handleCreateAccountForm()"></i>
                         <h4>Create New Account</h4>
                         <div>

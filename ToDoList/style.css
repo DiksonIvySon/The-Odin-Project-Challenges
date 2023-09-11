@@ -608,6 +608,14 @@ main .pop-up .pop-up-content {
     margin: 10px 0px;
 }
 
+.loginForm-div div {
+    margin: 5px 0px;
+}
+
+#createAccountForm div {
+    margin: 5px 0px;
+}
+
 .createAccountForm {
     padding: 30px;
     background-color: #363538;
@@ -656,6 +664,9 @@ main .forms-container input {
     color: black;
     padding: 5px;
     border-radius: 10px;
+    position: absolute;
+    left: 30%;
+    right: 30%;
 }
 
 .createAccountText:hover {
