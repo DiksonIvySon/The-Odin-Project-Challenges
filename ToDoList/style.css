@@ -399,6 +399,7 @@ body {
     cursor: pointer;
     color: #52D6F4;
     font-size: 20px;
+    transition: 0.5s;
 }
 
 #checkbox {
@@ -430,6 +431,7 @@ body {
     color: #52D6F4;
     cursor: pointer;
     font-size: 20px;
+    transition: 0.5s;
 }
 
 
