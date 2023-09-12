@@ -543,7 +543,7 @@ main .pop-up .pop-up-content {
         transform: translateY(-10px);
     }
     100% {
-        transform: translateY( -70px);
+        transform: translateY(-50%);
     }
 }
 
@@ -854,6 +854,28 @@ main .forms-container input {
     width: 80%;
 }
 
+#editItemForm textarea {
+    width: 100%;
+    min-height: 70px;
+    border-radius: 5px;
+    margin: 0px;
+}
+
 #editItemForm input {
     width: 100%;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+#editItemForm div {
+    margin: 5px;
+}
+
+#editItemForm button {
+    border-radius: 10px;
+}
+
+#editItemForm button:hover {
+    background-color: #52D6F4;
+    cursor: pointer;
 }
