@@ -523,6 +523,7 @@ main .pop-up div {
 
 main .pop-up .pop-up-content {
     position: absolute;
+    min-width: 75%;
     top: 50%;
     left: 0%;
     margin: 0% 10%;
@@ -841,4 +842,18 @@ main .forms-container input {
     color: white;
     font-size: 18px;
     cursor: pointer;
+}
+
+/* styling the editing item form*/
+.editingForm {
+    display: flex;
+    justify-content: center;
+}
+
+#editItemForm {
+    width: 80%;
+}
+
+#editItemForm input {
+    width: 100%;
 }

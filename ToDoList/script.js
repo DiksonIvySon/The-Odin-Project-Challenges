@@ -261,7 +261,7 @@ function popUpEditForm(index, previouslySelectedArray, option) {
     let editForm_div = document.createElement('div');
     editForm_div.setAttribute('class', 'editingForm')
     editForm_div.innerHTML = `
-                                <form action="" id="addForm" style="display: block">
+                                <form action="" id="editItemForm" style="display: block">
                                 <div>
                                     <label for="editItem-title">Title</label>
                                     <br>
