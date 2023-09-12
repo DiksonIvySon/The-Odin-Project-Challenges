@@ -497,12 +497,24 @@ body {
     z-index: 100;
 }
 
+main .pop-up div {
+    background-color: #52D6F4;
+    
+}
+
 .main .pop-up span {
     position: absolute;
     top: 0;
-    right: 10px;
+    right: 50px;
     font-size: 40px;
+    margin: 20px;
     z-index: 100;
+}
+
+.main .pop-up span:hover {
+    cursor: pointer;
+    color: #52D6F4;
+    font-size: 50px;
 }
 
 main .pop-up .pop-up-content {
@@ -510,11 +522,10 @@ main .pop-up .pop-up-content {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 5px solid #fff;
     border-radius: 10px;
     padding: 20px;
     object-fit: cover;
-    background-color: #52D6F4;
+    
 }
 
 /* styling the add project form*/

@@ -216,10 +216,12 @@
             </div>
         </section>
 
-        <section class="pop-up" style="display: none">
-            <span class="pop-up-cancel" onclick="removePopUp()"><i class="fa-solid fa-xmark"></i></span>
-            <div class="pop-up-content">
-                
+        <section class="pop-up" style="display: ">
+            <div>
+                <span class="pop-up-cancel" onclick="removePopUp()"><i class="fa-solid fa-xmark"></i></span>
+                <div class="pop-up-content">
+                    <p>I had the same problem, but my id was present. So I tried adding "window.onload = init;" Then I wrapped my original JS code with an init function (call it what you want). This worked, so at least in my case, I was adding an event listener before my document loaded. This could be what you are experiencing as well.</p>
+                </div>
             </div>
         </section>
        
