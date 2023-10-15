@@ -137,3 +137,76 @@ footer {
     color: #B38B59;
 }
 
+/* Styling the pop-up*/
+.pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: #F0F0F0;
+    width: 90%;
+    height: 90vh;
+}
+
+.pop-up .close-popUp {
+    margin: 5px 8px;
+    font-size: 25px;
+    text-align: right;
+}
+
+.pop-up .close-popUp i:hover {
+    color: #B38B59;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: 0.3s ease-in-out;
+}
+
+.popUp-image-container {
+    position: relative;
+}
+
+.pop-up img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.popUp-image-text {
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.popUp-recipe-name {
+    font-size: 40px;
+    margin: 0;
+}
+
+.popUp-recipe-category {
+    font-size: 20px;
+    color: #113e21;
+    margin: 0;
+}
+  
+.popUp-container {
+    padding: 2px 16px;
+}
+
+.pop-up button {
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #B38B59;
+    border: 0;
+    height: 35px;
+    transition: 0.5s ease-in-out;
+    color: #fff;
+}
+
+.pop-up button:hover {
+    cursor: pointer;
+    font-size: 20px;
+    color: #113e21;
+}
