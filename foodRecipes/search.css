@@ -45,7 +45,8 @@ body {
     width: 100%;
 }
 
-.searchForm i {
+.searchForm button {
+    border: 0;
     padding: 5px;
     font-size: 25px;
     color: #fff;
@@ -145,7 +146,7 @@ footer {
     translate: -50% -50%;
     background-color: #F0F0F0;
     width: 90%;
-    height: 90vh;
+    min-height: 92vh;
 }
 
 .pop-up .close-popUp {
