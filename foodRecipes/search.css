@@ -8,15 +8,49 @@ body {
 }
 
 .banner {
-    background-color: #113e21;
+    background-color: #B38B59;
     padding: 10px;
     color: #fff;
+    border-radius: 15px 15px 0px 0px;
 }
 
 .para {
     text-align: center;
+    color: #113e21;
+}
+
+.searchForm > div {
+    text-align: center;
+    color: black;
+    max-width: 400px;
+    min-width: 200px;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 .searchForm {
+    display: flex;
+    justify-content: center;
+}
+
+.searchForm input {
+    padding: 10px;
+    outline: none;
+    border: 0;
+    font-size: 15px;
+    background-color: transparent;
+}
+
+.searchForm i {
+    padding: 5px;
+    font-size: 25px;
+    color: #B38B59;
+    color: #113e21;
+}
+
+.resultsHeader {
     text-align: center;
 }
