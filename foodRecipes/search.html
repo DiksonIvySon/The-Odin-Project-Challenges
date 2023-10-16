@@ -11,106 +11,53 @@
     <script defer src="search.js"></script>
 </head>
 <body>
-    <div>
-        <h1 class="heading">Find the best meal recipes!!</h1>
-        <section class="banner">
-            <p class="para">When you need to feed the family or kids, these are the easy dinner recipes 
-                you turn to time and time again. With lots of healthy, quick, vegetarian, 
-                chicken, and budget-friendly ideas, there's something for everyone..
-            </p>
-            <form action="" class="searchForm">
-                <div>
-                    <input type="text" id="search-input" name="search" placeholder="Search by ingredient" required>
-                    <button id="search-button" type="button">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-            </form>
-        </section>
-        <h2 class="resultsHeader">Your Search Results</h2>
-        <main>
-            <div id="recipe-cards" class="recipe-cards">
-           <!-- <div class="card">
-                    <img src="images/burger.webp" alt="Avatar" style="width:100%">
-                    <div class="container">
-                      <h4><b>Burger</b></h4>
-                      <button>View the Recipe</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/burger.webp" alt="Avatar" style="width:100%">
-                    <div class="container">
-                      <h4><b>Burger</b></h4>
-                      <button>View the Recipe</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/burger.webp" alt="Avatar" style="width:100%">
-                    <div class="container">
-                      <h4><b>Burger</b></h4>
-                      <button>View the Recipe</button>
-                    </div>
-                </div>-->
+    <h1 class="heading">Find the best meal recipes!!</h1>
+    <section class="banner">
+        <p class="para">When you need to feed the family or kids, these are the easy dinner recipes 
+            you turn to time and time again. With lots of healthy, quick, vegetarian, 
+            chicken, and budget-friendly ideas, there's something for everyone..
+        </p>
+        <form action="" class="searchForm">
+            <div>
+                <input type="text" id="search-input" name="search" placeholder="Search by ingredient" required>
+                <button id="search-button" type="button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
             </div>
-            <div id="noResults-message" class="noResults-message" style="display: none">
-                <h1>"sorry we could not find results matching your search"</h1>
-                <h4>Try searching another related ingredient</h4>
-            </div>
-        </main>
-
-        <div id="pop-up" class="pop-up" style="display: none">
-           <!-- <div class="close-popUp" >
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <div class="popUp-image-container">
-                <img src="images/burger.webp" alt="Avatar" style="width:100%">
-                <div class="popUp-image-text">
-                    <h1 class="popUp-recipe-name">Burger</h1>
-                    <h6 class="popUp-recipe-category">Lunch</h6>
-                </div>
-            </div>
-            <div class="popUp-container">
-                <h4><b>Instructions:</b></h4>
-                <p class="instructions">
-                    Preheat grill to medium-high (400-450 degrees F). Combine oil, garlic and 1/4 teaspoon 
-                    each pepper and salt in a small bowl. Brush portobello caps with the oil mixture; set 
-                    aside to marinate at room temperature for 10 minutes.
-                    Meanwhile, combine ground turkey, Worcestershire, mustard and the remaining 1/2 teaspoon 
-                    pepper and 1/4 teaspoon salt in a medium bowl. Gently mix to incorporate. (Do not overmix.) 
-                    Shape into four 3/4-inch-thick patties and set aside.
-                    Oil the grill rack (see Tips). Place the mushrooms, cap-side down, on the oiled grill rack. 
-                    Grill, covered, until just tender, about 4 minutes per side. Transfer the mushrooms to a plate; 
-                    cover to keep warm. Oil the rack again; place the turkey patties on the oiled rack. Grill, covered, 
-                    until the patties are lightly charred and an instant-read thermometer inserted in the center 
-                    registers 165 degrees F, 4 to 5 minutes per side. Place 1 cheese slice on each patty during the 
-                    last minute of cooking. Transfer the patties to a plate and let rest for 5 minutes. (If your grill 
-                    is large enough, grill the portobello caps and the patties at the same time.)
-                    Place each patty on the stem side of a portobello cap; top evenly with tomato slices and arugula. 
-                    Cover with the remaining portobello caps, stem-side down, and serve immediately.
-                </p>
-                <a href="">
-                    <button>Watch Video</button>
-                </a>
-            </div> -->
+        </form>
+    </section>
+    <h2 class="resultsHeader">Your Search Results</h2>
+    <main>
+        <div id="recipe-cards" class="recipe-cards">
+            <!-- recipe results here-->
         </div>
+        <div id="noResults-message" class="noResults-message" style="display: none">
+            <h1>"sorry we could not find results matching your search"</h1>
+            <h4>Try searching another related ingredient</h4>
+        </div>
+    </main>
 
-        <footer>
-            <div class="footer-icons">
-                <a href="https://github.com/DiksonIvySon">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/dikson-manganye-a8b773213/">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </div>
-            <p>
-                Copyright © 2023 <a href="https://diksonivyson.github.io/My_Portfolio/" class="web-author">Dikson Manganye</a>. All rights reserved
-            </p>
-            <p>
-                I had a lot of fun building this website and since i love cooking, 
-                this is a website that i will be using a lot to prepare my meals.
-            </p>
-        </footer>
+    <div id="pop-up" class="pop-up" style="display: none">
+        <!-- pop-up here  -->
     </div>
+
+    <footer>
+        <div class="footer-icons">
+            <a href="https://github.com/DiksonIvySon">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/dikson-manganye-a8b773213/">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p>
+            Copyright © 2023 <a href="https://diksonivyson.github.io/My_Portfolio/" class="web-author">Dikson Manganye</a>. All rights reserved
+        </p>
+        <p>
+            I had a lot of fun building this website and since i love cooking, 
+            this is a website that i will be using a lot to prepare my meals.
+        </p>
+    </footer>
+    
 </body>
 </html>
