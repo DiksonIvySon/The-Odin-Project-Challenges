@@ -161,6 +161,20 @@ footer {
     background-color: #F0F0F0;
     width: 92%;
     min-height: 95vh;
+    animation: drop 1s ease-in-out forwards;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    70%{
+        transform: translateY(90px);
+    }
+    100% {
+        transform: translateY(-0%);
+    }
 }
 
 .pop-up .close-popUp {
