@@ -26,6 +26,7 @@ function displayResults(recipeData) {
     console.log(recipeData);
     let recipe_cards_container = document.querySelector('#recipe-cards');
     recipe_cards_container.textContent = '';
+    document.querySelector("#noResults-message").style.display = 'none';
 
     for (let i = 0; i < recipeData.meals.length; i++) {
         let card = document.createElement('div');
@@ -57,6 +58,7 @@ async function fetchViewRecipeData(idMeal) {
 
 function displayViewRecipeData(viewRecipeData) {
     let popUp_container = document.querySelector('#pop-up');
+    document.querySelector("#noResults-message").style.display = 'none';
     popUp_container.textContent = '';
     let popUp = document.createElement('div');
     popUp.innerHTML = `
