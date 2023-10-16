@@ -34,12 +34,24 @@ function displayResults(recipeData) {
                             <img src=${recipeData.meals[i].strMealThumb} alt="food image" style="width:100%">
                             <div class="container">
                                 <h4><b>${recipeData.meals[i].strMeal}</b></h4>
-                                <button onclick="handleViewRecipe(${recipeData.meals[i].idMeal})">View the Recipe</button>
+                                <button onclick="fetchViewRecipeData(${recipeData.meals[i].idMeal})">View the Recipe</button>
                             </div>
                          `;
 
     recipe_cards_container.appendChild(card);
     console.log("done");
     }
+}
+
+async function fetchViewRecipeData(idMeal) {
+    const response = await fetch("https:/www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal, {mode: 'cors'})
+    const viewRecipeData = await response.json();
+    console.log(viewRecipeData)
+    /*if (viewRecipeData.meals == null){
+        document.querySelector("#noResults-message").style.display = 'block';
+    }
+    else (
+        displayViewRecipeData(viewRecipeData)
+    )*/
 }
 
