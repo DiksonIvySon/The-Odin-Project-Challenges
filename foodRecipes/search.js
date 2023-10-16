@@ -47,11 +47,40 @@ async function fetchViewRecipeData(idMeal) {
     const response = await fetch("https:/www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal, {mode: 'cors'})
     const viewRecipeData = await response.json();
     console.log(viewRecipeData)
-    /*if (viewRecipeData.meals == null){
+    if (viewRecipeData.meals == null){
         document.querySelector("#noResults-message").style.display = 'block';
     }
     else (
         displayViewRecipeData(viewRecipeData)
-    )*/
+    )
 }
 
+function displayViewRecipeData(viewRecipeData) {
+    let popUp_container = document.querySelector('#pop-up');
+    popUp_container.textContent = '';
+    let popUp = document.createElement('div');
+    popUp.innerHTML = `
+                        <div class="close-popUp">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <div class="popUp-image-container">
+                            <img src=${viewRecipeData.meals[0].strMealThumb} alt="meal image" style="width:100%">
+                            <div class="popUp-image-text">
+                                <h1 class="popUp-recipe-name">${viewRecipeData.meals[0].strMeal}</h1>
+                                <h6 class="popUp-recipe-category">${viewRecipeData.meals[0].strCategory}</h6>
+                            </div>
+                        </div>
+                        <div class="popUp-container">
+                            <h4><b>Instructions:</b></h4>
+                            <p class="instructions">
+                                ${viewRecipeData.meals[0].strInstructions}
+                            </p>
+                            <a target="_blank" href=${viewRecipeData.meals[0].strYoutube}>
+                                <button>Watch YouTub Video</button>
+                            </a>
+                        </div>
+                      `
+
+    popUp_container.appendChild(popUp);
+    popUp_container.style.display = 'block';
+}
