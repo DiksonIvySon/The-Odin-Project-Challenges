@@ -167,9 +167,13 @@ footer {
     left: 50%;
     translate: -50% -50%;
     background-color: #F0F0F0;
-    width: 98%;
+    width: 96%;
     min-height: 75vh;
     animation: drop 1s ease-in-out forwards;
+}
+
+.popUp-container h4 {
+    margin-bottom: 0;
 }
 
 @keyframes drop {
