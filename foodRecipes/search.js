@@ -72,6 +72,7 @@ function displayViewRecipeData(viewRecipeData) {
                             <div class="popUp-image-text">
                                 <h1 class="popUp-recipe-name">${viewRecipeData.meals[0].strMeal}</h1>
                                 <h6 class="popUp-recipe-category">Meal Category: ${viewRecipeData.meals[0].strCategory}</h6>
+                                <h6 class="popUp-recipe-category">Origin: ${viewRecipeData.meals[0].strArea}</h6>
                             </div>
                         </div>
                         <div class="popUp-container">
