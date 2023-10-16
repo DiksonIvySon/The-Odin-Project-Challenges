@@ -109,6 +109,12 @@ main {
     padding: 2px 16px;
 }
 
+.container h4 {
+    min-height: 38px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .card button {
     padding: 5px;
     width: 100%;
@@ -250,3 +256,14 @@ footer {
     font-size: 20px;
     color: #113e21;
 }
+
+/* styling the scrollbar */
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #B38B59;
+}
+
+
