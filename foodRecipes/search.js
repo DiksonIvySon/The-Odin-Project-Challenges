@@ -6,12 +6,40 @@ search_button.addEventListener('click', handleSearch);
 //function to handle search button click
 function handleSearch() {
     let search_input = document.querySelector('#search-input').value.trim();
-    fetchData("https:/www.themealdb.com/api/json/v1/1/filter.php?i=chicken");
+    let link = "https:/www.themealdb.com/api/json/v1/1/filter.php?i=" + search_input;
+    fetchData(link);
 }
 
 async function fetchData(link) {
     const response = await fetch(link, {mode: 'cors'})
     const recipeData = await response.json();
+    
+    if (recipeData.meals == null){
+        alert("sorry could not find results")
+    }
+    else (
+        displayResults(recipeData)
+    )
+}
+
+function displayResults(recipeData) {
     console.log(recipeData);
+    let recipe_cards_container = document.querySelector('#recipe-cards');
+    recipe_cards_container.textContent = '';
+
+    for (let i = 0; i < recipeData.meals.length; i++) {
+        let card = document.createElement('div');
+        card.setAttribute('class', 'card')
+        card.innerHTML = `
+                            <img src=${recipeData.meals[i].strMealThumb} alt="food image" style="width:100%">
+                            <div class="container">
+                                <h4><b>${recipeData.meals[i].strMeal}</b></h4>
+                                <button onclick="handleViewRecipe(${recipeData.meals[i].idMeal})">View the Recipe</button>
+                            </div>
+                         `;
+
+    recipe_cards_container.appendChild(card);
+    console.log("done");
+    }
 }
 
