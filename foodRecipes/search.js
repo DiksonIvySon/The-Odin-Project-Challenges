@@ -1,4 +1,5 @@
 
+
 //making the search button work
 let search_button = document.querySelector('#search-button');
 search_button.addEventListener('click', handleSearch);
@@ -59,6 +60,7 @@ async function fetchViewRecipeData(idMeal) {
 function displayViewRecipeData(viewRecipeData) {
     let popUp_container = document.querySelector('#pop-up');
     document.querySelector("#noResults-message").style.display = 'none';
+    let recipe_ingredients = handleIngredients(viewRecipeData);
     popUp_container.textContent = '';
     let popUp = document.createElement('div');
     popUp.innerHTML = `
@@ -69,10 +71,14 @@ function displayViewRecipeData(viewRecipeData) {
                             <img src=${viewRecipeData.meals[0].strMealThumb} alt="meal image" style="width:100%">
                             <div class="popUp-image-text">
                                 <h1 class="popUp-recipe-name">${viewRecipeData.meals[0].strMeal}</h1>
-                                <h6 class="popUp-recipe-category">${viewRecipeData.meals[0].strCategory}</h6>
+                                <h6 class="popUp-recipe-category">Meal Category: ${viewRecipeData.meals[0].strCategory}</h6>
                             </div>
                         </div>
                         <div class="popUp-container">
+                            <h4><b>Ingredients:</b></h4>
+                            <p class="instructions">
+                                ${recipe_ingredients}
+                            </p>
                             <h4><b>Instructions:</b></h4>
                             <p class="instructions">
                                 ${viewRecipeData.meals[0].strInstructions}
@@ -85,4 +91,47 @@ function displayViewRecipeData(viewRecipeData) {
 
     popUp_container.appendChild(popUp);
     popUp_container.style.display = 'block';
+}
+
+
+// function to handle the ingredients to be one string
+function handleIngredients(viewRecipeData) {
+
+    let ingredients_string ="You will need";
+
+    let ingredientsList = [
+        viewRecipeData.meals[0].strIngredient,
+        viewRecipeData.meals[0].strIngredient1,
+        viewRecipeData.meals[0].strIngredient2,
+        viewRecipeData.meals[0].strIngredient3,
+        viewRecipeData.meals[0].strIngredient4,
+        viewRecipeData.meals[0].strIngredient5,
+        viewRecipeData.meals[0].strIngredient6,
+        viewRecipeData.meals[0].strIngredient7,
+        viewRecipeData.meals[0].strIngredient8,
+        viewRecipeData.meals[0].strIngredient9,
+        viewRecipeData.meals[0].strIngredient10,
+        viewRecipeData.meals[0].strIngredient11,
+        viewRecipeData.meals[0].strIngredient12,
+        viewRecipeData.meals[0].strIngredient13,
+        viewRecipeData.meals[0].strIngredient14,
+        viewRecipeData.meals[0].strIngredient15,
+        viewRecipeData.meals[0].strIngredient16,
+        viewRecipeData.meals[0].strIngredient17,
+        viewRecipeData.meals[0].strIngredient18,
+        viewRecipeData.meals[0].strIngredient19,
+        viewRecipeData.meals[0].strIngredient20,
+    ]
+
+    for (i = 0; i < ingredientsList.length; i++) {
+
+        if (ingredientsList[i] == "" || ingredientsList[i] == null) {
+            //do nothing
+        }
+        else {
+            ingredients_string += ", " + ingredientsList[i];
+        }
+    }
+
+    return ingredients_string;
 }

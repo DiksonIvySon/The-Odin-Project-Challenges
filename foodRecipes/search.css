@@ -159,8 +159,8 @@ footer {
     left: 50%;
     translate: -50% -50%;
     background-color: #F0F0F0;
-    width: 90%;
-    min-height: 92vh;
+    width: 92%;
+    min-height: 95vh;
 }
 
 .pop-up .close-popUp {
@@ -201,7 +201,6 @@ footer {
 
 .popUp-recipe-category {
     font-size: 20px;
-    color: #113e21;
     margin: 0;
 }
   
