@@ -15,7 +15,7 @@ async function fetchData(link) {
     const recipeData = await response.json();
     
     if (recipeData.meals == null){
-        alert("sorry could not find results")
+        document.querySelector("#noResults-message").style.display = 'block';
     }
     else (
         displayResults(recipeData)

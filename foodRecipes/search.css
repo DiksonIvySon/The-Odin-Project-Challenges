@@ -65,11 +65,25 @@ body {
 }
 
 /* styling the cards */
+main {
+    min-height: 40vh;
+    position: relative;
+}
+
 .recipe-cards {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 40px;
+}
+
+.noResults-message {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    color: #B38B59;
 }
 
 .card {
