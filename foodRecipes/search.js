@@ -17,6 +17,7 @@ async function fetchData(link) {
     
     if (recipeData.meals == null){
         document.querySelector("#noResults-message").style.display = 'block';
+        document.querySelector('#recipe-cards').style.display = 'none';
     }
     else (
         displayResults(recipeData)
@@ -64,7 +65,7 @@ function displayViewRecipeData(viewRecipeData) {
     popUp_container.textContent = '';
     let popUp = document.createElement('div');
     popUp.innerHTML = `
-                        <div class="close-popUp">
+                        <div class="close-popUp" onclick="handleClosePopUp()">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                         <div class="popUp-image-container">
@@ -135,4 +136,10 @@ function handleIngredients(viewRecipeData) {
     }
 
     return ingredients_string;
+}
+
+
+// Making close-pop-up function
+function handleClosePopUp() {
+    document.querySelector('#pop-up').style.display = 'none';
 }
