@@ -2,6 +2,16 @@ body {
     margin-inline: 5%;
 }
 
+header {
+    position: relative;
+}
+
+header .logo {
+    width: 50px;
+    border-radius: 10px;
+    transform: rotate(deg);
+}
+
 .heading {
     text-align: center;
     font-weight: 800;
@@ -265,5 +275,6 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
     background-color: #B38B59;
 }
+
 
 
