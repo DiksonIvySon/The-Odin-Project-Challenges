@@ -64,7 +64,8 @@ html, body {
 }
 
 .content-section {
-    margin: 70px;
+    
+    margin-inline: 5%;
 }
 
 .content-section h2 {
