@@ -52,11 +52,16 @@ function display_cartList() {
                                     <div>
                                         <span><strong>PRICE: </strong>R${cartList[i].price}</span>
                                     </div>
-                                    <button role="button" class="remove-btn">REMOVE</button>
+                                    <button role="button" class="remove-btn" onclick="deleteCartItem(${i})">REMOVE</button>
                                 </div>
                              `
     
         cartItem_container.appendChild(cart_Item);
-    }    
+    }   
 }
 
+//function to handle deleting an item from the cart
+function deleteCartItem(index) {
+    cartList.splice(index, 1);
+    display_cartList();
+}
