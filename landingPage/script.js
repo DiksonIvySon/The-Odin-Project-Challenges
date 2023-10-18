@@ -26,5 +26,37 @@ function addToCartList(name, price, imageURL) {
     let new_cartItem = new cartItem(name, price, imageURL);
     cartList.push(new_cartItem);
     console.log(cartList)
+    display_cartList();
+}
+
+//function to display the cart list items in the cart section
+function display_cartList() {
+    let cartItem_container = document.querySelector('.cart-items-container');
+    cartItem_container.textContent = "";
+
+    for (let i = 0; i<cartList.length; i++) {
+        let cart_Item = document.createElement('div');
+        cart_Item.setAttribute('class', 'cart-item');
+        cart_Item.innerHTML= `
+                                <div class="cart-item-img">
+                                    <img src=${cartList[i].imageURL} >
+                                </div>
+                                <div class="cart-item-info">
+                                    <div>
+                                        <span><strong>ITEM: </strong>${cartList[i].name}</span>
+                                    </div>
+                                    <div>
+                                        <label for="qualities"><strong>Quality: </strong></label>
+                                        <input type="number" value="1">
+                                    </div>
+                                    <div>
+                                        <span><strong>PRICE: </strong>R${cartList[i].price}</span>
+                                    </div>
+                                    <button role="button" class="remove-btn">REMOVE</button>
+                                </div>
+                             `
+    
+        cartItem_container.appendChild(cart_Item);
+    }    
 }
 
