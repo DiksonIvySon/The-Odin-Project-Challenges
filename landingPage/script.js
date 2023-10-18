@@ -5,6 +5,8 @@ let cartList = [];
 function cartItem(name, price, imageURL) {
     this.name = name;
     this.price = price;
+    this.quantity = 1;
+    this.quantity_price = price;
     this.imageURL = imageURL;
 }
 
@@ -47,10 +49,10 @@ function display_cartList() {
                                     </div>
                                     <div>
                                         <label for="qualities"><strong>Quality: </strong></label>
-                                        <input type="number" value="1">
+                                        <input type="number" value="${cartList[i].quantity}" id="${i}" onchange="handleQuantityChange(${i})">
                                     </div>
                                     <div>
-                                        <span><strong>PRICE: </strong>R${cartList[i].price}</span>
+                                        <span><strong>PRICE: </strong>R${cartList[i].quantity_price}</span>
                                     </div>
                                     <button role="button" class="remove-btn" onclick="deleteCartItem(${i})">REMOVE</button>
                                 </div>
@@ -64,4 +66,17 @@ function display_cartList() {
 function deleteCartItem(index) {
     cartList.splice(index, 1);
     display_cartList();
+}
+
+//function to change the price when the quantity 
+function handleQuantityChange(index) {
+    let quantity = document.getElementById(index).value;
+    let new_price = cartList[index].price * quantity;
+    cartList[0].quantity_price = new_price;
+
+    //also change the quantity in the dom
+    cartList[0].quantity = quantity;
+
+    //rerender the cartList display
+    display_cartList()
 }
