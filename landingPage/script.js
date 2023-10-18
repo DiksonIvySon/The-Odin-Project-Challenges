@@ -21,6 +21,7 @@ function handleAddToCart(id) {
     let imageURL = document.querySelector(imageClass).getAttribute('src');
 
     addToCartList(name, price, imageURL)
+
 } 
 
 //function to make a cartItem object and add it to cartList
@@ -60,7 +61,7 @@ function display_cartList() {
     
         cartItem_container.appendChild(cart_Item);
     }   
-    //call setCartNumber()
+    //call setCartNumber function
     setCartNumber();
 }
 
@@ -81,10 +82,26 @@ function handleQuantityChange(index) {
 
     //rerender the cartList display
     display_cartList()
+
 }
 
-//function to change the items number in the cart
+//function to change the items number in the cart when item is added
 function setCartNumber() {
     let items_inCart = cartList.length;
     document.querySelector('#cart-number').textContent = items_inCart;
+
+    //call totalCost function
+    totalCost()
+}
+
+//function to calculate the total cost and display it
+function totalCost() {
+    let total_cost = 0; 
+
+    for (i = 0; i < cartList.length; i++) {
+        total_cost += cartList[i].quantity_price;
+    }
+    console.log(total_cost)
+
+    document.querySelector('#total-cost').textContent = total_cost;
 }
