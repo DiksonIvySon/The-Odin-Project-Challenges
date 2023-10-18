@@ -60,6 +60,8 @@ function display_cartList() {
     
         cartItem_container.appendChild(cart_Item);
     }   
+    //call setCartNumber()
+    setCartNumber();
 }
 
 //function to handle deleting an item from the cart
@@ -68,15 +70,21 @@ function deleteCartItem(index) {
     display_cartList();
 }
 
-//function to change the price when the quantity 
+//function to change the price when the quantity when the quantity is changed
 function handleQuantityChange(index) {
     let quantity = document.getElementById(index).value;
     let new_price = cartList[index].price * quantity;
-    cartList[0].quantity_price = new_price;
+    cartList[index].quantity_price = new_price;
 
     //also change the quantity in the dom
-    cartList[0].quantity = quantity;
+    cartList[index].quantity = quantity;
 
     //rerender the cartList display
     display_cartList()
+}
+
+//function to change the items number in the cart
+function setCartNumber() {
+    let items_inCart = cartList.length;
+    document.querySelector('#cart-number').textContent = items_inCart;
 }
