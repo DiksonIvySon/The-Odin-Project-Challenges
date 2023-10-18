@@ -200,6 +200,7 @@ section > h2 {
     overflow: auto;
     white-space: nowrap;
     max-width: 90vw;
+    padding-right: 10px;
 }
 
 .cart-item {
