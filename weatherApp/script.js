@@ -474,4 +474,17 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+//scroll animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+});
+  
+const project_containers = document.querySelectorAll('.activity');
+project_containers.forEach((el) => observer.observe(el));
+
 
