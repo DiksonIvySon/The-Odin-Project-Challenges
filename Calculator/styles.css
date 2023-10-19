@@ -1,6 +1,6 @@
 body {
     background-image: url(images/pexels-karolina-grabowska-6256066.jpg);
-    background-size: contain;
+    background-size: cover;
     color: white;
     text-align: center;
 }
@@ -51,10 +51,6 @@ main {
 .currentValueScreen {
     font-size: 30px;
     margin: 10px;
-}
-
-.copyright a {
-    color: #3500D3;
 }
 
 .keyboard {
@@ -157,6 +153,44 @@ button:hover {
 
 .equals-btn {
     grid-area: equal;
+}
+
+/*styling the footer*/
+footer {
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+    padding: 20px;
+}
+
+.footer-icons a {
+    margin-inline: 15px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-icons i:hover {
+    transform: scale(2);
+    transition: 0.5s ease-in-out;
+    color: blue;
+}
+
+.web-author {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+}
+.web-author:hover {
+    color: blue;
+}
+
+/* styling the scroll bar*/
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #3500D3;
 }
 
 
