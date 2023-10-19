@@ -272,16 +272,21 @@ function makeDate() {
         let previousWeatherContainer = document.querySelector('.previousWeather-container');
         previousWeatherContainer.textContent = "";
 
-        getPreviousData(new_dayDate);
+        CreatePreviousDataLink(new_dayDate);
         dayDate_Day -= 1;
     }
 
 }
 
+//function to create the API link
+function CreatePreviousDataLink(new_dayDate) {
+    let previousDataLink = "http://api.weatherapi.com/v1/history.json?key=8badefafba8c47eb9f7184239231608&q=" + inputLocation + "&dt=" + new_dayDate;
+    getPreviousData(previousDataLink);
+}
+
 
 //function to fetch the previous data
-async function getPreviousData(new_dayDate) {
-    let previousDataLink = "http://api.weatherapi.com/v1/history.json?key=8badefafba8c47eb9f7184239231608&q=" + inputLocation + "&dt=" + new_dayDate;
+async function getPreviousData(previousDataLink) {
     const response = await fetch(previousDataLink, {mode: 'cors'});
     const previousDataInfo = await response.json();
     displayPreviousDataInfo(previousDataInfo);
