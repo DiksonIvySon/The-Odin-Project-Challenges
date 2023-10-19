@@ -5,7 +5,7 @@ let search_button = document.querySelector('#search-button');
 search_button.addEventListener('click', handleSearch);
 
 //Call handleSearch to always start page with loaded recipes
-
+handleSearch();
 
 //function to handle search button click
 function handleSearch() {
