@@ -347,6 +347,7 @@ a:hover {
   width: 100%;
   position: relative;
   margin: auto;
+  min-height: 350px;
 }
 
 /* Hide the images by default */
@@ -411,6 +412,10 @@ a:hover {
 
 .previousWeather-container {
     margin: 10px 0px 40px 0px;
+}
+
+.previousWeather-container > div {
+    padding: 10px;
 }
 
 /* Next & previous buttons */
