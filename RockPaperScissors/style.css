@@ -5,6 +5,10 @@
     max-height: 100%;
 }
 
+body {
+    margin: 0;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -46,7 +50,31 @@ header {
     border-radius: 10px;
 }
 
+.home-heading {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+    background-image: rgb(0,0,0,0.5);
+    width: 90vw;
+
+    text-align: center;
+    background-image: linear-gradient(to left, rgb(166, 122, 129), #fff, #fff, #6f6b6b, #45f3ff, rgb(166, 122, 129) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 120s linear infinite;
+}
+
 .heading {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+    background-image: rgb(0,0,0,0.5);
+    width: 90vw;
+
     text-align: center;
     background-image: linear-gradient(to left, rgb(166, 122, 129), #333, #333, #6f6b6b, #45f3ff, rgb(166, 122, 129) );
     -webkit-background-clip: text;
@@ -65,22 +93,27 @@ header {
     position: relative;
 }
 
-.center-image p {
+.score-board {
     position: absolute;
-    top: 100px;
-    left: 45%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    text-align: center;
 }
 
-.center-image h1 {
-    position: absolute;
-    top: 140px;
-    left: 45%;
+#gameResult {
+    color: aqua;
+    background: rgb(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 10px;
 }
 
-.center-image h2 {
-    position: absolute;
-    top: 180px;
-    left: 48%;
+.score-h2 {
+    margin-bottom: 0;
+}
+
+#gameScore {
+    margin: 0;
 }
 
 .center-image {
@@ -88,10 +121,15 @@ header {
     justify-content: center;
 }
 
-.image img{
-    width: 650px;
+.image {
+    width: 100vw;
     height: 300px;
-    border-radius: 10px;
+}
+
+.image img {
+    width: 100%;
+    object-fit: cover;
+    background-image: linear-gradient(180 deg, transparent, white, white);
 }
 
 .container {
@@ -128,27 +166,30 @@ header {
 }
 
 /*styling the home page video*/
-
-.video {
-    display: flex;
-    justify-content: center;
-}
-
-.video video{
-    height: 100vh;
-    border-radius: 10px;
+.home-image {
     position: relative;
+    width:100vw;
+    height: 70vh;
 }
 
-.video .play-game-button {
+.home-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-image .play-game-button {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 50px;
+    translate: -50% -50%;
+    font-size: 40px;
     padding: 20px;
     border-radius: 50px;
-    background-color: transparent;
+    width: 50%;
+    background: rgb(0,0,0,0.5);
+    border: 1px solid white;
+    color: white;
 }
 
 .play-game-button:hover {
