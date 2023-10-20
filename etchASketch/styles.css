@@ -22,7 +22,7 @@ body {
 }
 
 .section-container div{
-    border: 4px solid red;
+    border: 4px solid black;
     flex: 1 1 auto;
 }
 
@@ -32,7 +32,7 @@ body {
 }
 
 .main-btn{
-    background: red;
+    background: black;
     border-radius: 10px 10px 0px 0px;
 }
 
@@ -127,7 +127,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: red;
+    background-color: black;
 }
   
       
