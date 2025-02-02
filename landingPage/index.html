@@ -23,12 +23,24 @@
         </header>
 
         <section>
-            <!-- <div class="event">
-                <img src="IMAGES/colorsax-image.jpg" alt="">
-                <p>Date: <span class="date">07 Feb 2025 19:00</span></p>
-                <h2>Name: <span class="name">Grounded Comedy Night - Hosted by Jaryd Pillay</span></h2>
-                <p>Venue: <span class="venue">Casalinga, Johannesburg</span></p>
-            </div> -->
+            <div id="search-container">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="music">Music</option>
+                    <option value="sports">Sports</option>
+                    <option value="arts-theatre">Arts & Theatre</option>
+                    <option value="film">Film</option>
+                    <option value="miscellaneous">Miscellaneous</option>
+                </select>
+            
+                <label for="location">Location:</label>
+                <input type="text" id="location" placeholder="Enter city or location">
+            
+                <button onclick="searchEvents()">Search</button>
+            </div>
+        </section>
+
+        <section>
             <div id="events-container"></div>
         </section>
 
