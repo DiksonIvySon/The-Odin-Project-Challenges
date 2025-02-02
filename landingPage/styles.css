@@ -31,6 +31,7 @@ html, body {
     padding: .5em;
     color: white;
     text-decoration: none;
+    transition: 0.5s;
 } 
 
 .main-nav {
@@ -46,7 +47,7 @@ html, body {
 
 .nav a:hover {
     color: #56CCF2;
-    transition: 0.5s;
+    background-color: #777;
 }
 
 .main-header {
@@ -55,12 +56,18 @@ html, body {
     background-blend-mode: multiply;
     background-size: cover;
     padding-bottom: 30px;
+    text-align: center;
 }
 
 .main-header h1 {
     text-align: center;
     font-size: 100px;
     color: #56CCF2;
+    margin-bottom: 0PX;
+}
+
+.main-header p {
+    color: #97acb3;
 }
 
 .content-section {
@@ -123,6 +130,7 @@ button {
     color: white;
     background-color: #56CCF2;
     border: none;
+    padding: 5px;
     border-radius: .3em;
     font-weight: bold;
     transition: 0.5s;
@@ -243,8 +251,6 @@ h1 {
 }
 
 
-
-
 /*adding styling to the store page ...........................................................................*/
 section > h2 {
     text-align: center;
@@ -252,7 +258,7 @@ section > h2 {
 }
 
 .store {
-    margin-inline: 2rem;
+    margin-inline: 5%;
 }
 
 .store-items {
@@ -324,7 +330,7 @@ footer {
     text-align: center;
     margin: 30px 0px 0px 0px;
     padding: 20px;
-    background-color: #56CCF2;
+    background: linear-gradient(70deg, black, #56CCF2);
 }
 
 .footer-icons a {

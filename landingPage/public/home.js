@@ -40,7 +40,7 @@ async function searchEvents() {
         if (data._embedded && data._embedded.events) {
             displayEvents(data._embedded.events);
         } else {
-            document.getElementById("events-container").innerHTML = `<h1 class="notFound">No events found.</h1>`;
+            document.getElementById("eventNotFound").innerHTML = `<h1 class="notFound">No events found.</h1>`;
         }
     } catch (error) {
         console.error("Error fetching events:", error);
@@ -48,6 +48,7 @@ async function searchEvents() {
 }
 
 function displayEvents(events) {
+    document.getElementById("eventNotFound").innerHTML = ""; 
     let container = document.getElementById("events-container");
     container.innerHTML = ""; 
     console.log(events)
