@@ -101,10 +101,26 @@ html, body {
     border-bottom: 1px solid black;
     padding-bottom: 1em;
     margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .tour-row:last-child {
     border-bottom: none;
+}
+
+.tour-row .event-item img {
+    width: 100px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.tour-row .event-item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .tour-item {
@@ -115,15 +131,6 @@ html, body {
 .tour-date {
     color: #555;
     font-size: bold;
-    width: 11%;
-}
-
-.tour-city {
-    width: 24%;
-}
-
-.tour-arena {
-    width: 42%;
 }
 
 button {

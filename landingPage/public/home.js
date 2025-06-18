@@ -12,7 +12,7 @@ async function fetchEvents() {
 
         const data = await response.json();
         const events = data._embedded.events; 
-        console.log(data.products);
+        console.log(data);
 
         displayEvents(events);
     } catch (error) {
