@@ -71,7 +71,7 @@ html, body {
 }
 
 .content-section {
-    
+    margin-bottom: 100px;
     margin-inline: 5%;
 }
 
@@ -112,7 +112,8 @@ html, body {
 
 .tour-row .event-item img {
     width: 100px;
-    height: 70px;
+    height: 100px;
+    object-fit: fit;
     border-radius: 10px;
 }
 
@@ -131,6 +132,11 @@ html, body {
 .tour-date {
     color: #555;
     font-size: bold;
+}
+
+.tour-row .event-item-details {
+    max-width: 200px;
+    
 }
 
 button {
