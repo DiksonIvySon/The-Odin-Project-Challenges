@@ -1,10 +1,11 @@
 
 const API_KEY = "FqoXxM7gNsn34AG6LMAttjAi62rjhf6O"; 
 let CATEGORY = "music";
-let LOCATION = "Johannesburg"; 
+let COUNTRY = "ZA";
 
 async function fetchEvents() {
-    const url = `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${CATEGORY}&city=${encodeURIComponent(LOCATION)}&apikey=${API_KEY}`;
+
+    let url = `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${CATEGORY}&countryCode=${COUNTRY}&apikey=${API_KEY}`;
 
     try {
         const response = await fetch(url);
