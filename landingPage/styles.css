@@ -112,7 +112,7 @@ html, body {
 
 .tour-row .event-item img {
     width: 100px;
-    height: 100px;
+    height: 80px;
     object-fit: fit;
     border-radius: 10px;
 }
@@ -377,3 +377,5 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
     background-color: #56CCF2;
 }
+
+
