@@ -265,7 +265,7 @@ h1 {
 
 
 /*adding styling to the store page ...........................................................................*/
-section > h2 {
+section > h2, p {
     text-align: center;
     color: black;
 }
@@ -284,7 +284,7 @@ section > h2 {
 .store-items > div {
     flex: 1;
     background-color: #F0F0F0;
-    background-image: linear-gradient(50deg, black,rgb(114, 113, 113), #F0F0F0, #F0F0F0);
+    background-image: linear-gradient(30deg, black,rgb(114, 113, 113), #F0F0F0, #F0F0F0);
     min-width: 200px;
     max-height: 310px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -314,7 +314,6 @@ section > h2 {
     color: white;
     font-weight: bold;
 }
-
 
 /*styling the cart*/
 
