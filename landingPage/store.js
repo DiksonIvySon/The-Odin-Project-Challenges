@@ -142,3 +142,12 @@ window.onload = function () {
     }
 }
 
+function handleViewProduct(cardID) {
+    let popupContainer = document.querySelector(".product-view-popup");
+    popupContainer.style.display = "block";
+};
+
+function handleCloseViewProduct() {
+    let popupContainer = document.querySelector(".product-view-popup");
+    popupContainer.style.display = "none";
+};
