@@ -151,3 +151,44 @@ function handleCloseViewProduct() {
     let popupContainer = document.querySelector(".product-view-popup");
     popupContainer.style.display = "none";
 };
+
+
+/* Accordion functionality*/
+document.addEventListener("DOMContentLoaded", function() {
+    let panel1 = document.querySelector(".panel1");
+    let panel2 = document.querySelector(".panel2");
+    let panel3 = document.querySelector(".panel3");
+    let accordion1 = document.querySelector(".accordion1");
+    let accordion2 = document.querySelector(".accordion2");
+    let accordion3 = document.querySelector(".accordion3");
+
+    function togglePanel(panel) {
+        
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    };
+
+    window.handlePanelClick = function(panelNumber) {
+        panel1.style.display = "none";
+        panel2.style.display = "none";
+        panel3.style.display = "none";
+
+        accordion1.className = "accordion accordion1";
+        accordion2.className = "accordion accordion2";
+        accordion3.className = "accordion accordion3";
+
+        if (panelNumber === "1") {
+            togglePanel(panel1);
+            accordion1.className = "accordion accordion1 active";
+        }else if (panelNumber === "2"){
+            togglePanel(panel2);
+            accordion2.className = "accordion accordion2 active";
+        }else {
+            togglePanel(panel3);
+            accordion3.className = "accordion accordion3 active";
+        };
+    };
+});
