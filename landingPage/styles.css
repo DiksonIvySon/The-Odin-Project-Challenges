@@ -286,11 +286,12 @@ section > h2, p {
     background-color: #F0F0F0;
     background-image: linear-gradient(30deg, black,rgb(114, 113, 113), #F0F0F0, #F0F0F0);
     min-width: 200px;
-    max-height: 310px;
+    max-height: 390px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin-top: 10px;
     padding: 0px 10px 50px 10px;
+    border-radius: 10px 10px 0px 0px; 
 }
 
 .store-items > div:hover {
@@ -304,15 +305,37 @@ section > h2, p {
     object-fit: cover;
 }
 
+.store-items .price-container {
+    display: flex;
+}
+
+.store-items .price-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.store-items .price-container div{
+    flex: 1; 
+}
+
 .store-items .card-bottom-controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
 }
 
-.store-items .card-bottom-controls span{
+.store-items .card-bottom-controls button{
+    flex: 1;
+    padding: 15px 5px;
+}
+
+.store-items .price-container span{
     color: white;
     font-weight: bold;
+    font-size: 25px;
 }
 
 /*styling the cart*/
@@ -363,7 +386,21 @@ section > h2, p {
   transform: translate(-50%, -50%);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  /* position: relative; */
 }
+
+.product-view-popup .closeViewProduct-popup {
+    position: absolute;
+    right: 10px;
+    top: -20px;
+    font-size: 35px;
+    color: black;
+};
+
+.product-view-popup .closeViewProduct-popup:hover {
+    color: #56CCF2;
+    cursor: pointer;
+};
 
 .container {
   position: relative;
