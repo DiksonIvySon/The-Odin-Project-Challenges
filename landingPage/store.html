@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>THE IvySon Sax</title>
+        <title>Eventful Store</title>
         <meta name="decription" content="This is the discription">
         <link rel="stylesheet" href="styles.css">
         <script src="store.js"></script>
@@ -18,7 +18,9 @@
                     <li><a href="about.html">ABOUT</a></li>
                 </ul>
             </nav>
-            <h1 class="band-name band-name-large">The IvySon Sax</h1> 
+            <h1 class="band-name band-name-large">Eventful Store</h1> 
+            <p>Smell good, look good</p>
+            <h2>FEEL GREAT</h2>
         </header>
 
         <section class="store">
@@ -195,6 +197,72 @@
                 </div>
             </div>
         </section>
+
+        <section class="content-section accodion-section">
+            <h1>FAQ</h1>
+            <h3>Vendor: DM Essense</h3>
+            <h3>Socials: 
+
+            </h3>
+            <button class="accordion accordion1" onclick="handlePanelClick('1')"><i class="fa-solid fa-truck"></i> Delivery Options</button>
+            <div class="panel1" style="display: none;">
+                <ul>
+                    <li><b>Courier Guy</b> - Fast and reliable delivery to your door within 2-3 business days. Ideal for home or office deliveries.</li>
+                    <li><b>PAXI</b> - Budget-friendly delivery via PEP stores nationwide. Pick up your parcel at your nearest PEP store within 5-7 working days.</li>
+                    <li><b>Payment on Delivery</b> - Pay only when your package is delivered. Available for selected areas in Gauteng.</li>
+                </ul>
+            </div>
+            <hr>
+            <button class="accordion accordion2" onclick="handlePanelClick('2')"><i class="fa-solid fa-cart-shopping"></i> How ordering works</button>
+            <div class="panel2" style="display: none;">
+                <p>Ordering from us is simple, secure, and convenient. Here's how the process works from start to finish:</p>
+                <div>
+                    <h3>Step 1</h3>
+                    <ol>
+                        <li>Browse our collection and click “Add to Cart” for the products you want. </li>
+                        <li>You can view or update your cart at any time by clicking the cart icon.</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>Step 2</h3>
+                    <p>When you're ready to checkout, click the “Make an Order” button in your cart. This will open a secure form where you'll
+                        provide important delivery details, including:</p>
+                    <ol>
+                        <li>Your full name, Contact number, Email address and Delivery address</li>
+                        <li>Preferred delivery method (Courier Guy, PAXI, or Payment on Delivery)</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>Step 3</h3>
+                    <p>After submitting your delivery details, you'll be directed to a secure payment page. 
+                        We support several payment methods including debit/credit cards.</p>
+                </div>
+                <div>
+                    <h3>Step 4</h3>
+                    <p>Once your order is placed:</p>
+                    <ol>
+                        <li>You'll receive a confirmation email with your order summary and delivery details.</li>
+                        <li>If you paid online, your payment will be pending confirmation.</li>
+                        <li>Once confirmed, we'll begin preparing your order for dispatch.</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>Step 5</h3>
+                    <p>We'll send you updates as your order moves through our system. You'll be notified when your package is on the way.</p>
+                </div>
+                
+            </div>
+            <hr>
+            <button class="accordion accordion3" onclick="handlePanelClick('3')"><i class="fa-solid fa-address-book"></i> How to contact DM Essense</button>
+            <div class="panel3" style="display: none;">
+                <ul>
+                    <li><b>Contact Number :</b> <a type="tel" href="">+27 71 302 9647</a></li>
+                    <li><b>WhatsApp :</b> <a href=""></a></li>
+                    <li><b>Email :</b> <a type="Email" href="dikson"></a></li>
+                </ul>
+            </div>
+        </section>
+
         <section class="cart">
             <div>
                 <h2>CART</h2>
@@ -280,7 +348,6 @@
                     </div>
                 </div>
                 
-
                 <div class="row">
                     <div class="column">
                     <img class="demo cursor" src="DM-Essense-images/product1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
