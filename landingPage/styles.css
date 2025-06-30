@@ -96,6 +96,17 @@ html, body {
     border-radius: 50%;
 }
 
+.fixed-dividing-image {
+    background-color: #0056b3;
+    height: 200px;
+    border-radius: 10px;
+    background-image: url(IMAGES/pexels-anthonyshkraba-production-8044068.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-attachment: fixed;
+}
+
 /* css styling for the home page of the web also known as the musicpro index.html */
 .tour-row {
     border-bottom: 1px solid black;
@@ -151,7 +162,8 @@ button {
 
 button:hover {
     color: #56CCF2;
-    background-color: black;
+    /* background-color: black; */
+    background-color: rgb(34, 34, 48);
     cursor: pointer;
 }
 
@@ -284,7 +296,7 @@ section > h2, p {
 .store-items > div {
     flex: 1;
     background-color: #F0F0F0;
-    background-image: linear-gradient(30deg, black,rgb(114, 113, 113), #F0F0F0, #F0F0F0);
+    background-image: linear-gradient(30deg, rgb(231, 229, 229),rgb(161, 161, 161), #F0F0F0, #F0F0F0);
     min-width: 200px;
     max-height: 390px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -336,6 +348,34 @@ section > h2, p {
     color: white;
     font-weight: bold;
     font-size: 25px;
+}
+
+.accodion-section {
+    max-width: 700px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }
 
 /*styling the cart*/
