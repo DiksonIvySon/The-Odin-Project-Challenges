@@ -61,7 +61,7 @@ function display_cartList() {
     
         cartItem_container.appendChild(cart_Item);
     }   
-    //call setCartNumber function
+
     setCartNumber();
 }
 
@@ -77,10 +77,8 @@ function handleQuantityChange(index) {
     let new_price = cartList[index].price * quantity;
     cartList[index].quantity_price = new_price;
 
-    //also change the quantity in the dom
     cartList[index].quantity = quantity;
 
-    //rerender the cartList display
     display_cartList()
 
 }
@@ -90,7 +88,6 @@ function setCartNumber() {
     let items_inCart = cartList.length;
     document.querySelector('#cart-number').textContent = items_inCart;
 
-    //call totalCost function
     totalCost()
 }
 
